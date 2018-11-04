@@ -40,6 +40,9 @@ function brute(){
     include 'config.php';
     print "$okegreen\n████████████████████$white   BruteForce$okegreen   ████████████████████\n\n";
     print "$cyan 01$red :$white Admin Login Finder\n";
+    print "$cyan 02$red :$white Dirscanner\n";
+    print "$cyan 03$red :$white Shell Scanner\n";
+    print "$cyan 04$red :$white Subdomain Scanner\n";
 }
 /////////////////////////////////////////////////     Brute Menu     /////////////////////////////////////////////////
 /////////////////////////////////////////////////     Scan  Menu     /////////////////////////////////////////////////
@@ -49,6 +52,7 @@ function scan(){
     print "$cyan 01$red :$white Whois\n";
     print "$cyan 02$red :$white DNSLookup\n";
     print "$cyan 03$red :$white Host Search\n";
+    print "$cyan 04$red :$white Nmap Scan\n";
 }
 /////////////////////////////////////////////////     Scan  Menu     /////////////////////////////////////////////////
 /////////////////////////////////////////////////    Encode  Menu    /////////////////////////////////////////////////
@@ -112,6 +116,9 @@ function logfin(){
                     fwrite($handle, "$log\n");
                     print "\n$cyan  [".date('H:m:s')."]==//$white $log =>$cyan OK";
                 }
+            elseif($httpcode == 403){
+                    print "\n$red  [".date('H:m:s')."]==//$white $log =>$red FORBIDDEN";
+                }
             else{
                     print "\n$red  [".date('H:m:s')."]==//$white $log =>$red ERROR";
                 }
@@ -119,6 +126,156 @@ function logfin(){
     echo "\n\n$cyan [!]==// Result OK reported to result/adlog-$target.txt\n\n $white ";
 }
 ///////////////////////////////////////////////// Admin Login Finder /////////////////////////////////////////////////
+/////////////////////////////////////////////////     Dirscanner     /////////////////////////////////////////////////
+function dirscan(){
+    include 'config.php';
+    echo "$cyan Target$red >$white ";
+    $target = trim(fgets(STDIN));
+    echo "$cyan Use Default List (Y/N)?$red  >$white ";
+    $pilihan = trim(fgets(STDIN));
+    if ($pilihan == 'Y' OR $pilihan == 'y'){
+            $list = 'wordlist/dirscan.txt';
+        }
+    else{
+            echo "$cyan List$red >$white ";
+            $list = trim(fgets(STDIN));
+        }
+    if(!preg_match("/^http:\/\//",$target) AND !preg_match("/^https:\/\//",$target)){
+            $targetnya = "http://$target";
+        }
+    else{
+            $targetnya = $target;
+        }
+    echo "$yellow \n [!]==// Opening $list ...";
+    $buka = fopen("$list","r");
+    $ukuran = filesize("$list");
+    $baca = fread($buka,$ukuran);
+    $lists = explode("\r\n",$baca);
+    echo "$cyan\n [!]==// Please Wait...
+    ";
+    foreach($lists as $directory){
+            $log = "$targetnya/$directory";
+            $ch = curl_init("$log");
+            curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            curl_exec($ch);
+            $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+            curl_close($ch);
+            if($httpcode == 200){
+                    $handle = fopen("result/dirscan-$target.txt", "a+");
+                    fwrite($handle, "$log\n");
+                    print "\n$cyan  [".date('H:m:s')."]==//$white $log =>$cyan OK";
+                }
+            elseif($httpcode == 403){
+                    print "\n$red  [".date('H:m:s')."]==//$white $log =>$red FORBIDDEN";
+                }
+            else{
+                    print "\n$red  [".date('H:m:s')."]==//$white $log =>$red ERROR";
+                }
+        }
+    echo "\n\n$cyan [!]==// Result OK reported to result/dirscan-$target.txt\n\n $white ";
+}
+/////////////////////////////////////////////////     Dirscanner     /////////////////////////////////////////////////
+/////////////////////////////////////////////////   Shell  scanner   /////////////////////////////////////////////////
+function shellscan(){
+    include 'config.php';
+    echo "$cyan Target$red >$white ";
+    $target = trim(fgets(STDIN));
+    echo "$cyan Use Default List (Y/N)?$red  >$white ";
+    $pilihan = trim(fgets(STDIN));
+    if ($pilihan == 'Y' OR $pilihan == 'y'){
+            $list = 'wordlist/shell.txt';
+        }
+    else{
+            echo "$cyan List$red >$white ";
+            $list = trim(fgets(STDIN));
+        }
+    if(!preg_match("/^http:\/\//",$target) AND !preg_match("/^https:\/\//",$target)){
+            $targetnya = "http://$target";
+        }
+    else{
+            $targetnya = $target;
+        }
+    echo "$yellow \n [!]==// Opening $list ...";
+    $buka = fopen("$list","r");
+    $ukuran = filesize("$list");
+    $baca = fread($buka,$ukuran);
+    $lists = explode("\r\n",$baca);
+    echo "$cyan\n [!]==// Please Wait...
+    ";
+    foreach($lists as $shell){
+            $log = "$targetnya/$shell";
+            $ch = curl_init("$log");
+            curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            curl_exec($ch);
+            $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+            curl_close($ch);
+            if($httpcode == 200){
+                    $handle = fopen("result/shellscan-$target.txt", "a+");
+                    fwrite($handle, "$log\n");
+                    print "\n$cyan  [".date('H:m:s')."]==//$white $log =>$cyan OK";
+                }
+            elseif($httpcode == 403){
+                    print "\n$red  [".date('H:m:s')."]==//$white $log =>$red FORBIDDEN";
+                }
+            else{
+                    print "\n$red  [".date('H:m:s')."]==//$white $log =>$red ERROR";
+                }
+        }
+    echo "\n\n$cyan [!]==// Result OK reported to result/shellscan-$target.txt\n\n $white ";
+}
+/////////////////////////////////////////////////   Shell  scanner   /////////////////////////////////////////////////
+/////////////////////////////////////////////////   Subdo  scanner   /////////////////////////////////////////////////
+function subdoscan(){
+    include 'config.php';
+    echo "$cyan Target$red >$white ";
+    $target = trim(fgets(STDIN));
+    echo "$cyan Use Default List (Y/N)?$red  >$white ";
+    $pilihan = trim(fgets(STDIN));
+    if ($pilihan == 'Y' OR $pilihan == 'y'){
+            $list = 'wordlist/subdo.txt';
+        }
+    else{
+            echo "$cyan List$red >$white ";
+            $list = trim(fgets(STDIN));
+        }
+    if(!preg_match("/^http:\/\//",$target) AND !preg_match("/^https:\/\//",$target)){
+            $targetnya = "http://$target";
+        }
+    else{
+            $targetnya = $target;
+        }
+    echo "$yellow \n [!]==// Opening $list ...";
+    $buka = fopen("$list","r");
+    $ukuran = filesize("$list");
+    $baca = fread($buka,$ukuran);
+    $lists = explode("\r\n",$baca);
+    echo "$cyan\n [!]==// Please Wait...
+    ";
+    foreach($lists as $subdo){
+            $log = "$subdo.$targetnya";
+            $ch = curl_init("$log");
+            curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            curl_exec($ch);
+            $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+            curl_close($ch);
+            if($httpcode == 200){
+                    $handle = fopen("result/subdo-$target.txt", "a+");
+                    fwrite($handle, "$log\n");
+                    print "\n$cyan  [".date('H:m:s')."]==//$white $log =>$cyan OK";
+                }
+            elseif($httpcode == 403){
+                    print "\n$red  [".date('H:m:s')."]==//$white $log =>$red FORBIDDEN";
+                }
+            else{
+                    print "\n$red  [".date('H:m:s')."]==//$white $log =>$red ERROR";
+                }
+        }
+    echo "\n\n$cyan [!]==// Result OK reported to result/subdo-$target.txt\n\n $white ";
+}
+/////////////////////////////////////////////////   Subdo  scanner   /////////////////////////////////////////////////
 /////////////////////////////////////////////////    Brute  Tools    /////////////////////////////////////////////////
 
 /////////////////////////////////////////////////   Scanner  Tools   /////////////////////////////////////////////////
@@ -182,6 +339,26 @@ function host(){
 	echo "\n\n$cyan [!]==// Result reported to result/host-$target.txt\n\n";
 }
 /////////////////////////////////////////////////    Host Search     /////////////////////////////////////////////////
+/////////////////////////////////////////////////     Nmap Scan      /////////////////////////////////////////////////
+function nmap(){
+    include 'config.php';
+    echo "$cyan Target$red >$white ";
+    $target = trim(fgets(STDIN));
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch, CURLOPT_URL,'https://api.hackertarget.com/nmap/?q='.$target);
+	$result=curl_exec($ch);
+	curl_close($ch);
+	$isi = "[ ".date('d-m-Y H:i:s')." ]-[ ".$target." ]-[ N1ght_Frmwrk-nmap ]\n\n".$result."	";
+	$open = fopen("result/nmap-$target.txt", 'a');
+	fwrite($open, $isi);
+	fclose($open);
+	touch($file);
+	print $result;
+	echo "\n\n$cyan [!]==// Result reported to result/nmap-$target.txt\n\n";
+}
+/////////////////////////////////////////////////     Nmap Scan      /////////////////////////////////////////////////
 /////////////////////////////////////////////////   Scanner  Tools   /////////////////////////////////////////////////
 
 /////////////////////////////////////////////////   Endecode Tools   /////////////////////////////////////////////////
