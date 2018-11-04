@@ -1,2 +1,6 @@
 # N1ght_Frmwrk
-[ PROJECT ] Priv framework by N1ght.Hax0r
+Priv framework by N1ght.Hax0r
+# Depedency
+php
+# Usage
+php N1.php
