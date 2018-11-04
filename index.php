@@ -240,12 +240,7 @@ function subdoscan(){
             echo "$cyan List$red >$white ";
             $list = trim(fgets(STDIN));
         }
-    if(!preg_match("/^http:\/\//",$target) AND !preg_match("/^https:\/\//",$target)){
-            $targetnya = "http://$target";
-        }
-    else{
-            $targetnya = $target;
-        }
+    $targetnya = $target;
     echo "$yellow \n [!]==// Opening $list ...";
     $buka = fopen("$list","r");
     $ukuran = filesize("$list");
