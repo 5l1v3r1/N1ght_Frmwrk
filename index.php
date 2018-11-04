@@ -14,10 +14,23 @@ function about(){
 /////////////////////////////////////////////////     Main  Menu     /////////////////////////////////////////////////
 function index(){
     include 'config.php';
+    print "$red                                                     \n";
+    print "$yellow========================================================\n";
+    print "$red        .---.        .-----------                      \n";
+    print "$red       /     \  __  /    ------                        \n";
+    print "$red      / /     \(  )/    -----                          \n";
+    print "$red     //////   ' \/ `   ---    $white    N1ght.Frmwrk$red V.1.5\n";
+    print "$red    //// / // :    : ---      $cyan    By$white N1ght.Hax0r    \n";
+    print "$red   // /   /  /`    '--                                 \n";
+    print "$red  //          //..\\\                                   \n";
+    print "$yellow============$red UU$yellow ==$red UU$yellow ==================================\n";
+    print "$red             '//||\\\`                                  \n";
+    print "$red               ''``                                     \n";
     print "$okegreen\n████████████████████$white  N1ght_Frmwrk$okegreen  ████████████████████\n\n";
     print "$cyan 01$red :$white BruteForce\n";
     print "$cyan 02$red :$white Scanner\n";
-    print "$cyan 03$red :$white Encode & Decode\n\n";
+    print "$cyan 03$red :$white Encode & Decode\n";
+    print "$cyan 04$red :$white Generator\n\n";
     print "$cyan 0h$red :$white Show help\n";
     print "$cyan 0a$red :$white Show about this tool\n";
 }
@@ -45,6 +58,18 @@ function endecode(){
     print "$cyan 01$red :$white Encode\n";
 }
 /////////////////////////////////////////////////    Decode  Menu    /////////////////////////////////////////////////
+/////////////////////////////////////////////////   Generator Menu   /////////////////////////////////////////////////
+function generator(){
+    include 'config.php';
+    print "$okegreen\n████████████████████$white    Generator$okegreen    ████████████████████\n\n";
+    print "$cyan 01$red :$white Bukalapak Voucher Generator\n";
+    print "$cyan 02$red :$white Tokopedia Voucher Generator\n";
+    print "$cyan 03$red :$white Gojek Voucher Generator\n";
+    print "$cyan 04$red :$white Google Play Card Generator\n";
+    print "$cyan 05$red :$white Password Generator\n";
+    print "$cyan 00$red :$white Custom Generator\n";
+}
+/////////////////////////////////////////////////   Generator Menu   /////////////////////////////////////////////////
 
 /////////////////////////////////////////////////    Brute  Tools    /////////////////////////////////////////////////
 ///////////////////////////////////////////////// Admin Login Finder /////////////////////////////////////////////////
@@ -203,4 +228,138 @@ function encode(){
 }
 /////////////////////////////////////////////////       Encode       /////////////////////////////////////////////////
 /////////////////////////////////////////////////   Endecode Tools   /////////////////////////////////////////////////
+
+/////////////////////////////////////////////////  Generator  Tools  /////////////////////////////////////////////////
+/////////////////////////////////////////////////  BLVoc  Generator  /////////////////////////////////////////////////
+function blvoc(){
+    include 'config.php';
+    $base100k = "NNAO835";
+    $base200k1 = "BLMOII";
+    $base200k2 = "BLMOIV";
+    print "$okegreen\n█████████████████$white Bukalapak  Voucher$okegreen █████████████████\n\n";
+    print "$cyan 01$red :$white Voucher CashBack 100k\n";
+    print "$cyan 02$red :$white Voucher CashBack 200k (1)\n";
+    print "$cyan 03$red :$white Voucher CashBack 200k (2)\n";
+    function random($panjang)
+    {
+        $karakter = '';
+        $karakter .= 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'; // karakter alfabet
+        $karakter .= '1234567890'; // karakter numerik
+        $string = '';
+        for ($i=0; $i < $panjang; $i++) { 
+            $pos = rand(0, strlen($karakter)-1);
+            $string .= $karakter{$pos};
+        }
+        return $string;
+    }
+    echo "$cyan Menu$red >$white ";
+    $menu = trim(fgets(STDIN));
+    if ($menu == 1 OR $menu == 01){
+        echo "$cyan Jumlah$red >$white ";
+        $jumlah = trim(fgets(STDIN));
+        for ($i=0; $i < $jumlah; $i++){
+            echo $base100k.random(5);
+            echo "\n";
+        }
+    }
+    elseif ($menu == 2 OR $menu == 02){
+        echo "$cyan Jumlah$red >$white ";
+        $jumlah = trim(fgets(STDIN));
+        for ($i=0; $i < $jumlah; $i++){
+            echo $base200k1.random(4);
+            echo "\n";
+        }
+    }
+    elseif ($menu == 3 OR $menu == 03){
+        echo "$cyan Jumlah$red >$white ";
+        $jumlah = trim(fgets(STDIN));
+        for ($i=0; $i < $jumlah; $i++){
+            echo $base200k2.random(4);
+            echo "\n";
+        }
+    }
+}
+/////////////////////////////////////////////////  BLVoc  Generator  /////////////////////////////////////////////////
+/////////////////////////////////////////////////  Gojek  Generator  /////////////////////////////////////////////////
+function gojekvoc(){
+    include 'config.php';
+    $basepulsa1 = "GPUX";
+    print "$okegreen\n█████████████████$white   Gojek  Voucher$okegreen   █████████████████\n\n";
+    print "$cyan 01$red :$white Voucher GO Pulsa 10k\n";
+    print "$cyan 02$red :$white Voucher GO Pulsa 15k\n";
+    function random($panjang)
+    {
+        $karakter = '';
+        $karakter .= 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'; // karakter alfabet
+        $karakter .= '1234567890'; // karakter numerik
+        $string = '';
+        for ($i=0; $i < $panjang; $i++) { 
+            $pos = rand(0, strlen($karakter)-1);
+            $string .= $karakter{$pos};
+        }
+        return $string;
+    }
+    echo "$cyan Menu$red >$white ";
+    $menu = trim(fgets(STDIN));
+    if ($menu == 1 OR $menu == 01){
+        echo "$cyan Jumlah$red >$white ";
+        $jumlah = trim(fgets(STDIN));
+        for ($i=0; $i < $jumlah; $i++){
+            echo $basepulsa1.random(8);
+            echo "\n";
+        }
+    }
+    elseif ($menu == 2 OR $menu == 02){
+        echo "$cyan Jumlah$red >$white ";
+        $jumlah = trim(fgets(STDIN));
+        for ($i=0; $i < $jumlah; $i++){
+            echo $basepulsa1.random(7);
+            echo "\n";
+        }
+    }
+}
+/////////////////////////////////////////////////  Gojek  Generator  /////////////////////////////////////////////////
+/////////////////////////////////////////////////  Custom Generator  /////////////////////////////////////////////////
+function custgen(){
+    include 'config.php';
+    $basepulsa1 = "GPUX";
+    function random($panjang)
+    {
+        $karakter = '';
+        $karakter .= 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'; // karakter alfabet
+        $karakter .= '1234567890'; // karakter numerik
+        $string = '';
+        for ($i=0; $i < $panjang; $i++) { 
+            $pos = rand(0, strlen($karakter)-1);
+            $string .= $karakter{$pos};
+        }
+        return $string;
+    }
+    echo "$cyan Want to Input Base(y/n)?$red >$white ";
+    $menu = trim(fgets(STDIN));
+    if ($menu == 'y' OR $menu == 'Y'){
+        echo "$cyan Base$red >$white ";
+        $base = trim(fgets(STDIN));
+        echo "$cyan Panjang$red >$white ";
+        $total = trim(fgets(STDIN));
+        echo "$cyan Jumlah$red >$white ";
+        $jumlah = trim(fgets(STDIN));
+        for ($i=0; $i < $jumlah; $i++){
+            echo $base.random($total-strlen($base));
+            echo "\n";
+        }
+    }
+    elseif ($menu == 'n' OR $menu == 'N'){
+        echo "$cyan Panjang$red >$white ";
+        $total = trim(fgets(STDIN));
+        echo "$cyan Jumlah$red >$white ";
+        $jumlah = trim(fgets(STDIN));
+        for ($i=0; $i < $jumlah; $i++){
+            echo random($total);
+            echo "\n";
+        }
+    }
+}
+/////////////////////////////////////////////////  Custom Generator  /////////////////////////////////////////////////
+/////////////////////////////////////////////////  Generator  Tools  /////////////////////////////////////////////////
 ?>
