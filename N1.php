@@ -15,6 +15,15 @@ if ($input == 1 OR $input == 01){
     if ($input == 1 OR $input == 01){
         logfin($input);
     }
+    elseif ($input == 2 OR $input == 02){
+        dirscan($input);
+    }
+    elseif ($input == 3 OR $input == 03){
+        shellscan($input);
+    }
+    elseif ($input == 4 OR $input == 04){
+        subdoscan($input);
+    }
 }
 /////////////////////////////////////////////////     Brute Menu     /////////////////////////////////////////////////
 /////////////////////////////////////////////////    Scanner Menu    /////////////////////////////////////////////////
@@ -30,6 +39,9 @@ elseif ($input == 2 OR $input == 02){
     }
     elseif ($input == 3 OR $input == 03){
         host($input);
+    }
+    elseif ($input == 4 OR $input == 04){
+        nmap($input);
     }
 }
 /////////////////////////////////////////////////    Scanner Menu    /////////////////////////////////////////////////
