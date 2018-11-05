@@ -1,7 +1,7 @@
 <?php
 
 include 'config.php';
-include 'index.php';
+include 'main.php';
 
 index();
 
@@ -60,13 +60,7 @@ elseif ($input == 4 OR $input == 04){
     generator($input);
     echo "$cyan\n Menu$red >$white ";
     $input = trim(fgets(STDIN));
-    if ($input == 1 OR $input == 01){
-        blvoc($input);
-    }
-    elseif ($input == 3 OR $input == 03){
-        gojekvoc($input);
-    }
-    elseif ($input == 0 OR $input == 00){
+    if ($input == 0 OR $input == 00){
         custgen($input);
     }
 }
@@ -85,7 +79,16 @@ elseif ($input == 'Hax0r' OR $input == 'hax0r'){
     echo "$okegreen\n ($cyan Hax0r$okegreen )$white- on -$okegreen($white ~/Menu/archive/mine$okegreen ) \n$red >$white ";
     $input = trim(fgets(STDIN));
     if ($input == 1 OR $input == 01){
+        bukalapak($input);
+    }
+    elseif ($input == 2 OR $input == 02){
+        gojek($input);
+    }
+    elseif ($input == 3 OR $input == 03){
         frestea($input);
+    }
+    elseif ($input == 4 OR $input == 04){
+        tokped($input);
     }
 }
 /////////////////////////////////////////////////       Bonus        /////////////////////////////////////////////////
