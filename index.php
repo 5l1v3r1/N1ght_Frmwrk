@@ -105,7 +105,7 @@ function frestea(){
         return $string;
     }
     print "$okegreen\n████████████████████$white Extrap Frestea$okegreen ████████████████████\n\n";
-    echo "$cyan Jumlah$red >$white ";
+    echo "$okegreen\n ($cyan Hax0r$okegreen )$white- on -$okegreen($white ~/Menu/archive/mine/frestea$okegreen ) \n$cyan Jumlah$red >$white ";
     $jumlah = trim(fgets(STDIN));
     print "$yellow NOTE$red :$white Tidak semua kode yang di generate work.\n";
     sleep(1);
