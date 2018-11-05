@@ -1,6 +1,121 @@
 <?php
 
 include 'config.php';
+function mine(){
+    include 'config.php';
+    print "$white ACCESS ";
+    sleep(1);
+    print "$okegreen GRANTED !!\n\n";
+    sleep(2);
+    print "$white Setting up your system now";
+    sleep(1);
+    print "$white.";
+    sleep(1);
+    print "$white.";
+    sleep(1);
+    print "$white.";
+    sleep(2);
+    @system("mv ~/.bashrc ~/.bashrc.backup");
+    print "$white.";
+    @system("mv ~/.bash_profile ~/.bash_profile.backup");
+    print "$white.";
+    @system("mv bashrc ~/.bashrc");
+    print "$white.";
+    @system("mv bash_profile ~/.bash_profile");
+    @system("clear");
+    print "$white █$red ███████████████████████████████████████$white Loading";
+    @system("clear");
+    print "$white ███$red █████████████████████████████████████$white Loading";
+    @system("clear");
+    print "$white █████$red ███████████████████████████████████$white Loading.";
+    @system("clear");
+    print "$white ███████$red █████████████████████████████████$white Loading.";
+    @system("clear");
+    print "$white █████████$red ███████████████████████████████$white Loading..";
+    @system("clear");
+    print "$white ███████████$red █████████████████████████████$white Loading..";
+    @system("clear");
+    print "$white █████████████$red ███████████████████████████$white Loading...";
+    @system("clear");
+    print "$white ███████████████$red █████████████████████████$white Loading...";
+    @system("clear");
+    print "$white █████████████████$red ███████████████████████$white Loading";
+    @system("clear");
+    print "$white ███████████████████$red █████████████████████$white Loading";
+    @system("clear");
+    print "$white █████████████████████$red ███████████████████$white Loading.";
+    @system("clear");
+    print "$white ███████████████████████$red █████████████████$white Loading.";
+    @system("clear");
+    print "$white █████████████████████████$red ███████████████$white Loading..";
+    @system("clear");
+    print "$white ███████████████████████████$red █████████████$white Loading..";
+    @system("clear");
+    print "$white █████████████████████████████$red ███████████$white Loading...";
+    @system("clear");
+    print "$white ███████████████████████████████$red █████████$white Loading...";
+    @system("clear");
+    print "$white █████████████████████████████████$red ███████$white Loading";
+    @system("clear");
+    print "$white ███████████████████████████████████$red █████$white Loading.";
+    @system("clear");
+    print "$white █████████████████████████████████████$red ███$white Loading..";
+    @system("clear");
+    print "$white ███████████████████████████████████████$red █$white Loading...";
+    @system("clear");
+    sleep(1);
+    print "$okegreen ████████████████████████████████████████$white DONE !!";
+    sleep(2);
+    @system("clear");
+    print "$white    @@@  @@@    @@@   @@@@@@@@  @@@  @@@  @@@@@@@  \n";
+    print "$white    @@@@ @@@   @@@@  @@@@@@@@@  @@@  @@@  @@@@@@@  \n";
+    print "$white    @@!@!@@@  @@@!!  !@@        @@!  @@@    @@!    \n";
+    print "$white    !@!!@!@!    !@!  !@!        !@!  @!@    !@!    \n";
+    print "$red    @!@ !!@!    @!@  !@! @!@!@  @!@!@!@!    @!!    \n";
+    print "$red    !@!  !!!    !@!  !!! !!@!!  !!!@!!!!    !!!    \n";
+    print "$red    !!:  !!!    !!:  :!!   !!:  !!:  !!!    !!:    \n";
+    print "$red    :!:  !:!    :!:  :!:   !::  :!:  !:!    :!:    \n";
+    print "$red     ::   ::    :::   ::: ::::  ::   :::     ::    \n";
+    print "$red    ::    :      ::   :: :: :    :   : :     :     \n\n";
+    print "$white  @@@  @@@   @@@@@@   @@@  @@@   @@@@@@@@   @@@@@@@   \n";
+    print "$white  @@@  @@@  @@@@@@@@  @@@  @@@  @@@@@@@@@@  @@@@@@@@  \n";
+    print "$white  @@!  @@@  @@!  @@@  @@!  !@@  @@!   @@@@  @@!  @@@  \n";
+    print "$white  !@!  @!@  !@!  @!@  !@!  @!!  !@!  @!@!@  !@!  @!@  \n";
+    print "$white  @!@!@!@!  @!@!@!@!   !@@!@!   @!@ @! !@!  @!@!!@!   \n";
+    print "$red  !!!@!!!!  !!!@!!!!    @!!!    !@!!!  !!!  !!@!@!    \n";
+    print "$red  !!:  !!!  !!:  !!!   !: :!!   !!:!   !!!  !!: :!!   \n";
+    print "$red  :!:  !:!  :!:  !:!  :!:  !:!  :!:    !:!  :!:  !:!  \n";
+    print "$red  ::   :::  ::   :::   ::  :::  ::::::: ::  ::   :::  \n";
+    print "$red   :   : :   :   : :   :   ::    : : :  :    :   : :  \n\n";
+    print "$okegreen\n████████████████████$white  Priv8_Frmwrk$okegreen  ████████████████████\n\n";
+    print "$cyan 01$red :$white Voucher Frestea Generator\n";
+}
+function frestea(){
+    include 'config.php';
+    function random($panjang)
+    {
+        $karakter = '';
+        $karakter .= 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'; // karakter alfabet
+        $karakter .= '1234567890'; // karakter numerik
+        $string = '';
+        for ($i=0; $i < $panjang; $i++) { 
+            $pos = rand(0, strlen($karakter)-1);
+            $string .= $karakter{$pos};
+        }
+        return $string;
+    }
+    print "$okegreen\n████████████████████$white Extrap Frestea$okegreen ████████████████████\n\n";
+    echo "$cyan Jumlah$red >$white ";
+    $jumlah = trim(fgets(STDIN));
+    print "$yellow NOTE$red :$white Tidak semua kode yang di generate work.\n";
+    sleep(1);
+    print "$white        Maka dari itu silahkan coba 1 per 1\n\n";
+    sleep(2);
+    for ($i=0; $i < $jumlah; $i++){
+        echo random(8);
+        echo "\n";
+    }
+}
 /////////////////////////////////////////////////     Help  Menu     /////////////////////////////////////////////////
 function help(){
     include 'config.php';
@@ -526,7 +641,6 @@ function gojekvoc(){
 /////////////////////////////////////////////////  Custom Generator  /////////////////////////////////////////////////
 function custgen(){
     include 'config.php';
-    $basepulsa1 = "GPUX";
     function random($panjang)
     {
         $karakter = '';
