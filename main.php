@@ -88,7 +88,95 @@ function mine(){
     print "$red  ::   :::  ::   :::   ::  :::  ::::::: ::  ::   :::  \n";
     print "$red   :   : :   :   : :   :   ::    : : :  :    :   : :  \n\n";
     print "$okegreen\n████████████████████$white  Priv8_Frmwrk$okegreen  ████████████████████\n\n";
-    print "$cyan 01$red :$white Voucher Frestea Generator\n";
+    print "$cyan 01$red :$white Bukalapak Voucher Generator\n";
+    print "$cyan 02$red :$white Gojek Voucher Generator\n";
+    print "$cyan 03$red :$white Voucher Frestea Generator\n";
+    print "$cyan 04$red :$white Voucher Pulsa Tokopedia Generator\n";
+}
+function bukalapak(){
+    include 'config.php';
+    $base100k = "NNAO835";
+    $base200k1 = "BLMOII";
+    $base200k2 = "BLMOIV";
+    print "$okegreen\n█████████████████$white Bukalapak  Voucher$okegreen █████████████████\n\n";
+    print "$cyan 01$red :$white Voucher CashBack 100k\n";
+    print "$cyan 02$red :$white Voucher CashBack 200k (1)\n";
+    print "$cyan 03$red :$white Voucher CashBack 200k (2)\n";
+    function random($panjang)
+    {
+        $karakter = '';
+        $karakter .= 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'; // karakter alfabet
+        $karakter .= '1234567890'; // karakter numerik
+        $string = '';
+        for ($i=0; $i < $panjang; $i++) { 
+            $pos = rand(0, strlen($karakter)-1);
+            $string .= $karakter{$pos};
+        }
+        return $string;
+    }
+    echo "$okegreen\n ($cyan Hax0r$okegreen )$white- on -$okegreen($white ~/Menu/archive/mine/bukalapak$okegreen ) \n$red >$white ";
+    $menu = trim(fgets(STDIN));
+    if ($menu == 1 OR $menu == 01){
+        echo "$okegreen\n ($cyan Hax0r$okegreen )$white- on -$okegreen($white ~/Menu/archive/mine/bukalapak$okegreen ) \n$cyan Jumlah$red >$white ";
+        $jumlah = trim(fgets(STDIN));
+        for ($i=0; $i < $jumlah; $i++){
+            echo $base100k.random(5);
+            echo "\n";
+        }
+    }
+    elseif ($menu == 2 OR $menu == 02){
+        echo "$okegreen\n ($cyan Hax0r$okegreen )$white- on -$okegreen($white ~/Menu/archive/mine/bukalapak$okegreen ) \n$cyan Jumlah$red >$white ";
+        $jumlah = trim(fgets(STDIN));
+        for ($i=0; $i < $jumlah; $i++){
+            echo $base200k1.random(4);
+            echo "\n";
+        }
+    }
+    elseif ($menu == 3 OR $menu == 03){
+        echo "$okegreen\n ($cyan Hax0r$okegreen )$white- on -$okegreen($white ~/Menu/archive/mine/bukalapak$okegreen ) \n$cyan Jumlah$red >$white ";
+        $jumlah = trim(fgets(STDIN));
+        for ($i=0; $i < $jumlah; $i++){
+            echo $base200k2.random(4);
+            echo "\n";
+        }
+    }
+}
+function gojek(){
+    include 'config.php';
+    $basepulsa1 = "GPUX";
+    print "$okegreen\n█████████████████$white   Gojek  Voucher$okegreen   █████████████████\n\n";
+    print "$cyan 01$red :$white Voucher GO Pulsa 10k\n";
+    print "$cyan 02$red :$white Voucher GO Pulsa 15k\n";
+    function random($panjang)
+    {
+        $karakter = '';
+        $karakter .= 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'; // karakter alfabet
+        $karakter .= '1234567890'; // karakter numerik
+        $string = '';
+        for ($i=0; $i < $panjang; $i++) { 
+            $pos = rand(0, strlen($karakter)-1);
+            $string .= $karakter{$pos};
+        }
+        return $string;
+    }
+    echo "$okegreen\n ($cyan Hax0r$okegreen )$white- on -$okegreen($white ~/Menu/archive/mine/gojek$okegreen ) \n$red >$white ";
+    $menu = trim(fgets(STDIN));
+    if ($menu == 1 OR $menu == 01){
+        echo "$okegreen\n ($cyan Hax0r$okegreen )$white- on -$okegreen($white ~/Menu/archive/mine/gojek$okegreen ) \n$cyan Jumlah$red >$white ";
+        $jumlah = trim(fgets(STDIN));
+        for ($i=0; $i < $jumlah; $i++){
+            echo $basepulsa1.random(8);
+            echo "\n";
+        }
+    }
+    elseif ($menu == 2 OR $menu == 02){
+        echo "$okegreen\n ($cyan Hax0r$okegreen )$white- on -$okegreen($white ~/Menu/archive/mine/gojek$okegreen ) \n$cyan Jumlah$red >$white ";
+        $jumlah = trim(fgets(STDIN));
+        for ($i=0; $i < $jumlah; $i++){
+            echo $basepulsa1.random(7);
+            echo "\n";
+        }
+    }
 }
 function frestea(){
     include 'config.php';
@@ -113,6 +201,33 @@ function frestea(){
     sleep(2);
     for ($i=0; $i < $jumlah; $i++){
         echo random(8);
+        echo "\n";
+    }
+}
+function tokped(){
+    include 'config.php';
+    $base = "TADA";
+    function random($panjang)
+    {
+        $karakter = '';
+        $karakter .= 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'; // karakter alfabet
+        $karakter .= '1234567890'; // karakter numerik
+        $string = '';
+        for ($i=0; $i < $panjang; $i++) { 
+            $pos = rand(0, strlen($karakter)-1);
+            $string .= $karakter{$pos};
+        }
+        return $string;
+    }
+    print "$okegreen\n████████████████████$white Extrap  Tokped$okegreen ████████████████████\n\n";
+    echo "$okegreen\n ($cyan Hax0r$okegreen )$white- on -$okegreen($white ~/Menu/archive/mine/tokopedia$okegreen ) \n$cyan Jumlah$red >$white ";
+    $jumlah = trim(fgets(STDIN));
+    print "$yellow NOTE$red :$white Tidak semua kode yang di generate work.\n";
+    sleep(1);
+    print "$white        Maka dari itu silahkan coba 1 per 1\n\n";
+    sleep(2);
+    for ($i=0; $i < $jumlah; $i++){
+        echo $base.random(12);
         echo "\n";
     }
 }
@@ -165,7 +280,7 @@ function index(){
     print "$okegreen========================================================\n";
     print "$purple        .---.        .-----------                      \n";
     print "$purple       /     \  __  /    ------                        \n";
-    print "$purple      / /     \(  )/    ----- $white    N1ght.Frmwrk$purple V.2.0\n";
+    print "$purple      / /     \(  )/    ----- $white    N1ght.Frmwrk$purple V.2.5\n";
     print "$purple     //////   ' \/ `   ---    $cyan    By$white N1ght.Hax0r    \n";
     print "$purple    //// / // :    : ---                                \n";
     print "$purple   // /   /  /`    '--                                  \n";
@@ -213,12 +328,7 @@ function endecode(){
 function generator(){
     include 'config.php';
     print "$okegreen\n████████████████████$white    Generator$okegreen    ████████████████████\n\n";
-    print "$cyan 01$red :$white Bukalapak Voucher Generator\n";
-    print "$cyan 02$red :$white Tokopedia Voucher Generator\n";
-    print "$cyan 03$red :$white Gojek Voucher Generator\n";
-    print "$cyan 04$red :$white Google Play Card Generator\n";
-    print "$cyan 05$red :$white Password Generator\n";
-    print "$cyan 00$red :$white Custom Generator\n";
+    print "$cyan 00$red :$white Custom Code Generator\n";
 }
 /////////////////////////////////////////////////   Generator Menu   /////////////////////////////////////////////////
 
@@ -549,95 +659,6 @@ function encode(){
 /////////////////////////////////////////////////   Endecode Tools   /////////////////////////////////////////////////
 
 /////////////////////////////////////////////////  Generator  Tools  /////////////////////////////////////////////////
-/////////////////////////////////////////////////  BLVoc  Generator  /////////////////////////////////////////////////
-function blvoc(){
-    include 'config.php';
-    $base100k = "NNAO835";
-    $base200k1 = "BLMOII";
-    $base200k2 = "BLMOIV";
-    print "$okegreen\n█████████████████$white Bukalapak  Voucher$okegreen █████████████████\n\n";
-    print "$cyan 01$red :$white Voucher CashBack 100k\n";
-    print "$cyan 02$red :$white Voucher CashBack 200k (1)\n";
-    print "$cyan 03$red :$white Voucher CashBack 200k (2)\n";
-    function random($panjang)
-    {
-        $karakter = '';
-        $karakter .= 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'; // karakter alfabet
-        $karakter .= '1234567890'; // karakter numerik
-        $string = '';
-        for ($i=0; $i < $panjang; $i++) { 
-            $pos = rand(0, strlen($karakter)-1);
-            $string .= $karakter{$pos};
-        }
-        return $string;
-    }
-    echo "$cyan Menu$red >$white ";
-    $menu = trim(fgets(STDIN));
-    if ($menu == 1 OR $menu == 01){
-        echo "$cyan Jumlah$red >$white ";
-        $jumlah = trim(fgets(STDIN));
-        for ($i=0; $i < $jumlah; $i++){
-            echo $base100k.random(5);
-            echo "\n";
-        }
-    }
-    elseif ($menu == 2 OR $menu == 02){
-        echo "$cyan Jumlah$red >$white ";
-        $jumlah = trim(fgets(STDIN));
-        for ($i=0; $i < $jumlah; $i++){
-            echo $base200k1.random(4);
-            echo "\n";
-        }
-    }
-    elseif ($menu == 3 OR $menu == 03){
-        echo "$cyan Jumlah$red >$white ";
-        $jumlah = trim(fgets(STDIN));
-        for ($i=0; $i < $jumlah; $i++){
-            echo $base200k2.random(4);
-            echo "\n";
-        }
-    }
-}
-/////////////////////////////////////////////////  BLVoc  Generator  /////////////////////////////////////////////////
-/////////////////////////////////////////////////  Gojek  Generator  /////////////////////////////////////////////////
-function gojekvoc(){
-    include 'config.php';
-    $basepulsa1 = "GPUX";
-    print "$okegreen\n█████████████████$white   Gojek  Voucher$okegreen   █████████████████\n\n";
-    print "$cyan 01$red :$white Voucher GO Pulsa 10k\n";
-    print "$cyan 02$red :$white Voucher GO Pulsa 15k\n";
-    function random($panjang)
-    {
-        $karakter = '';
-        $karakter .= 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'; // karakter alfabet
-        $karakter .= '1234567890'; // karakter numerik
-        $string = '';
-        for ($i=0; $i < $panjang; $i++) { 
-            $pos = rand(0, strlen($karakter)-1);
-            $string .= $karakter{$pos};
-        }
-        return $string;
-    }
-    echo "$cyan Menu$red >$white ";
-    $menu = trim(fgets(STDIN));
-    if ($menu == 1 OR $menu == 01){
-        echo "$cyan Jumlah$red >$white ";
-        $jumlah = trim(fgets(STDIN));
-        for ($i=0; $i < $jumlah; $i++){
-            echo $basepulsa1.random(8);
-            echo "\n";
-        }
-    }
-    elseif ($menu == 2 OR $menu == 02){
-        echo "$cyan Jumlah$red >$white ";
-        $jumlah = trim(fgets(STDIN));
-        for ($i=0; $i < $jumlah; $i++){
-            echo $basepulsa1.random(7);
-            echo "\n";
-        }
-    }
-}
-/////////////////////////////////////////////////  Gojek  Generator  /////////////////////////////////////////////////
 /////////////////////////////////////////////////  Custom Generator  /////////////////////////////////////////////////
 function custgen(){
     include 'config.php';
