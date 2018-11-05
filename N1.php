@@ -79,4 +79,14 @@ elseif ($input == 'a' OR $input == '0a'){
     about($input);
 }
 /////////////////////////////////////////////////    Miscellanous    /////////////////////////////////////////////////
+/////////////////////////////////////////////////       Bonus        /////////////////////////////////////////////////
+elseif ($input == 'Hax0r' OR $input == 'hax0r'){
+    mine($input);
+    echo "$okegreen\n ($cyan Hax0r$okegreen )$white- on -$okegreen($white ~/Menu/archive/mine$okegreen ) \n$red >$white ";
+    $input = trim(fgets(STDIN));
+    if ($input == 1 OR $input == 01){
+        frestea($input);
+    }
+}
+/////////////////////////////////////////////////       Bonus        /////////////////////////////////////////////////
 ?>
