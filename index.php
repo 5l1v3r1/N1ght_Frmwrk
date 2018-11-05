@@ -3,29 +3,61 @@
 include 'config.php';
 /////////////////////////////////////////////////     Help  Menu     /////////////////////////////////////////////////
 function help(){
-    print "";
+    include 'config.php';
+    print "\n";
+    print "$red       __   __ \n";
+    print "$red      /  \./  \/\_ \n";
+    print "$red   __{^\_ _}_   )  }$okegreen/^\ $purple   N1ght.Frmwrk$cyan Project      \n";
+    print "$red  /  /\_/^\._}_/  /$okegreen/  / \n";
+    print "$red (  (__{(@)}\__}./$okegreen/_/__A____A_____A________A_____A___\n";
+    print "$red  \__/{/(_)\_}  )\\$okegreen\\ \\\---v-----V-----V-v----Y----v----\n";
+    print "$red   (   (__)_)_/  )\ $okegreen\> \n";
+    print "$red    \__/     \__/\/$okegreen\/$white            How To Use\n";
+    print "$red       \__,--' \n\n";
+    print "$white Just select the number of the tool\n";
+    print "$white you want to use, and enjoy\n\n";
 }
 /////////////////////////////////////////////////     Help  Menu     /////////////////////////////////////////////////
 /////////////////////////////////////////////////     About Menu     /////////////////////////////////////////////////
 function about(){
-    print "";
+    include 'config.php';
+    print "\n";
+    print "$red       __   __ \n";
+    print "$red      /  \./  \/\_ \n";
+    print "$red   __{^\_ _}_   )  }$okegreen/^\ $purple   N1ght.Frmwrk$cyan Project      \n";
+    print "$red  /  /\_/^\._}_/  /$okegreen/  / \n";
+    print "$red (  (__{(@)}\__}./$okegreen/_/__A____A_____A________A_____A___\n";
+    print "$red  \__/{/(_)\_}  )\\$okegreen\\ \\\---v-----V-----V-v----Y----v----\n";
+    print "$red   (   (__)_)_/  )\ $okegreen\> \n";
+    print "$red    \__/     \__/\/$okegreen\/$white      About Me and My Tool\n";
+    print "$red       \__,--' \n\n";
+    print "$cyan Name$red       : Rakka Pratama Putra\n";
+    print "$cyan Birth$red      : 16 August 2003\n";
+    print "$cyan Country$red    : ID\n";
+    print "$cyan Fav. Color$red : White\n\n";
+    print "$okegreen =======================$white About$okegreen =======================\n\n";
+    print "$white I made this framework initially just for fun\n";
+    print "$white but finally I developed this framework by adding\n";
+    print "$white some tools for penetration for hackers out there.\n";
+    print "$white Maybe now I can only add a few tools in this framework,\n";
+    print "$white and I will continue to update them\n\n";
 }
 /////////////////////////////////////////////////     About Menu     /////////////////////////////////////////////////
 /////////////////////////////////////////////////     Main  Menu     /////////////////////////////////////////////////
 function index(){
     include 'config.php';
-    print "$red                                                     \n";
-    print "$yellow========================================================\n";
-    print "$red        .---.        .-----------                      \n";
-    print "$red       /     \  __  /    ------                        \n";
-    print "$red      / /     \(  )/    -----                          \n";
-    print "$red     //////   ' \/ `   ---    $white    N1ght.Frmwrk$red V.1.5\n";
-    print "$red    //// / // :    : ---      $cyan    By$white N1ght.Hax0r    \n";
-    print "$red   // /   /  /`    '--                                 \n";
-    print "$red  //          //..\\\                                   \n";
-    print "$yellow============$red UU$yellow ==$red UU$yellow ==================================\n";
-    print "$red             '//||\\\`                                  \n";
-    print "$red               ''``                                     \n";
+    print "\n";
+    print "$okegreen========================================================\n";
+    print "$purple        .---.        .-----------                      \n";
+    print "$purple       /     \  __  /    ------                        \n";
+    print "$purple      / /     \(  )/    ----- $white    N1ght.Frmwrk$purple V.2.0\n";
+    print "$purple     //////   ' \/ `   ---    $cyan    By$white N1ght.Hax0r    \n";
+    print "$purple    //// / // :    : ---                                \n";
+    print "$purple   // /   /  /`    '--                                  \n";
+    print "$purple  //          //..\\\                                   \n";
+    print "$okegreen============$purple UU$okegreen ==$purple UU$okegreen ==================================\n";
+    print "$purple             '//||\\\`    $okegreen https://github.com/N1ght420   \n";
+    print "$purple               ''``                                     \n";
     print "$okegreen\n████████████████████$white  N1ght_Frmwrk$okegreen  ████████████████████\n\n";
     print "$cyan 01$red :$white BruteForce\n";
     print "$cyan 02$red :$white Scanner\n";
