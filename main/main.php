@@ -356,7 +356,6 @@ function whois(){
 	$open = fopen("result/whois-$target.txt", 'a');
 	fwrite($open, $isi);
 	fclose($open);
-	touch($file);
 	print $result;
 	echo "\n\n$cyan [!]==// Result reported to result/whois-$target.txt\n\n";
 }
@@ -376,7 +375,6 @@ function dnslookup(){
 	$open = fopen("result/dnslookup-$target.txt", 'a');
 	fwrite($open, $isi);
 	fclose($open);
-	touch($file);
 	print $result;
 	echo "\n\n$cyan [!]==// Result reported to result/dnslookup-$target.txt\n\n";
 }
@@ -396,7 +394,6 @@ function host(){
 	$open = fopen("result/host-$target.txt", 'a');
 	fwrite($open, $isi);
 	fclose($open);
-	touch($file);
 	print $result;
 	echo "\n\n$cyan [!]==// Result reported to result/host-$target.txt\n\n";
 }
@@ -416,7 +413,6 @@ function nmap(){
 	$open = fopen("result/nmap-$target.txt", 'a');
 	fwrite($open, $isi);
 	fclose($open);
-	touch($file);
 	print $result;
 	echo "\n\n$cyan [!]==// Result reported to result/nmap-$target.txt\n\n";
 }
