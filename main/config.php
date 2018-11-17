@@ -1,9 +1,8 @@
 <?php
 
 // Color
-$blue="\033[1;34";
+$blue="\033[1;34m";
 $cyan="\033[1;36m";
-$green="\033[1;34m";
 $okegreen="\033[92m";
 $lightgreen="\033[1;32m";
 $white="\033[1;37m";
