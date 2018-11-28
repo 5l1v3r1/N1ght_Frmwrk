@@ -40,81 +40,60 @@ function about(){
     print "$white Maybe now I can only add a few tools in this framework,\n";
     print "$white and I will continue to update them\n\n";
 }
-function indexold(){
-    include 'config.php';
-    @system("clear");
-    print "\n";
-    print "$yellow ═══════════════════════════════════════════════════════\n";
-    print "$okegreen         .---.        .-----------                      \n";
-    print "$okegreen        /     \  __  /    ------                        \n";
-    print "$okegreen       / /     \(  )/    ----- $red    N1ght.Frmwrk$purple V.3.5\n";
-    print "$okegreen      //////   ' \/ `   ---    $cyan    By$white N1ght.Hax0r    \n";
-    print "$okegreen     //// / // :    : ---                                \n";
-    print "$okegreen    // /   /  /`    '--                                  \n";
-    print "$okegreen   //          //..\\\                                   \n";
-    print "$yellow ════════════$okegreen UU$yellow ══$okegreen UU$yellow ═════════════════════════════════\n";
-    print "$okegreen              '//||\\\`   $white https://github.com/N1ght420   \n";
-    print "$okegreen                ''``                                     \n";
-    print "$okegreen\n████████████████████$white  N1ght_Frmwrk$okegreen  ████████████████████\n\n";
-    print "$cyan 01$red :$white BruteForce\n";
-    print "$cyan 02$red :$white Scanner\n";
-    print "$cyan 03$red :$white Encode & Decode\n";
-    print "$cyan 04$red :$white Generator\n\n";
-    print "$cyan 0h$red :$white Show help\n";
-    print "$cyan 0a$red :$white Show about this tool\n";
-}
 function index(){
     include 'config.php';
     @system("clear");
     print "\n";
-    print "$white    @@@  @@@    @@@   @@@@@@@@  @@@  @@@  @@@@@@@  \n";
-    print "$white    @@@@ @@@   @@@@  @@@@@@@@@  @@@  @@@  @@@@@@@  \n";
-    print "$white    @@!@!@@@  @@@!!  !@@        @@!  @@@    @@!    \n";
-    print "$white    !@!!@!@!    !@!  !@!        !@!  @!@    !@!    \n";
-    print "$red    @!@ !!@!    @!@  !@! @!@!@  @!@!@!@!    @!!    \n";
-    print "$red    !@!  !!!    !@!  !!! !!@!!  !!!@!!!!    !!!    \n";
-    print "$red    !!:  !!!    !!:  :!!   !!:  !!:  !!!    !!:    \n";
-    print "$red    :!:  !:!    :!:  :!:   !::  :!:  !:!    :!:    \n";
-    print "$red     ::   ::    :::   ::: ::::  ::   :::     ::    \n";
-    print "$red    ::    :      ::   :: :: :    :   : :     :     \n\n";
-    print "$white  @@@  @@@   @@@@@@   @@@  @@@   @@@@@@@@   @@@@@@@   \n";
-    print "$white  @@@  @@@  @@@@@@@@  @@@  @@@  @@@@@@@@@@  @@@@@@@@  \n";
-    print "$white  @@!  @@@  @@!  @@@  @@!  !@@  @@!   @@@@  @@!  @@@  \n";
-    print "$white  !@!  @!@  !@!  @!@  !@!  @!!  !@!  @!@!@  !@!  @!@  \n";
-    print "$white  @!@!@!@!  @!@!@!@!   !@@!@!   @!@ @! !@!  @!@!!@!   \n";
-    print "$red  !!!@!!!!  !!!@!!!!    @!!!    !@!!!  !!!  !!@!@!    \n";
-    print "$red  !!:  !!!  !!:  !!!   !: :!!   !!:!   !!!  !!: :!!   \n";
-    print "$red  :!:  !:!  :!:  !:!  :!:  !:!  :!:    !:!  :!:  !:!  \n";
-    print "$red  ::   :::  ::   :::   ::  :::  ::::::: ::  ::   :::  \n";
-    print "$red   :   : :   :   : :   :   ::    : : :  :    :   : :  \n\n";
+    print "$red ═══════════════════════════════════════════════════════\n";
+    print "$cyan         .---.        .-----------                      \n";
+    print "$cyan        /     \  __  /    ------                        \n";
+    print "$cyan       / /     \(  )/    ----- $red    N1ght.Frmwrk$yellow V.4.0\n";
+    print "$cyan      //////   ' \/ `   ---    $cyan    By$white N1ght.Hax0r    \n";
+    print "$cyan     //// / // :    : ---                                \n";
+    print "$cyan    // /   /  /`    '--                                  \n";
+    print "$cyan   //          //..\\\                                   \n";
+    print "$red ════════════$cyan UU$red ══$cyan UU$red ═════════════════════════════════\n";
+    print "$cyan              '//||\\\`   $white https://github.com/N1ght420   \n";
+    print "$cyan                ''``                                     \n";
     print "$okegreen\n████████████████████$white  N1ght_Frmwrk$okegreen  ████████████████████\n\n";
     print "$cyan 01$red :$white BruteForce\n";
     print "$cyan 02$red :$white Scanner\n";
     print "$cyan 03$red :$white Encode & Decode\n";
-    print "$cyan 04$red :$white Generator\n\n";
+    print "$cyan 04$red :$white IP Tools\n";
+    print "$cyan 05$red :$white Generator\n\n";
     print "$cyan 0h$red :$white Show help\n";
     print "$cyan 0a$red :$white Show about this tool\n";
 }
 function brute(){
     include 'config.php';
     print "$okegreen\n████████████████████$white   BruteForce$okegreen   ████████████████████\n\n";
-    print "$cyan 01$red :$white Admin Login Finder\n";
-    print "$cyan 02$red :$white Dirscanner\n";
-    print "$cyan 03$red :$white Shell Scanner\n";
-    print "$cyan 04$red :$white Subdomain Scanner\n";
+    print "$yellow COMINGSOON!! \n";
 }
 function scan(){
     include 'config.php';
     print "$okegreen\n████████████████████$white    Scanner$okegreen     ████████████████████\n\n";
-    print "$cyan 01$red :$white Whois\n";
-    print "$cyan 02$red :$white DNSLookup\n";
-    print "$cyan 03$red :$white Host Search\n";
-    print "$cyan 04$red :$white Nmap Scan\n";
+    print "$cyan 01$red :$white Admin Login Finder\n";
+    print "$cyan 02$red :$white Directory Scanner\n";
+    print "$cyan 03$red :$white Shell Finder\n";
+    print "$cyan 04$red :$white Subdomain Scanner\n";
 }
 function endecode(){
     include 'config.php';
     print "$okegreen\n████████████████████$white Encode & Decode$okegreen ████████████████████\n\n";
     print "$cyan 01$red :$white Encode\n";
+}
+function iptools(){
+    include 'config.php';
+    print "$okegreen\n████████████████████$white    IP  Tools$okegreen    ████████████████████\n\n";
+    print "$cyan 01$red :$white MTR Traceroute\n";
+    print "$cyan 02$red :$white Test Ping\n";
+    print "$cyan 03$red :$white DNS Lookup\n";
+    print "$cyan 04$red :$white Reverse DNS\n";
+    print "$cyan 05$red :$white Whois\n";
+    print "$cyan 06$red :$white Host Search\n";
+    print "$cyan 07$red :$white Reverse IP\n";
+    print "$cyan 08$red :$white HTTP Headers\n";
+    print "$cyan 09$red :$white Page Links\n";
 }
 function generator(){
     include 'config.php';
