@@ -1,5 +1,26 @@
 <?php
 include 'config.php';
+include 'tools/crypto/encode.php';
+include 'tools/crypto/md4.php';
+include 'tools/crypto/md5.php';
+include 'tools/crypto/sha1.php';
+include 'tools/crypto/base64.php';
+include 'tools/crypto/aio.php';
+include 'tools/generator/customcode.php';
+include 'tools/iptools/dnslookup.php';
+include 'tools/iptools/hostsrc.php';
+include 'tools/iptools/nmap.php';
+include 'tools/iptools/reversedns.php';
+include 'tools/iptools/testping.php';
+include 'tools/iptools/headers.php';
+include 'tools/iptools/mtr.php';
+include 'tools/iptools/page.php';
+include 'tools/iptools/reverseip.php';
+include 'tools/iptools/whois.php';
+include 'tools/scan/dirscan.php';
+include 'tools/scan/logfin.php';
+include 'tools/scan/shellscan.php';
+include 'tools/scan/subdoscan.php';
 function help(){
     include 'config.php';
     @system("clear");
@@ -13,8 +34,19 @@ function help(){
     print "$red   (   (__)_)_/  )\ $okegreen\> \n";
     print "$red    \__/     \__/\/$okegreen\/$white            How To Use\n";
     print "$red       \__,--' \n\n";
-    print "$white Just select the number of the tool\n";
-    print "$white you want to use, and enjoy\n\n";
+    print "$white This framework uses the command to run several tools in it\n\n";
+    print "$white Commands that can be used, including :\n\n";
+    print "$okegreen\n████████████████████$white     Basics$okegreen     ████████████████████\n\n";
+    print "$cyan menu$white     OR$cyan   -m$red  :$white Show Main Menu\n";
+    print "$cyan help$white     OR$cyan   -h$red  :$white Show Help\n";
+    print "$cyan about$white    OR$cyan   -a$red  :$white Show About\n\n";
+    menu();
+    brute();
+    scan();
+    endecode();
+    iptools();
+    generator();
+    print "\n";
 }
 function about(){
     include 'config.php';
@@ -47,7 +79,7 @@ function index(){
     print "$red ═══════════════════════════════════════════════════════\n";
     print "$cyan         .---.        .-----------                      \n";
     print "$cyan        /     \  __  /    ------                        \n";
-    print "$cyan       / /     \(  )/    ----- $red    N1ght.Frmwrk$yellow V.4.0\n";
+    print "$cyan       / /     \(  )/    ----- $red    N1ght.Frmwrk$yellow V.5.0\n";
     print "$cyan      //////   ' \/ `   ---    $cyan    By$white N1ght.Hax0r    \n";
     print "$cyan     //// / // :    : ---                                \n";
     print "$cyan    // /   /  /`    '--                                  \n";
@@ -55,50 +87,52 @@ function index(){
     print "$red ════════════$cyan UU$red ══$cyan UU$red ═════════════════════════════════\n";
     print "$cyan              '//||\\\`   $white https://github.com/N1ght420   \n";
     print "$cyan                ''``                                     \n";
-    print "$okegreen\n████████████████████$white  N1ght_Frmwrk$okegreen  ████████████████████\n\n";
-    print "$cyan 01$red :$white BruteForce\n";
-    print "$cyan 02$red :$white Scanner\n";
-    print "$cyan 03$red :$white Encode & Decode\n";
-    print "$cyan 04$red :$white IP Tools\n";
-    print "$cyan 05$red :$white Generator\n\n";
-    print "$cyan 0h$red :$white Show help\n";
-    print "$cyan 0a$red :$white Show about this tool\n";
+}
+function menu(){
+    include 'config.php';
+    print "$okegreen\n████████████████████$white       Menu$okegreen      ████████████████████\n\n";
+    print "$cyan iptool$white   OR$cyan   -i$red  :$white IP Tools\n";
+    print "$cyan brute$white    OR$cyan   -b$red  :$white BruteForce\n";
+    print "$cyan scan$white     OR$cyan   -s$red  :$white Scanner\n";
+    print "$cyan crypto$white   OR$cyan   -c$red  :$white Encode & Decode\n";
+    print "$cyan gen$white      OR$cyan   -g$red  :$white Generator\n\n";
 }
 function brute(){
     include 'config.php';
-    print "$okegreen\n████████████████████$white   BruteForce$okegreen   ████████████████████\n\n";
-    print "$yellow COMINGSOON!! \n";
+    print "$okegreen\n████████████████████$white    BruteForce$okegreen   ████████████████████\n\n";
+    print "$yellow COMINGSOON!! \n\n";
 }
 function scan(){
     include 'config.php';
-    print "$okegreen\n████████████████████$white    Scanner$okegreen     ████████████████████\n\n";
-    print "$cyan 01$red :$white Admin Login Finder\n";
-    print "$cyan 02$red :$white Directory Scanner\n";
-    print "$cyan 03$red :$white Shell Finder\n";
-    print "$cyan 04$red :$white Subdomain Scanner\n";
+    print "$okegreen\n████████████████████$white     Scanner$okegreen     ████████████████████\n\n";
+    print "$cyan adlog$red       :$white Admin Login Finder\n";
+    print "$cyan dirscan$red     :$white Directory Scanner\n";
+    print "$cyan shellscan$red   :$white Shell Finder\n";
+    print "$cyan subscan$red     :$white Subdomain Scanner\n\n";
 }
 function endecode(){
     include 'config.php';
     print "$okegreen\n████████████████████$white Encode & Decode$okegreen ████████████████████\n\n";
-    print "$cyan 01$red :$white Encode\n";
+    print "$cyan encode$red      :$white Encode\n\n";
 }
 function iptools(){
     include 'config.php';
     print "$okegreen\n████████████████████$white    IP  Tools$okegreen    ████████████████████\n\n";
-    print "$cyan 01$red :$white MTR Traceroute\n";
-    print "$cyan 02$red :$white Test Ping\n";
-    print "$cyan 03$red :$white DNS Lookup\n";
-    print "$cyan 04$red :$white Reverse DNS\n";
-    print "$cyan 05$red :$white Whois\n";
-    print "$cyan 06$red :$white Host Search\n";
-    print "$cyan 07$red :$white Reverse IP\n";
-    print "$cyan 08$red :$white HTTP Headers\n";
-    print "$cyan 09$red :$white Page Links\n";
+    print "$cyan mtr$red         :$white MTR Traceroute\n";
+    print "$cyan nping$red       :$white Test Ping\n";
+    print "$cyan dnslookup$red   :$white DNS Lookup\n";
+    print "$cyan revdns$red      :$white Reverse DNS\n";
+    print "$cyan whois$red       :$white Whois\n";
+    print "$cyan hostsrc$red     :$white Host Search\n";
+    print "$cyan revip$red       :$white Reverse IP\n";
+    print "$cyan httphead$red    :$white HTTP Headers\n";
+    print "$cyan pagelink$red    :$white Page Links\n";
+    print "$cyan nmap$red        :$white Nmap Port Scan\n\n";
 }
 function generator(){
     include 'config.php';
     print "$okegreen\n████████████████████$white    Generator$okegreen    ████████████████████\n\n";
-    print "$cyan 01$red :$white Custom Code Generator\n";
+    print "$cyan custgen$red     :$white Custom Code Generator\n\n";
 }
 
 ?>
