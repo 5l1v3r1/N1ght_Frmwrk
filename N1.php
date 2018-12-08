@@ -8,11 +8,18 @@ function main(){
     include 'main/config.php';
     echo "$red >$white ";
     $input = trim(fgets(STDIN));
-    if ($input == '-b' OR $input == 'brute'){
+    $open = fopen(".cmd_history", 'a');
+    fwrite($open, $input. "\n");
+    fclose($open);
+    if ($input == '-m' OR $input == 'menu'){
+        menu();
+        main();
+    }
+    elseif ($input == '-b' OR $input == 'brute'){
         brute();
         main();
     }
-    elseif ($input == '-s' OR $input == 'scan'){
+    elseif ($input == '-sc' OR $input == 'scan'){
         scan();
         main();
     }
@@ -28,12 +35,24 @@ function main(){
         generator();
         main();
     }
+    elseif ($input == '-sp' OR $input == 'spam'){
+        spam();
+        main();
+    }
     elseif ($input == '-h' OR $input == 'help'){
         help();
         main();
     }
     elseif ($input == '-a' OR $input == 'about'){
         about();
+        main();
+    }
+    elseif ($input == 'exit' or $input == '-e'){
+        exit();
+    }
+    elseif ($input == 'quit' OR $input == 'q'){
+        echo"$white Command $input Not Found\n";
+        echo"$white Type ($cyan exit$white ) to Exit Program\n\n";
         main();
     }
     elseif ($input == 'adlog'){
@@ -96,6 +115,10 @@ function main(){
         nmap();
         main();
     }
+    elseif ($input == 'ping'){
+        ping();
+        main();
+    }
     elseif ($input == 'custgen'){
         custgen();
         main();
@@ -120,8 +143,29 @@ function main(){
         enall();
         main();
     }
+    elseif ($input == 'smsphd'){
+        smsphd();
+        main();
+    }
+    elseif ($input == 'smstp'){
+        betaprogram();
+        main();
+    }
+    elseif ($input == 'calltp'){
+        betaprogram();
+        main();
+    }
+    elseif ($input == 'smsjd'){
+        smsjdid();
+        main();
+    }
+    elseif ($input == 'smsts'){
+        smstelkom();
+        main();
+    }
     else{
-        echo"$white Command $input Not Found\n\n";
+        echo"$white Command $input Not Found\n";
+        echo"$white Type ($cyan help$white ) to Show Help\n\n";
         main();
     }
 }
