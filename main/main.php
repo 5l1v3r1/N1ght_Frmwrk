@@ -17,10 +17,20 @@ include 'tools/iptools/mtr.php';
 include 'tools/iptools/page.php';
 include 'tools/iptools/reverseip.php';
 include 'tools/iptools/whois.php';
+include 'tools/iptools/ping.php';
 include 'tools/scan/dirscan.php';
 include 'tools/scan/logfin.php';
 include 'tools/scan/shellscan.php';
 include 'tools/scan/subdoscan.php';
+include 'tools/spam/phd.php';
+include 'tools/spam/jdid.php';
+include 'tools/spam/telkomsel.php';
+
+function betaprogram(){
+    include 'config.php';
+    print "\n";
+    print "$yellow COMINGSOON!! \n\n";
+}
 function help(){
     include 'config.php';
     @system("clear");
@@ -79,7 +89,7 @@ function index(){
     print "$red ═══════════════════════════════════════════════════════\n";
     print "$cyan         .---.        .-----------                      \n";
     print "$cyan        /     \  __  /    ------                        \n";
-    print "$cyan       / /     \(  )/    ----- $red    N1ght.Frmwrk$yellow V.5.0\n";
+    print "$cyan       / /     \(  )/    ----- $red    N1ght.Frmwrk$yellow V.6.bt\n";
     print "$cyan      //////   ' \/ `   ---    $cyan    By$white N1ght.Hax0r    \n";
     print "$cyan     //// / // :    : ---                                \n";
     print "$cyan    // /   /  /`    '--                                  \n";
@@ -93,9 +103,10 @@ function menu(){
     print "$okegreen\n████████████████████$white       Menu$okegreen      ████████████████████\n\n";
     print "$cyan iptool$white   OR$cyan   -i$red  :$white IP Tools\n";
     print "$cyan brute$white    OR$cyan   -b$red  :$white BruteForce\n";
-    print "$cyan scan$white     OR$cyan   -s$red  :$white Scanner\n";
+    print "$cyan scan$white     OR$cyan   -sc$red :$white Scanner\n";
     print "$cyan crypto$white   OR$cyan   -c$red  :$white Encode & Decode\n";
-    print "$cyan gen$white      OR$cyan   -g$red  :$white Generator\n\n";
+    print "$cyan gen$white      OR$cyan   -g$red  :$white Generator\n";
+    print "$cyan spam$white     OR$cyan   -sp$red :$white Spammer\n\n";
 }
 function brute(){
     include 'config.php';
@@ -133,6 +144,15 @@ function generator(){
     include 'config.php';
     print "$okegreen\n████████████████████$white    Generator$okegreen    ████████████████████\n\n";
     print "$cyan custgen$red     :$white Custom Code Generator\n\n";
+}
+function spam(){
+    include 'config.php';
+    print "$okegreen\n████████████████████$white     Spammer$okegreen     ████████████████████\n\n";
+    print "$cyan smsphd$red      :$white SMS Pizza Hut Delivery\n";
+    print "$cyan smstp$red       :$white SMS Tokopedia\n";
+    print "$cyan calltp$red      :$white Call Tokopedia\n";
+    print "$cyan smsjd$red       :$white SMS JD.ID\n";
+    print "$cyan smsts$red       :$white SMS Telkomsel\n\n";
 }
 
 ?>
