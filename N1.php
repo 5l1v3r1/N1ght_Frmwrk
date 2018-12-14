@@ -15,6 +15,10 @@ function main(){
         menu();
         main();
     }
+    elseif ($input == '-c' OR $input == 'clear'){
+        index();
+        main();
+    }
     elseif ($input == '-b' OR $input == 'brute'){
         brute();
         main();
@@ -48,6 +52,7 @@ function main(){
         main();
     }
     elseif ($input == 'exit' or $input == '-e'){
+        echo"$red Exitting now$white ";
         exit();
     }
     elseif ($input == 'quit' OR $input == 'q'){
@@ -121,6 +126,10 @@ function main(){
     }
     elseif ($input == 'custgen'){
         custgen();
+        main();
+    }
+    elseif ($input == 'hma'){
+        hma();
         main();
     }
     elseif ($input == 'enmd4'){
