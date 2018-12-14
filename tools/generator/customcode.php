@@ -27,7 +27,7 @@ function custgen(){
                 return $string;
             }
             for ($i=0; $i < $jumlah; $i++){
-                echo $base.random($total-strlen($base));
+                echo " ".$base.random($total-strlen($base));
                 echo "\n";
             }
         }
@@ -45,7 +45,7 @@ function custgen(){
                 return $string;
             }
             for ($i=0; $i < $jumlah; $i++){
-                echo $base.random($total-strlen($base));
+                echo " ".$base.random($total-strlen($base));
                 echo "\n";
             }
         }
@@ -71,7 +71,7 @@ function custgen(){
                 return $string;
             }
             for ($i=0; $i < $jumlah; $i++){
-                echo random($total);
+                echo " ".random($total);
                 echo "\n";
             }
         }
@@ -89,7 +89,7 @@ function custgen(){
                 return $string;
             }
             for ($i=0; $i < $jumlah; $i++){
-                echo random($total);
+                echo " ".random($total);
                 echo "\n";
             }
         }
