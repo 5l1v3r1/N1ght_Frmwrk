@@ -7,6 +7,7 @@ include 'tools/crypto/sha1.php';
 include 'tools/crypto/base64.php';
 include 'tools/crypto/aio.php';
 include 'tools/generator/customcode.php';
+include 'tools/generator/hma.php';
 include 'tools/iptools/dnslookup.php';
 include 'tools/iptools/hostsrc.php';
 include 'tools/iptools/nmap.php';
@@ -89,7 +90,7 @@ function index(){
     print "$red ═══════════════════════════════════════════════════════\n";
     print "$cyan         .---.        .-----------                      \n";
     print "$cyan        /     \  __  /    ------                        \n";
-    print "$cyan       / /     \(  )/    ----- $red    N1ght.Frmwrk$yellow V.6.bt\n";
+    print "$cyan       / /     \(  )/    ----- $red    N1ght.Frmwrk$yellow V.6.0\n";
     print "$cyan      //////   ' \/ `   ---    $cyan    By$white N1ght.Hax0r    \n";
     print "$cyan     //// / // :    : ---                                \n";
     print "$cyan    // /   /  /`    '--                                  \n";
@@ -143,6 +144,7 @@ function iptools(){
 function generator(){
     include 'config.php';
     print "$okegreen\n████████████████████$white    Generator$okegreen    ████████████████████\n\n";
+    print "$cyan hma$red         :$white HMA License key Generator\n";
     print "$cyan custgen$red     :$white Custom Code Generator\n\n";
 }
 function spam(){
