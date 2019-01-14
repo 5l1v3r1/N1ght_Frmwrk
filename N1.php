@@ -2,11 +2,15 @@
 
 include 'config.php';
 @system("mkdir result");
+
 function betaprogram(){
     include 'config.php';
     print "\n";
     print "$yellow COMINGSOON!! \n\n";
 }
+
+// Banner
+
 function help(){
     include 'config.php';
     @system("clear");
@@ -34,6 +38,7 @@ function help(){
     generator();
     print "\n";
 }
+
 function about(){
     include 'config.php';
     @system("clear");
@@ -58,13 +63,14 @@ function about(){
     print "$white Maybe now I can only add a few tools in this framework,\n";
     print "$white and I will continue to update them\n\n";
 }
+
 function index(){
     include 'config.php';
     @system("clear");
     print "\n";
     print "$red ═══════════════════════════════════════════════════════\n";
     print "$cyan         .---.        .-----------                      \n";
-    print "$cyan        /     \  __  /    ------                        \n";
+    print "$cyan        /     \  __  /    ------ $white    Remake Version\n";
     print "$cyan       / /     \(  )/    ----- $red    N1ght.Frmwrk$yellow V.6.0\n";
     print "$cyan      //////   ' \/ `   ---    $cyan    By$white N1ght.Hax0r    \n";
     print "$cyan     //// / // :    : ---                                \n";
@@ -74,6 +80,89 @@ function index(){
     print "$cyan              '//||\\\`   $white https://github.com/N1ght420   \n";
     print "$cyan                ''``                                     \n";
 }
+
+function install(){
+    include 'config.php';
+    echo "$cyan Are You$white ROOT (Y/N)$cyan ?$red >$white ";
+    $confirm = trim(fgets(STDIN));
+    print "\n";
+    if ($confirm == 'Y' OR $confirm == 'y'){
+        sleep(1);
+        @system("rm -rf /opt/N1ght/Framework");
+        @system("rm -rf /usr/bin/nconsole");
+        print "$white [$yellow *$white ]$okegreen Making Special Directory ";print ".";print ".";print ".";print "\n";
+        @system("mkdir /opt/N1ght");
+        sleep(1);
+        print "$white [$yellow *$white ]$okegreen Making N1ght_Frmwrk Directory ";print ".";print ".";print ".";print "\n";
+        @system("mkdir /opt/N1ght/Framework");
+        sleep(1);
+        print "$white [$yellow *$white ]$okegreen Copying Script to /opt/N1ght/Framework/ ";print ".";print ".";print ".";print "\n";
+        @system("cp -r install/nconsole.php /opt/N1ght/Framework/");
+        sleep(1);
+        print "$white [$yellow *$white ]$okegreen Copying Command to /usr/bin/ ";print ".";print ".";print ".";print "\n";
+        @system("cp install/bin/nconsole /usr/bin/");
+        sleep(1);
+        print "$white [$yellow *$white ]$okegreen Setting Permission for /usr/bin/nconsole ";print ".";print ".";print ".";print "\n";
+        @system("chmod +x /usr/bin/nconsole");
+        sleep(2);
+        print "\n";
+        print "\n";
+        print "$cyan [$white DONE$cyan ]";
+        sleep(1);
+        print "\n";
+        print "$okegreen You can using this framework by typing$white ($cyan nconsole$white )$okegreen command";
+        print "\n";
+        print "\n";
+    }
+    elseif ($confirm == 'N' OR $confirm =='n'){
+        print "$white [$red !$white ]$yellow Maybe you need to enter your$red ROOT$yellow passwd ";print "\n";
+        sleep(1);
+        @system("sudo rm -rf /opt/N1ght/Framework");
+        @system("sudo rm -rf /usr/bin/nconsole");
+        print "$white [$yellow *$white ]$okegreen Making Special Directory ";print ".";print ".";print ".";print "\n";
+        @system("sudo mkdir /opt/N1ght");
+        sleep(1);
+        print "$white [$yellow *$white ]$okegreen Making N1ght_Frmwrk Directory ";print ".";print ".";print ".";print "\n";
+        @system("sudo mkdir /opt/N1ght/Framework");
+        sleep(1);
+        print "$white [$yellow *$white ]$okegreen Copying Script to /opt/N1ght/Framework/ ";print ".";print ".";print ".";print "\n";
+        @system("sudo cp -r install/nconsole.php /opt/N1ght/Framework/");
+        sleep(1);
+        print "$white [$yellow *$white ]$okegreen Copying Command to /usr/bin/ ";print ".";print ".";print ".";print "\n";
+        @system("sudo cp install/bin/nconsole /usr/bin/");
+        sleep(1);
+        print "$white [$yellow *$white ]$okegreen Setting Permission for /usr/bin/nconsole ";print ".";print ".";print ".";print "\n";
+        @system("sudo chmod +x /usr/bin/nconsole");
+        sleep(2);
+        print "\n";
+        print "\n";
+        print "$cyan [$white DONE$cyan ]";
+        sleep(1);
+        print "\n";
+        print "$okegreen You can using this framework by typing$white ($cyan nconsole$white )$okegreen command";
+        print "\n";
+        print "\n";
+    }
+    else{
+        print "$yellow Choose One Choice";
+        print "\n";
+        echo "$cyan Back to Main Menu$white (Y/N)$cyan ?$red >$white ";
+        $mamen = trim(fgets(STDIN));
+        if ($mamen == 'Y' OR $mamen == 'y'){
+            index();
+            main();
+        }
+        elseif ($mamen == 'N' OR $mamen == 'n'){
+            install();
+        }
+        else{
+            install();
+        }
+    }
+}
+
+// Menu
+
 function menu(){
     include 'config.php';
     print "$okegreen\n████████████████████$white       Menu$okegreen      ████████████████████\n\n";
@@ -84,11 +173,13 @@ function menu(){
     print "$cyan gen$white      OR$cyan   -g$red  :$white Generator\n";
     print "$cyan spam$white     OR$cyan   -sp$red :$white Spammer\n\n";
 }
+
 function brute(){
     include 'config.php';
     print "$okegreen\n████████████████████$white    BruteForce$okegreen   ████████████████████\n\n";
     print "$yellow COMINGSOON!! \n\n";
 }
+
 function scan(){
     include 'config.php';
     print "$okegreen\n████████████████████$white     Scanner$okegreen     ████████████████████\n\n";
@@ -97,11 +188,13 @@ function scan(){
     print "$cyan shellscan$red   :$white Shell Finder\n";
     print "$cyan subscan$red     :$white Subdomain Scanner\n\n";
 }
+
 function endecode(){
     include 'config.php';
     print "$okegreen\n████████████████████$white Encode & Decode$okegreen ████████████████████\n\n";
     print "$cyan encode$red      :$white Encode\n\n";
 }
+
 function iptools(){
     include 'config.php';
     print "$okegreen\n████████████████████$white    IP  Tools$okegreen    ████████████████████\n\n";
@@ -116,12 +209,14 @@ function iptools(){
     print "$cyan pagelink$red    :$white Page Links\n";
     print "$cyan nmap$red        :$white Nmap Port Scan\n\n";
 }
+
 function generator(){
     include 'config.php';
     print "$okegreen\n████████████████████$white    Generator$okegreen    ████████████████████\n\n";
     print "$cyan hma$red         :$white HMA License key Generator\n";
     print "$cyan custgen$red     :$white Custom Code Generator\n\n";
 }
+
 function spam(){
     include 'config.php';
     print "$okegreen\n████████████████████$white     Spammer$okegreen     ████████████████████\n\n";
@@ -131,6 +226,9 @@ function spam(){
     print "$cyan smsjd$red       :$white SMS JD.ID\n";
     print "$cyan smsts$red       :$white SMS Telkomsel\n\n";
 }
+
+// Encode Tools
+
 function encode(){
     include 'config.php';
     print "$okegreen\n█████████████████$white    Encode Tools$okegreen    █████████████████\n\n";
@@ -173,6 +271,7 @@ function encode(){
     print "\n\n";
     main();
 }
+
 function enall(){
     include 'config.php';
     echo "$cyan Input Kata$red >$white ";
@@ -184,6 +283,7 @@ function enall(){
     }
     print "\n\n";
 }
+
 function enbase64(){
     include 'config.php';
     echo "$cyan Input Kata$red >$white ";
@@ -191,6 +291,7 @@ function enbase64(){
     echo "$cyan Encode Md5$red :$white ",base64_encode($base);
     print "\n\n";
 }
+
 function enmd4(){
     include 'config.php';
     echo "$cyan Input Kata$red >$white ";
@@ -198,6 +299,7 @@ function enmd4(){
     echo "$cyan Encode Md4$red :$white ",crypt('md4',$base);
     print "\n\n";
 }
+
 function enmd5(){
     include 'config.php';
     echo "$cyan Input Kata$red >$white ";
@@ -205,6 +307,7 @@ function enmd5(){
     echo "$cyan Encode Md5$red :$white ",md5($base);
     print "\n\n";
 }
+
 function ensha1(){
     include 'config.php';
     echo "$cyan Input Kata$red >$white ";
@@ -212,6 +315,9 @@ function ensha1(){
     echo "$cyan Encode Sha1$red :$white ",sha1($base);
     print "\n\n";
 }
+
+// Generator Tools
+
 function custgen(){
     include 'config.php';
     echo "$cyan Want to Input Base(y/n)?$red >$white ";
@@ -307,6 +413,7 @@ function custgen(){
         }
     }
 }
+
 function hma(){
 	include 'config.php';
 	echo "$cyan Total$red >$white ";
@@ -327,6 +434,9 @@ function hma(){
 		echo "\n";
 	}
 }
+
+// IP Tools
+
 function dnslookup(){
     include 'config.php';
     echo "$cyan Target$red >$white ";
@@ -344,6 +454,7 @@ function dnslookup(){
 	print $result;
 	echo "\n\n$cyan [!]==// Result reported to result/dnslookup-$target.txt\n\n";
 }
+
 function httphead(){
     include 'config.php';
     echo "$cyan Target$red >$white ";
@@ -361,6 +472,7 @@ function httphead(){
 	print $result;
 	echo "\n\n$cyan [!]==// Result reported to result/headers-$target.txt\n\n";
 }
+
 function host(){
     include 'config.php';
     echo "$cyan Target$red >$white ";
@@ -378,6 +490,7 @@ function host(){
 	print $result;
 	echo "\n\n$cyan [!]==// Result reported to result/host-$target.txt\n\n";
 }
+
 function mtr(){
     include 'config.php';
     echo "$cyan Target$red >$white ";
@@ -395,6 +508,7 @@ function mtr(){
 	print $result;
 	echo "\n\n$cyan [!]==// Result reported to result/mtr-$target.txt\n\n";
 }
+
 function nmap(){
     include 'config.php';
     echo "$cyan Target$red >$white ";
@@ -412,6 +526,7 @@ function nmap(){
 	print $result;
 	echo "\n\n$cyan [!]==// Result reported to result/nmap-$target.txt\n\n";
 }
+
 function pagelink(){
     include 'config.php';
     echo "$cyan Target$red >$white ";
@@ -429,6 +544,7 @@ function pagelink(){
 	print $result;
 	echo "\n\n$cyan [!]==// Result reported to result/links-$target.txt\n\n";
 }
+
 function reversedns(){
     include 'config.php';
     echo "$cyan Target$red >$white ";
@@ -446,6 +562,7 @@ function reversedns(){
 	print $result;
 	echo "\n\n$cyan [!]==// Result reported to result/reversedns-$target.txt\n\n";
 }
+
 function reverseip(){
     include 'config.php';
     echo "$cyan Target$red >$white ";
@@ -463,6 +580,7 @@ function reverseip(){
 	print $result;
 	echo "\n\n$cyan [!]==// Result reported to result/reverseip-$target.txt\n\n";
 }
+
 function testping(){
     include 'config.php';
     echo "$cyan Target$red >$white ";
@@ -480,6 +598,7 @@ function testping(){
 	print $result;
 	echo "\n\n$cyan [!]==// Result reported to result/testping-$target.txt\n\n";
 }
+
 function whois(){
     include 'config.php';
     echo "$cyan Target$red >$white ";
@@ -497,6 +616,9 @@ function whois(){
 	print $result;
 	echo "\n\n$cyan [!]==// Result reported to result/whois-$target.txt\n\n";
 }
+
+// Scanner Tools
+
 function dirscan(){
     include 'config.php';
     echo "$cyan Target$red >$white ";
@@ -545,6 +667,7 @@ function dirscan(){
         }
     echo "\n\n$cyan [!]==// Result OK reported to result/dirscan-$target.txt\n\n $white ";
 }
+
 function logfin(){
     include 'config.php';
     echo "$cyan Target$red >$white ";
@@ -593,6 +716,7 @@ function logfin(){
         }
     echo "\n\n$cyan [!]==// Result OK reported to result/adlog-$target.txt\n\n $white ";
 }
+
 function shellscan(){
     include 'config.php';
     echo "$cyan Target$red >$white ";
@@ -641,6 +765,7 @@ function shellscan(){
         }
     echo "\n\n$cyan [!]==// Result OK reported to result/shellscan-$target.txt\n\n $white ";
 }
+
 function subdoscan(){
     include 'config.php';
     echo "$cyan Target$red >$white ";
@@ -684,6 +809,9 @@ function subdoscan(){
         }
     echo "\n\n$cyan [!]==// Result OK reported to result/subdo-$target.txt\n\n $white ";
 }
+
+// Spammer Tools
+
 function jdid($no, $jum, $wait){
     $x = 0; 
     while($x < $jum) {
@@ -705,6 +833,7 @@ function jdid($no, $jum, $wait){
         flush();
     }
 }
+
 function smsjdid(){
     include 'config.php';
     echo "$cyan Target$red >$white ";
@@ -719,6 +848,7 @@ function smsjdid(){
     print "\n";
     print "$cyan Done !!\n\n";
 }
+
 function phd($no, $jum, $wait){
     $x = 0; 
     while($x < $jum) {
@@ -740,6 +870,7 @@ function phd($no, $jum, $wait){
         flush();
     }
 }
+
 function smsphd(){
     include 'config.php';
     echo "$cyan Target$red >$white ";
@@ -754,6 +885,7 @@ function smsphd(){
     print "\n";
     print "$cyan Done !!\n\n";
 }
+
 function telkom($no, $jum, $wait){
     $x = 0; 
     while($x < $jum) {
@@ -775,6 +907,7 @@ function telkom($no, $jum, $wait){
         flush();
     }
 }
+
 function smstelkom(){
     include 'config.php';
     echo "$cyan Target$red >$white ";
@@ -789,6 +922,9 @@ function smstelkom(){
     print "\n";
     print "$cyan Done !!\n\n";
 }
+
+// Command List
+
 index();
 function main(){
     include 'config.php';
@@ -813,7 +949,7 @@ function main(){
         scan();
         main();
     }
-    elseif ($input == '-c' OR $input == 'crypto'){
+    elseif ($input == '-cr' OR $input == 'crypto'){
         endecode();
         main();
     }
@@ -845,6 +981,10 @@ function main(){
     elseif ($input == 'quit' OR $input == 'q'){
         echo"$white Command $input Not Found\n";
         echo"$white Type ($cyan exit$white ) to Exit Program\n\n";
+        main();
+    }
+    elseif ($input == 'install'){
+        install();
         main();
     }
     elseif ($input == 'adlog'){
@@ -965,5 +1105,7 @@ function main(){
         main();
     }
 }
+
 main();
+
 ?>
