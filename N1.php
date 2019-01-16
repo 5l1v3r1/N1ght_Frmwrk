@@ -26,15 +26,20 @@ function help(){
     print "$red       \__,--' \n\n";
     print "$white This framework uses the command to run several tools in it\n\n";
     print "$white Commands that can be used, including :\n\n";
+    sleep(1);
     print "$okegreen\n████████████████████$white     Basics$okegreen     ████████████████████\n\n";
-    print "$cyan menu$white     OR$cyan   -m$red  :$white Show Main Menu\n";
+    print "$cyan bash$white     OR$cyan   -b$red  :$white Run Your Bash\n";
+    print "$cyan clear$white    OR$cyan   -c$red  :$white Clear Your Terminal\n";
+    print "$cyan about$white    OR$cyan   -a$red  :$white Show About This Framework\n";
     print "$cyan help$white     OR$cyan   -h$red  :$white Show Help\n";
-    print "$cyan about$white    OR$cyan   -a$red  :$white Show About\n\n";
-    menu();
-    brute();
-    scan();
-    endecode();
-    iptools();
+    print "$cyan menu$white     OR$cyan   -m$red  :$white Show Menu\n";
+    print "$cyan exit$white     OR$cyan   -e$red  :$white Exit Program\n\n";
+    sleep(1);
+    menu();sleep(1);
+    brute();sleep(1);
+    scan();sleep(1);
+    endecode();sleep(1);
+    iptools();sleep(1);
     generator();
     print "\n";
 }
@@ -56,7 +61,7 @@ function about(){
     print "$cyan Birth$red      :$white 16 August 2003\n";
     print "$cyan Country$red    :$white ID\n";
     print "$cyan Fav. Color$red :$white White\n\n";
-    print "$okegreen =======================$white About$okegreen =======================\n\n";
+    print "$okegreen ═══════════════════════$white About$okegreen ══════════════════════\n\n";
     print "$white I made this framework initially just for fun\n";
     print "$white but finally I developed this framework by adding\n";
     print "$white some tools for penetration for hackers out there.\n";
@@ -68,7 +73,7 @@ function index(){
     include 'config.php';
     @system("clear");
     print "\n";
-    print "$red ═══════════════════════════════════════════════════════\n";
+    print "$red ════════════════════════════════════════════════════════\n";
     print "$cyan         .---.        .-----------                      \n";
     print "$cyan        /     \  __  /    ------ $white    Remake Version\n";
     print "$cyan       / /     \(  )/    ----- $red    N1ght.Frmwrk$yellow V.6.0\n";
@@ -76,7 +81,7 @@ function index(){
     print "$cyan     //// / // :    : ---                                \n";
     print "$cyan    // /   /  /`    '--                                  \n";
     print "$cyan   //          //..\\\                                   \n";
-    print "$red ════════════$cyan UU$red ══$cyan UU$red ═════════════════════════════════\n";
+    print "$red ════════════$cyan UU$red ══$cyan UU$red ══════════════════════════════════\n";
     print "$cyan              '//||\\\`   $white https://github.com/N1ght420   \n";
     print "$cyan                ''``                                     \n";
 }
@@ -98,6 +103,7 @@ function install(){
         sleep(1);
         print "$white [$yellow *$white ]$okegreen Copying Script to /opt/N1ght/Framework/ ";print ".";print ".";print ".";print "\n";
         @system("cp -r install/nconsole.php /opt/N1ght/Framework/");
+        @system("cp -r install/config.php /opt/N1ght/Framework/");
         sleep(1);
         print "$white [$yellow *$white ]$okegreen Copying Command to /usr/bin/ ";print ".";print ".";print ".";print "\n";
         @system("cp install/bin/nconsole /usr/bin/");
@@ -105,14 +111,12 @@ function install(){
         print "$white [$yellow *$white ]$okegreen Setting Permission for /usr/bin/nconsole ";print ".";print ".";print ".";print "\n";
         @system("chmod +x /usr/bin/nconsole");
         sleep(2);
-        print "\n";
-        print "\n";
+        print "\n\n";
         print "$cyan [$white DONE$cyan ]";
         sleep(1);
         print "\n";
         print "$okegreen You can using this framework by typing$white ($cyan nconsole$white )$okegreen command";
-        print "\n";
-        print "\n";
+        print "\n\n";
     }
     elseif ($confirm == 'N' OR $confirm =='n'){
         print "$white [$red !$white ]$yellow Maybe you need to enter your$red ROOT$yellow passwd ";print "\n";
@@ -127,6 +131,7 @@ function install(){
         sleep(1);
         print "$white [$yellow *$white ]$okegreen Copying Script to /opt/N1ght/Framework/ ";print ".";print ".";print ".";print "\n";
         @system("sudo cp -r install/nconsole.php /opt/N1ght/Framework/");
+        @system("sudo cp -r install/config.php /opt/N1ght/Framework/");
         sleep(1);
         print "$white [$yellow *$white ]$okegreen Copying Command to /usr/bin/ ";print ".";print ".";print ".";print "\n";
         @system("sudo cp install/bin/nconsole /usr/bin/");
@@ -134,14 +139,12 @@ function install(){
         print "$white [$yellow *$white ]$okegreen Setting Permission for /usr/bin/nconsole ";print ".";print ".";print ".";print "\n";
         @system("sudo chmod +x /usr/bin/nconsole");
         sleep(2);
-        print "\n";
-        print "\n";
+        print "\n\n";
         print "$cyan [$white DONE$cyan ]";
         sleep(1);
         print "\n";
         print "$okegreen You can using this framework by typing$white ($cyan nconsole$white )$okegreen command";
-        print "\n";
-        print "\n";
+        print "\n\n";
     }
     else{
         print "$yellow Choose One Choice";
@@ -161,16 +164,29 @@ function install(){
     }
 }
 
+function clear_history(){
+    include 'config.php';
+    print "\n";
+    print "$white [$yellow *$white ]$okegreen Removing .cmd_history ";print ".";print ".";print ".";print "\n";
+    @system("rm .cmd_history");
+    sleep(2);
+    print "\n";
+    print "\n";
+    print "$cyan [$white DONE$cyan ]";
+    sleep(1);
+    print "\n\n";
+}
+
 // Menu
 
 function menu(){
     include 'config.php';
     print "$okegreen\n████████████████████$white       Menu$okegreen      ████████████████████\n\n";
-    print "$cyan iptool$white   OR$cyan   -i$red  :$white IP Tools\n";
-    print "$cyan brute$white    OR$cyan   -b$red  :$white BruteForce\n";
+    print "$cyan iptool$white   OR$cyan   -ip$red :$white IP Tools\n";
+    print "$cyan brute$white    OR$cyan   -br$red :$white BruteForce\n";
     print "$cyan scan$white     OR$cyan   -sc$red :$white Scanner\n";
-    print "$cyan crypto$white   OR$cyan   -c$red  :$white Encode & Decode\n";
-    print "$cyan gen$white      OR$cyan   -g$red  :$white Generator\n";
+    print "$cyan crypto$white   OR$cyan   -cr$red :$white Encode & Decode\n";
+    print "$cyan gen$white      OR$cyan   -gn$red :$white Generator\n";
     print "$cyan spam$white     OR$cyan   -sp$red :$white Spammer\n\n";
 }
 
@@ -933,7 +949,11 @@ function main(){
     $open = fopen(".cmd_history", 'a');
     fwrite($open, $input. "\n");
     fclose($open);
-    if ($input == '-m' OR $input == 'menu'){
+    if ($input == '-ch' OR $input == 'clear history'){
+        clear_history();
+        main();
+    }
+    elseif ($input == '-m' OR $input == 'menu'){
         menu();
         main();
     }
@@ -941,7 +961,7 @@ function main(){
         index();
         main();
     }
-    elseif ($input == '-b' OR $input == 'brute'){
+    elseif ($input == '-br' OR $input == 'brute'){
         brute();
         main();
     }
@@ -953,11 +973,11 @@ function main(){
         endecode();
         main();
     }
-    elseif ($input == '-i' OR $input == 'iptool'){
+    elseif ($input == '-ip' OR $input == 'iptool'){
         iptools();
         main();
     }
-    elseif ($input == '-g' OR $input == 'gen'){
+    elseif ($input == '-gn' OR $input == 'gen'){
         generator();
         main();
     }
@@ -973,7 +993,7 @@ function main(){
         about();
         main();
     }
-    elseif ($input == 'exit' or $input == '-e'){
+    elseif ($input == 'exit' OR $input == '-e'){
         echo"$red Exitting now$white ";
         echo"\n";
         exit();
@@ -981,6 +1001,10 @@ function main(){
     elseif ($input == 'quit' OR $input == 'q'){
         echo"$white Command $input Not Found\n";
         echo"$white Type ($cyan exit$white ) to Exit Program\n\n";
+        main();
+    }
+    elseif ($input == 'bash' OR $input == '-b'){
+        @system("bash");
         main();
     }
     elseif ($input == 'install'){
