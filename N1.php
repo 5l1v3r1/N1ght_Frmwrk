@@ -30,6 +30,7 @@ function help(){
     print "$okegreen\n████████████████████$white     Basics$okegreen     ████████████████████\n\n";
     print "$cyan bash$white     OR$cyan   -b$red  :$white Run Your Bash\n";
     print "$cyan clear$white    OR$cyan   -c$red  :$white Clear Your Terminal\n";
+    print "$cyan install$white  OR$cyan   -i$red  :$white Install This Framework\n";
     print "$cyan about$white    OR$cyan   -a$red  :$white Show About This Framework\n";
     print "$cyan help$white     OR$cyan   -h$red  :$white Show Help\n";
     print "$cyan menu$white     OR$cyan   -m$red  :$white Show Menu\n";
@@ -73,71 +74,40 @@ function index(){
     include 'config.php';
     @system("clear");
     print "\n";
-    print "$red ════════════════════════════════════════════════════════\n";
-    print "$cyan         .---.        .-----------                      \n";
-    print "$cyan        /     \  __  /    ------ $white    Remake Version\n";
-    print "$cyan       / /     \(  )/    ----- $red    N1ght.Frmwrk$yellow V.6.0\n";
-    print "$cyan      //////   ' \/ `   ---    $cyan    By$white N1ght.Hax0r    \n";
-    print "$cyan     //// / // :    : ---                                \n";
-    print "$cyan    // /   /  /`    '--                                  \n";
-    print "$cyan   //          //..\\\                                   \n";
-    print "$red ════════════$cyan UU$red ══$cyan UU$red ══════════════════════════════════\n";
-    print "$cyan              '//||\\\`   $white https://github.com/N1ght420   \n";
-    print "$cyan                ''``                                     \n";
+    print "$okegreen      \      ,  $red  _,  _,___,____, __, _,____, \n";
+    print "$okegreen      l\   ,/   $red  (-|\ |(-/|(-/ _,(-|__|(-|    \n";
+    print "$okegreen ._   `|] /j    $red   _| \|,'_|,_\__| _|  |,_|,  $purple V.6.5\n";
+    print "$okegreen  `\\, \|f7 _,/'$red  (      (  (     (     (      \n";
+    print "$okegreen    \"`=,k/,x-' $yellow    ____,____, __, _,_   _,____, __, , \n";
+    print "$okegreen     ,z/fY-=-   $yellow (-|_,(-|__)(-|\/|(-|  |(-|__)( |_/  \n";
+    print "$okegreen   -'\" .y \    $yellow   _|   _|  \,_| _|,_|/\|,_|  \,_| \, \n";
+    print "$okegreen       '   \    $yellow (    (     (     (     (     (      \n";
+    print "$okegreen            \________________________________________ \n\n";
 }
 
 function install(){
     include 'config.php';
-    echo "$cyan Are You$white ROOT (Y/N)$cyan ?$red >$white ";
-    $confirm = trim(fgets(STDIN));
+    $user = trim(shell_exec('whoami'));
     print "\n";
-    if ($confirm == 'Y' OR $confirm == 'y'){
+    if ($user == 'root'){
         sleep(1);
         @system("rm -rf /opt/N1ght/Framework");
         @system("rm -rf /usr/bin/nconsole");
-        print "$white [$yellow *$white ]$okegreen Making Special Directory ";print ".";print ".";print ".";print "\n";
-        @system("mkdir /opt/N1ght");
+        print "$white [$yellow *$white ]$okegreen Making Special Directory ";print ".";print ".";print ".";
+        @system("mkdir /opt/N1ght");print "$cyan [$white DONE$cyan ]";print "\n";
         sleep(1);
-        print "$white [$yellow *$white ]$okegreen Making N1ght_Frmwrk Directory ";print ".";print ".";print ".";print "\n";
-        @system("mkdir /opt/N1ght/Framework");
+        print "$white [$yellow *$white ]$okegreen Making N1ght_Frmwrk Directory ";print ".";print ".";print ".";
+        @system("mkdir /opt/N1ght/Framework");print "$cyan [$white DONE$cyan ]";print "\n";
         sleep(1);
-        print "$white [$yellow *$white ]$okegreen Copying Script to /opt/N1ght/Framework/ ";print ".";print ".";print ".";print "\n";
+        print "$white [$yellow *$white ]$okegreen Copying Script to /opt/N1ght/Framework/ ";print ".";print ".";print ".";
         @system("cp -r install/nconsole.php /opt/N1ght/Framework/");
-        @system("cp -r install/config.php /opt/N1ght/Framework/");
+        @system("cp -r install/config.php /opt/N1ght/Framework/");print "$cyan [$white DONE$cyan ]";print "\n";
         sleep(1);
-        print "$white [$yellow *$white ]$okegreen Copying Command to /usr/bin/ ";print ".";print ".";print ".";print "\n";
-        @system("cp install/bin/nconsole /usr/bin/");
+        print "$white [$yellow *$white ]$okegreen Copying Command to /usr/bin/ ";print ".";print ".";print ".";
+        @system("cp install/bin/nconsole /usr/bin/");print "$cyan [$white DONE$cyan ]";print "\n";
         sleep(1);
-        print "$white [$yellow *$white ]$okegreen Setting Permission for /usr/bin/nconsole ";print ".";print ".";print ".";print "\n";
-        @system("chmod +x /usr/bin/nconsole");
-        sleep(2);
-        print "\n\n";
-        print "$cyan [$white DONE$cyan ]";
-        sleep(1);
-        print "\n";
-        print "$okegreen You can using this framework by typing$white ($cyan nconsole$white )$okegreen command";
-        print "\n\n";
-    }
-    elseif ($confirm == 'N' OR $confirm =='n'){
-        print "$white [$red !$white ]$yellow Maybe you need to enter your$red ROOT$yellow passwd ";print "\n";
-        sleep(1);
-        @system("sudo rm -rf /opt/N1ght/Framework");
-        @system("sudo rm -rf /usr/bin/nconsole");
-        print "$white [$yellow *$white ]$okegreen Making Special Directory ";print ".";print ".";print ".";print "\n";
-        @system("sudo mkdir /opt/N1ght");
-        sleep(1);
-        print "$white [$yellow *$white ]$okegreen Making N1ght_Frmwrk Directory ";print ".";print ".";print ".";print "\n";
-        @system("sudo mkdir /opt/N1ght/Framework");
-        sleep(1);
-        print "$white [$yellow *$white ]$okegreen Copying Script to /opt/N1ght/Framework/ ";print ".";print ".";print ".";print "\n";
-        @system("sudo cp -r install/nconsole.php /opt/N1ght/Framework/");
-        @system("sudo cp -r install/config.php /opt/N1ght/Framework/");
-        sleep(1);
-        print "$white [$yellow *$white ]$okegreen Copying Command to /usr/bin/ ";print ".";print ".";print ".";print "\n";
-        @system("sudo cp install/bin/nconsole /usr/bin/");
-        sleep(1);
-        print "$white [$yellow *$white ]$okegreen Setting Permission for /usr/bin/nconsole ";print ".";print ".";print ".";print "\n";
-        @system("sudo chmod +x /usr/bin/nconsole");
+        print "$white [$yellow *$white ]$okegreen Setting Permission for /usr/bin/nconsole ";print ".";print ".";print ".";
+        @system("chmod +x /usr/bin/nconsole");print "$cyan [$white DONE$cyan ]";print "\n";
         sleep(2);
         print "\n\n";
         print "$cyan [$white DONE$cyan ]";
@@ -147,31 +117,41 @@ function install(){
         print "\n\n";
     }
     else{
-        print "$yellow Choose One Choice";
+        print "$white [$red !$white ]$yellow Maybe you need to enter your$red ROOT$yellow passwd ";
+        sleep(1);
+        @system("sudo rm -rf /opt/N1ght/Framework");
+        @system("sudo rm -rf /usr/bin/nconsole");
+        print "$white [$yellow *$white ]$okegreen Making Special Directory ";print ".";print ".";print ".";
+        @system("sudo mkdir /opt/N1ght");print "$cyan [$white DONE$cyan ]";print "\n";
+        sleep(1);
+        print "$white [$yellow *$white ]$okegreen Making N1ght_Frmwrk Directory ";print ".";print ".";print ".";
+        @system("sudo mkdir /opt/N1ght/Framework");print "$cyan [$white DONE$cyan ]";print "\n";
+        sleep(1);
+        print "$white [$yellow *$white ]$okegreen Copying Script to /opt/N1ght/Framework/ ";print ".";print ".";print ".";
+        @system("sudo cp -r install/nconsole.php /opt/N1ght/Framework/");
+        @system("sudo cp -r install/config.php /opt/N1ght/Framework/");print "$cyan [$white DONE$cyan ]";print "\n";
+        sleep(1);
+        print "$white [$yellow *$white ]$okegreen Copying Command to /usr/bin/ ";print ".";print ".";print ".";
+        @system("sudo cp install/bin/nconsole /usr/bin/");print "$cyan [$white DONE$cyan ]";print "\n";
+        sleep(1);
+        print "$white [$yellow *$white ]$okegreen Setting Permission for /usr/bin/nconsole ";print ".";print ".";print ".";
+        @system("sudo chmod +x /usr/bin/nconsole");print "$cyan [$white DONE$cyan ]";print "\n";
+        sleep(2);
+        print "\n\n";
+        print "$cyan [$white DONE$cyan ]";
+        sleep(1);
         print "\n";
-        echo "$cyan Back to Main Menu$white (Y/N)$cyan ?$red >$white ";
-        $mamen = trim(fgets(STDIN));
-        if ($mamen == 'Y' OR $mamen == 'y'){
-            index();
-            main();
-        }
-        elseif ($mamen == 'N' OR $mamen == 'n'){
-            install();
-        }
-        else{
-            install();
-        }
+        print "$okegreen You can using this framework by typing$white ($cyan nconsole$white )$okegreen command";
+        print "\n\n";
     }
 }
 
 function clear_history(){
     include 'config.php';
     print "\n";
-    print "$white [$yellow *$white ]$okegreen Removing .cmd_history ";print ".";print ".";print ".";print "\n";
+    print "$white [$yellow *$white ]$okegreen Removing .cmd_history ";print ".";print ".";print ".";
     @system("rm .cmd_history");
     sleep(2);
-    print "\n";
-    print "\n";
     print "$cyan [$white DONE$cyan ]";
     sleep(1);
     print "\n\n";
@@ -944,7 +924,10 @@ function smstelkom(){
 index();
 function main(){
     include 'config.php';
-    echo "$red >$white ";
+    $user = trim(shell_exec('whoami'));
+    $host = trim(shell_exec('hostname'));
+    $date = date('H:i:s');
+    echo "$okegreen [$cyan $user$red.$cyan$host$okegreen ]$white - on -$okegreen [$white $date$okegreen ] \n$red >$white ";
     $input = trim(fgets(STDIN));
     $open = fopen(".cmd_history", 'a');
     fwrite($open, $input. "\n");
