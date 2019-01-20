@@ -73,27 +73,23 @@ function index(){
     include 'config.php';
     @system("clear");
     print "\n";
-    print "$red ════════════════════════════════════════════════════════\n";
-    print "$cyan         .---.        .-----------                      \n";
-    print "$cyan        /     \  __  /    ------ $white    Remake Version\n";
-    print "$cyan       / /     \(  )/    ----- $red    N1ght.Frmwrk$yellow V.6.0\n";
-    print "$cyan      //////   ' \/ `   ---    $cyan    By$white N1ght.Hax0r    \n";
-    print "$cyan     //// / // :    : ---                                \n";
-    print "$cyan    // /   /  /`    '--                                  \n";
-    print "$cyan   //          //..\\\                                   \n";
-    print "$red ════════════$cyan UU$red ══$cyan UU$red ══════════════════════════════════\n";
-    print "$cyan              '//||\\\`   $white https://github.com/N1ght420   \n";
-    print "$cyan                ''``                                     \n";
+    print "$okegreen      \      ,  $red  _,  _,___,____, __, _,____, \n";
+    print "$okegreen      l\   ,/   $red  (-|\ |(-/|(-/ _,(-|__|(-|    \n";
+    print "$okegreen ._   `|] /j    $red   _| \|,'_|,_\__| _|  |,_|,  $purple V.6.5\n";
+    print "$okegreen  `\\, \|f7 _,/'$red  (      (  (     (     (      \n";
+    print "$okegreen    \"`=,k/,x-' $yellow    ____,____, __, _,_   _,____, __, , \n";
+    print "$okegreen     ,z/fY-=-   $yellow (-|_,(-|__)(-|\/|(-|  |(-|__)( |_/  \n";
+    print "$okegreen   -'\" .y \    $yellow   _|   _|  \,_| _|,_|/\|,_|  \,_| \, \n";
+    print "$okegreen       '   \    $yellow (    (     (     (     (     (      \n";
+    print "$okegreen            \________________________________________ \n\n";
 }
 
 function clear_history(){
     include 'config.php';
     print "\n";
-    print "$white [$yellow *$white ]$okegreen Removing .cmd_history ";print ".";print ".";print ".";print "\n";
+    print "$white [$yellow *$white ]$okegreen Removing .cmd_history ";print ".";print ".";print ".";
     @system("rm .cmd_history");
     sleep(2);
-    print "\n";
-    print "\n";
     print "$cyan [$white DONE$cyan ]";
     sleep(1);
     print "\n\n";
@@ -866,7 +862,10 @@ function smstelkom(){
 index();
 function main(){
     include 'config.php';
-    echo "$red >$white ";
+    $user = trim(shell_exec('whoami'));
+    $host = trim(shell_exec('hostname'));
+    $date = date('H:i:s');
+    echo "$okegreen [$cyan $user$red.$cyan$host$okegreen ]$white - on -$okegreen [$white $date$okegreen ] \n$red >$white ";
     $input = trim(fgets(STDIN));
     $open = fopen(".cmd_history", 'a');
     fwrite($open, $input. "\n");
