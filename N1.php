@@ -3,86 +3,21 @@
 include 'config.php';
 @system("mkdir result");
 
-function betaprogram(){
-    include 'config.php';
-    print "\n";
-    print "$yellow COMINGSOON!! \n\n";
-}
-
 // Banner
-
-function help(){
-    include 'config.php';
-    @system("clear");
-    print "\n";
-    print "$red       __   __ \n";
-    print "$red      /  \./  \/\_ \n";
-    print "$red   __{^\_ _}_   )  }$okegreen/^\ $purple   N1ght.Frmwrk$cyan Project      \n";
-    print "$red  /  /\_/^\._}_/  /$okegreen/  / \n";
-    print "$red (  (__{(@)}\__}./$okegreen/_/__A____A_____A________A_____A___\n";
-    print "$red  \__/{/(_)\_}  )\\$okegreen\\ \\\---v-----V-----V-v----Y----v----\n";
-    print "$red   (   (__)_)_/  )\ $okegreen\> \n";
-    print "$red    \__/     \__/\/$okegreen\/$white            How To Use\n";
-    print "$red       \__,--' \n\n";
-    print "$white This framework uses the command to run several tools in it\n\n";
-    print "$white Commands that can be used, including :\n\n";
-    sleep(1);
-    print "$okegreen\n████████████████████$white     Basics$okegreen     ████████████████████\n\n";
-    print "$cyan bash$white     OR$cyan   -b$red  :$white Run Your Bash\n";
-    print "$cyan clear$white    OR$cyan   -c$red  :$white Clear Your Terminal\n";
-    print "$cyan install$white  OR$cyan   -i$red  :$white Install This Framework\n";
-    print "$cyan about$white    OR$cyan   -a$red  :$white Show About This Framework\n";
-    print "$cyan help$white     OR$cyan   -h$red  :$white Show Help\n";
-    print "$cyan menu$white     OR$cyan   -m$red  :$white Show Menu\n";
-    print "$cyan exit$white     OR$cyan   -e$red  :$white Exit Program\n\n";
-    sleep(1);
-    menu();sleep(1);
-    brute();sleep(1);
-    scan();sleep(1);
-    endecode();sleep(1);
-    iptools();sleep(1);
-    generator();
-    print "\n";
-}
-
-function about(){
-    include 'config.php';
-    @system("clear");
-    print "\n";
-    print "$red       __   __ \n";
-    print "$red      /  \./  \/\_ \n";
-    print "$red   __{^\_ _}_   )  }$okegreen/^\ $purple   N1ght.Frmwrk$cyan Project      \n";
-    print "$red  /  /\_/^\._}_/  /$okegreen/  / \n";
-    print "$red (  (__{(@)}\__}./$okegreen/_/__A____A_____A________A_____A___\n";
-    print "$red  \__/{/(_)\_}  )\\$okegreen\\ \\\---v-----V-----V-v----Y----v----\n";
-    print "$red   (   (__)_)_/  )\ $okegreen\> \n";
-    print "$red    \__/     \__/\/$okegreen\/$white      About Me and My Tool\n";
-    print "$red       \__,--' \n\n";
-    print "$cyan Name$red       :$white Rakka Pratama Putra\n";
-    print "$cyan Birth$red      :$white 16 August 2003\n";
-    print "$cyan Country$red    :$white ID\n";
-    print "$cyan Fav. Color$red :$white White\n\n";
-    print "$okegreen ═══════════════════════$white About$okegreen ══════════════════════\n\n";
-    print "$white I made this framework initially just for fun\n";
-    print "$white but finally I developed this framework by adding\n";
-    print "$white some tools for penetration for hackers out there.\n";
-    print "$white Maybe now I can only add a few tools in this framework,\n";
-    print "$white and I will continue to update them\n\n";
-}
 
 function index(){
     include 'config.php';
+    $date = date('H:i:s');
     @system("clear");
     print "\n";
-    print "$okegreen      \      ,  $red  _,  _,___,____, __, _,____, \n";
-    print "$okegreen      l\   ,/   $red  (-|\ |(-/|(-/ _,(-|__|(-|    \n";
-    print "$okegreen ._   `|] /j    $red   _| \|,'_|,_\__| _|  |,_|,  $purple V.6.5\n";
-    print "$okegreen  `\\, \|f7 _,/'$red  (      (  (     (     (      \n";
-    print "$okegreen    \"`=,k/,x-' $yellow    ____,____, __, _,_   _,____, __, , \n";
-    print "$okegreen     ,z/fY-=-   $yellow (-|_,(-|__)(-|\/|(-|  |(-|__)( |_/  \n";
-    print "$okegreen   -'\" .y \    $yellow   _|   _|  \,_| _|,_|/\|,_|  \,_| \, \n";
-    print "$okegreen       '   \    $yellow (    (     (     (     (     (      \n";
-    print "$okegreen            \________________________________________ \n\n";
+    print "$red       _,  _,___,____, __, _,____, \n";
+    print "$red      (-|\ |(-/|(-/ _,(-|__|(-|    \n";
+    print "$red       _| \|,'_|,_\__| _|  |,_|,  $purple V.6.7\n";
+    print "$red      (      (  (     (     (      \n";
+    print "$yellow       ____,____, __, _,_   _,____, __, , \n";
+    print "$yellow      (-|_,(-|__)(-|\/|(-|  |(-|__)( |_/  \n";
+    print "$yellow       _|   _|  \,_| _|,_|/\|,_|  \,_| \, \n";
+    print "$yellow      (    (     (     (     (     (      \n\n";
 }
 
 function install(){
@@ -146,116 +81,332 @@ function install(){
     }
 }
 
-function clear_history(){
-    include 'config.php';
-    print "\n";
-    print "$white [$yellow *$white ]$okegreen Removing .cmd_history ";print ".";print ".";print ".";
-    @system("rm .cmd_history");
-    sleep(2);
-    print "$cyan [$white DONE$cyan ]";
-    sleep(1);
-    print "\n\n";
-}
-
 // Menu
 
 function menu(){
     include 'config.php';
-    print "$okegreen\n████████████████████$white       Menu$okegreen      ████████████████████\n\n";
-    print "$cyan iptool$white   OR$cyan   -ip$red :$white IP Tools\n";
-    print "$cyan brute$white    OR$cyan   -br$red :$white BruteForce\n";
-    print "$cyan scan$white     OR$cyan   -sc$red :$white Scanner\n";
-    print "$cyan crypto$white   OR$cyan   -cr$red :$white Encode & Decode\n";
-    print "$cyan gen$white      OR$cyan   -gn$red :$white Generator\n";
-    print "$cyan spam$white     OR$cyan   -sp$red :$white Spammer\n\n";
+    $date = date('H:i:s');
+    print "$okegreen\n═════════════[[$white     $date$okegreen    ]]═════════════";
+    print "$okegreen\n═════════════[[$white       Menu$okegreen      ]]═════════════\n\n";
+    print "$cyan 01  $red :$white  IP Tools\n";
+    print "$cyan 02  $red :$white  BruteForce\n";
+    print "$cyan 03  $red :$white  Scanner\n";
+    print "$cyan 04  $red :$white  Encode & Decode\n";
+    print "$cyan 05  $red :$white  Generator\n";
+    print "$cyan 06  $red :$white  Spammer\n\n";
+    print "$cyan 00  $red :$white  Install\n";
+    print "$cyan 99  $red :$white  Exit\n\n";
+    $user = trim(shell_exec('whoami'));
+    $host = trim(shell_exec('hostname'));
+    echo "$okegreen [$cyan $user$red.$cyan$host$okegreen ]$white - on -$okegreen [$white Menu$okegreen ] \n$red >$white ";
+    $input = trim(fgets(STDIN));
+    if ($input == '01' OR $input == '1'){
+        index();
+        iptools();
+    }
+    elseif ($input == '02' OR $input == '2'){
+        index();
+        brute();
+    }
+    elseif ($input == '03' OR $input == '3'){
+        index();
+        scan();
+    }
+    elseif ($input == '04' OR $input == '4'){
+        index();
+        endecode();
+    }
+    elseif ($input == '05' OR $input == '5'){
+        index();
+        generator();
+    }
+    elseif ($input == '06' OR $input == '6'){
+        index();
+        spam();
+    }
+    elseif ($input == '00' OR $input == '0'){
+        index();
+        install();
+    }
+    elseif ($input == '99'){
+        exit();
+    }
+    elseif ($input == 'bash'){
+        @system("bash");
+        index();
+        menu();
+    }
+    else{
+        index();
+        menu();
+    }
 }
 
 function brute(){
     include 'config.php';
-    print "$okegreen\n████████████████████$white    BruteForce$okegreen   ████████████████████\n\n";
+    $date = date('H:i:s');
+    print "$okegreen\n═════════════[[$white     $date$okegreen    ]]═════════════";
+    print "$okegreen\n═════════════[[$white    BruteForce$okegreen   ]]═════════════\n\n";
     print "$yellow COMINGSOON!! \n\n";
 }
 
 function scan(){
     include 'config.php';
-    print "$okegreen\n████████████████████$white     Scanner$okegreen     ████████████████████\n\n";
-    print "$cyan adlog$red       :$white Admin Login Finder\n";
-    print "$cyan dirscan$red     :$white Directory Scanner\n";
-    print "$cyan shellscan$red   :$white Shell Finder\n";
-    print "$cyan subscan$red     :$white Subdomain Scanner\n\n";
+    $date = date('H:i:s');
+    print "$okegreen\n═════════════[[$white     $date$okegreen    ]]═════════════";
+    print "$okegreen\n═════════════[[$white       Scan$okegreen      ]]═════════════\n\n";
+    print "$cyan 01  $red :$white  Admin Login Finder\n";
+    print "$cyan 02  $red :$white  Directory Scanner\n";
+    print "$cyan 03  $red :$white  Shell Finder\n";
+    print "$cyan 04  $red :$white  Subdomain Scanner\n\n";
+    print "$cyan 00  $red :$white  Back\n";
+    print "$cyan 99  $red :$white  Exit\n\n";
+    $user = trim(shell_exec('whoami'));
+    $host = trim(shell_exec('hostname'));
+    echo "$okegreen [$cyan $user$red.$cyan$host$okegreen ]$white - on -$okegreen [$white Menu/Scan$okegreen ] \n$red >$white ";
+    $input = trim(fgets(STDIN));
+    if ($input == '01' OR $input == '1'){
+        index();
+        logfin();
+    }
+    elseif ($input == '02' OR $input == '2'){
+        index();
+        dirscan();
+    }
+    elseif ($input == '03' OR $input == '3'){
+        index();
+        shellscan();
+    }
+    elseif ($input == '04' OR $input == '4'){
+        index();
+        subdoscan();
+    }
+    elseif ($input == '00' OR $input == '0'){
+        index();
+        menu();
+    }
+    elseif ($input == '99'){
+        exit();
+    }
+    else{
+        index();
+        scan();
+    }
 }
 
 function endecode(){
     include 'config.php';
-    print "$okegreen\n████████████████████$white Encode & Decode$okegreen ████████████████████\n\n";
-    print "$cyan encode$red      :$white Encode\n\n";
+    $date = date('H:i:s');
+    print "$okegreen\n═════════════[[$white     $date$okegreen    ]]═════════════";
+    print "$okegreen\n═════════════[[$white     Endecode$okegreen    ]]═════════════\n\n";
+    print "$cyan 01  $red :$white  Encode\n\n";
+    print "$cyan 00  $red :$white  Back\n";
+    print "$cyan 99  $red :$white  Exit\n\n";
+    $user = trim(shell_exec('whoami'));
+    $host = trim(shell_exec('hostname'));
+    echo "$okegreen [$cyan $user$red.$cyan$host$okegreen ]$white - on -$okegreen [$white Menu/Crypto$okegreen ] \n$red >$white ";
+    $input = trim(fgets(STDIN));
+    if ($input == '01' OR $input == '1'){
+        index();
+        encode();
+    }
+    elseif ($input == '00' OR $input == '0'){
+        index();
+        menu();
+    }
+    elseif ($input == '99'){
+        exit();
+    }
+    else{
+        index();
+        endecode();
+    }
 }
 
 function iptools(){
     include 'config.php';
-    print "$okegreen\n████████████████████$white    IP  Tools$okegreen    ████████████████████\n\n";
-    print "$cyan mtr$red         :$white MTR Traceroute\n";
-    print "$cyan nping$red       :$white Test Ping\n";
-    print "$cyan dnslookup$red   :$white DNS Lookup\n";
-    print "$cyan revdns$red      :$white Reverse DNS\n";
-    print "$cyan whois$red       :$white Whois\n";
-    print "$cyan hostsrc$red     :$white Host Search\n";
-    print "$cyan revip$red       :$white Reverse IP\n";
-    print "$cyan httphead$red    :$white HTTP Headers\n";
-    print "$cyan pagelink$red    :$white Page Links\n";
-    print "$cyan nmap$red        :$white Nmap Port Scan\n\n";
+    $date = date('H:i:s');
+    print "$okegreen\n═════════════[[$white     $date$okegreen    ]]═════════════";
+    print "$okegreen\n═════════════[[$white     IP Tools$okegreen    ]]═════════════\n\n";
+    print "$cyan 01  $red :$white  MTR Traceroute\n";
+    print "$cyan 02  $red :$white  Test Ping\n";
+    print "$cyan 03  $red :$white  DNS Lookup\n";
+    print "$cyan 04  $red :$white  Reverse DNS\n";
+    print "$cyan 05  $red :$white  Whois\n";
+    print "$cyan 06  $red :$white  Host Search\n";
+    print "$cyan 07  $red :$white  Reverse IP\n";
+    print "$cyan 08  $red :$white  HTTP Headers\n";
+    print "$cyan 09  $red :$white  Page Links\n";
+    print "$cyan 10  $red :$white  Nmap Port Scan\n\n";
+    print "$cyan 00  $red :$white  Back\n";
+    print "$cyan 99  $red :$white  Exit\n\n";
+    $user = trim(shell_exec('whoami'));
+    $host = trim(shell_exec('hostname'));
+    echo "$okegreen [$cyan $user$red.$cyan$host$okegreen ]$white - on -$okegreen [$white Menu/IP$okegreen ] \n$red >$white ";
+    $input = trim(fgets(STDIN));
+    if ($input == '01' OR $input == '1'){
+        index();
+        mtr();
+    }
+    elseif ($input == '02' OR $input == '2'){
+        index();
+        testping();
+    }
+    elseif ($input == '03' OR $input == '3'){
+        index();
+        dnslookup();
+    }
+    elseif ($input == '04' OR $input == '4'){
+        index();
+        reversedns();
+    }
+    elseif ($input == '05' OR $input == '5'){
+        index();
+        whois();
+    }
+    elseif ($input == '06' OR $input == '6'){
+        index();
+        host();
+    }
+    elseif ($input == '07' OR $input == '7'){
+        index();
+        reverseip();
+    }
+    elseif ($input == '08' OR $input == '8'){
+        index();
+        httphead();
+    }
+    elseif ($input == '09' OR $input == '9'){
+        index();
+        pagelink();
+    }
+    elseif ($input == '10'){
+        index();
+        nmap();
+    }
+    elseif ($input == '00' OR $input == '0'){
+        index();
+        menu();
+    }
+    elseif ($input == '99'){
+        exit();
+    }
+    else{
+        index();
+        iptools();
+    }
 }
 
 function generator(){
     include 'config.php';
-    print "$okegreen\n████████████████████$white    Generator$okegreen    ████████████████████\n\n";
-    print "$cyan hma$red         :$white HMA License key Generator\n";
-    print "$cyan custgen$red     :$white Custom Code Generator\n\n";
+    $date = date('H:i:s');
+    print "$okegreen\n═════════════[[$white     $date$okegreen    ]]═════════════";
+    print "$okegreen\n═════════════[[$white     Generate$okegreen    ]]═════════════\n\n";
+    print "$cyan 01  $red :$white  HMA License key Generator\n";
+    print "$cyan 02  $red :$white  Custom Code Generator\n\n";
+    print "$cyan 00  $red :$white  Back\n";
+    print "$cyan 99  $red :$white  Exit\n\n";
+    $user = trim(shell_exec('whoami'));
+    $host = trim(shell_exec('hostname'));
+    echo "$okegreen [$cyan $user$red.$cyan$host$okegreen ]$white - on -$okegreen [$white Menu/Generator$okegreen ] \n$red >$white ";
+    $input = trim(fgets(STDIN));
+    if ($input == '01' OR $input == '1'){
+        index();
+        hma();
+    }
+    elseif ($input == '02' OR $input == '2'){
+        index();
+        custgen();
+    }
+    elseif ($input == '00' OR $input == '0'){
+        index();
+        menu();
+    }
+    elseif ($input == '99'){
+        exit();
+    }
+    else{
+        index();
+        generator();
+    }
 }
 
 function spam(){
     include 'config.php';
-    print "$okegreen\n████████████████████$white     Spammer$okegreen     ████████████████████\n\n";
-    print "$cyan smsphd$red      :$white SMS Pizza Hut Delivery\n";
-    print "$cyan smstp$red       :$white SMS Tokopedia\n";
-    print "$cyan calltp$red      :$white Call Tokopedia\n";
-    print "$cyan smsjd$red       :$white SMS JD.ID\n";
-    print "$cyan smsts$red       :$white SMS Telkomsel\n\n";
+    $date = date('H:i:s');
+    print "$okegreen\n═════════════[[$white     $date$okegreen    ]]═════════════";
+    print "$okegreen\n═════════════[[$white       Spam$okegreen      ]]═════════════\n\n";
+    print "$cyan 01  $red :$white  SMS Pizza Hut Delivery\n";
+    print "$cyan 02  $red :$white  SMS JD.ID\n";
+    print "$cyan 03  $red :$white  SMS Telkomsel\n\n";
+    print "$cyan 00  $red :$white  Back\n";
+    print "$cyan 99  $red :$white  Exit\n\n";
+    $user = trim(shell_exec('whoami'));
+    $host = trim(shell_exec('hostname'));
+    echo "$okegreen [$cyan $user$red.$cyan$host$okegreen ]$white - on -$okegreen [$white Menu/Spam$okegreen ] \n$red >$white ";
+    $input = trim(fgets(STDIN));
+    if ($input == '01' OR $input == '1'){
+        index();
+        smsphd();
+    }
+    elseif ($input == '02' OR $input == '2'){
+        index();
+        smsjd();
+    }
+    elseif ($input == '03' OR $input == '3'){
+        index();
+        smstelkom();
+    }
+    elseif ($input == '00' OR $input == '0'){
+        index();
+        menu();
+    }
+    elseif ($input == '99'){
+        exit();
+    }
+    else{
+        index();
+        spam();
+    }
 }
 
 // Encode Tools
 
 function encode(){
     include 'config.php';
-    print "$okegreen\n█████████████████$white    Encode Tools$okegreen    █████████████████\n\n";
-    print "$cyan enmd4$red       :$white Encode Md4\n";
-    print "$cyan enmd5$red       :$white Encode Md5\n";
-    print "$cyan ensha1$red      :$white Encode Sha1\n";
-    print "$cyan enbase64$red    :$white Encode Base64\n";
-    print "$cyan enall$red       :$white Encode All Type\n\n";
-    echo "$red >$white ";
-    $menu = trim(fgets(STDIN));
-    if ($menu == 'enmd4'){
+    $date = date('H:i:s');
+    print "$okegreen\n═════════════[[$white     $date$okegreen    ]]═════════════";
+    print "$okegreen\n═════════════[[$white      Encode$okegreen     ]]═════════════\n\n";
+    print "$cyan 01  $red :$white  Encode Md4\n";
+    print "$cyan 02  $red :$white  Encode Md5\n";
+    print "$cyan 03  $red :$white  Encode Sha1\n";
+    print "$cyan 04  $red :$white  Encode Base64\n";
+    print "$cyan 05  $red :$white  Encode All Type\n\n";
+    print "$cyan 00  $red :$white  Back\n";
+    print "$cyan 99  $red :$white  Exit\n\n";
+    echo "$okegreen [$cyan $user$red.$cyan$host$okegreen ]$white - on -$okegreen [$white Menu/Endecode/Encode$okegreen ] \n$red >$white ";
+    $input = trim(fgets(STDIN));
+    if ($input == '01' OR $input == '1'){
         echo "$cyan Input Kata$red >$white ";
         $base = trim(fgets(STDIN));
         echo "$cyan Encode Md4$red :$white ",crypt('md4',$base);
     }
-    elseif ($menu == 'enmd5'){
+    elseif ($input == '02' OR $input == '2'){
         echo "$cyan Input Kata$red >$white ";
         $base = trim(fgets(STDIN,256));
         echo "$cyan Encode Md5$red :$white ",md5($base);
     }
-    elseif ($menu == 'ensha1'){
+    elseif ($input == '03' OR $input == '3'){
         echo "$cyan Input Kata$red >$white ";
         $base = trim(fgets(STDIN));
         echo "$cyan Encode Sha1$red :$white ",sha1($base);
     }
-    elseif ($menu == 'enbase64'){
+    elseif ($input == '04' OR $input == '4'){
         echo "$cyan Input Kata$red >$white ";
         $base = trim(fgets(STDIN));
         echo "$cyan Encode Md5$red :$white ",base64_encode($base);
     }
-    elseif ($menu == 'enall'){
+    elseif ($input == '05' OR $input == '5'){
         echo "$cyan Input Kata$red >$white ";
         $base = trim(fgets(STDIN));
         print "$okegreen █$white Length$okegreen █████$white Type$okegreen █████████████$white Encode$okegreen █████████████$white\n";
@@ -264,51 +415,17 @@ function encode(){
             printf("    %3d         %-12s       %s\n\n", strlen($r), $v, $r);
         }
     }
-    print "\n\n";
-    main();
-}
-
-function enall(){
-    include 'config.php';
-    echo "$cyan Input Kata$red >$white ";
-    $base = trim(fgets(STDIN));
-    print "$okegreen █$white Length$okegreen █████$white Type$okegreen █████████████$white Encode$okegreen █████████████$white\n";
-    foreach (hash_algos() as $v){
-        $r = hash($v, $base, false);
-        printf("    %3d         %-12s       %s\n\n", strlen($r), $v, $r);
+    elseif ($input == '00' OR $input == '0'){
+        index();
+        endecode();
     }
-    print "\n\n";
-}
-
-function enbase64(){
-    include 'config.php';
-    echo "$cyan Input Kata$red >$white ";
-    $base = trim(fgets(STDIN));
-    echo "$cyan Encode Md5$red :$white ",base64_encode($base);
-    print "\n\n";
-}
-
-function enmd4(){
-    include 'config.php';
-    echo "$cyan Input Kata$red >$white ";
-    $base = trim(fgets(STDIN));
-    echo "$cyan Encode Md4$red :$white ",crypt('md4',$base);
-    print "\n\n";
-}
-
-function enmd5(){
-    include 'config.php';
-    echo "$cyan Input Kata$red >$white ";
-    $base = trim(fgets(STDIN,256));
-    echo "$cyan Encode Md5$red :$white ",md5($base);
-    print "\n\n";
-}
-
-function ensha1(){
-    include 'config.php';
-    echo "$cyan Input Kata$red >$white ";
-    $base = trim(fgets(STDIN));
-    echo "$cyan Encode Sha1$red :$white ",sha1($base);
+    elseif ($input == '99'){
+        exit();
+    }
+    else{
+        index();
+        encode();
+    }
     print "\n\n";
 }
 
@@ -317,8 +434,8 @@ function ensha1(){
 function custgen(){
     include 'config.php';
     echo "$cyan Want to Input Base(y/n)?$red >$white ";
-    $menu = trim(fgets(STDIN));
-    if ($menu == 'y' OR $menu == 'Y'){
+    $input = trim(fgets(STDIN));
+    if ($input == 'y' OR $input == 'Y'){
         echo "$cyan Base$red >$white ";
         $base = trim(fgets(STDIN));
         echo "$cyan Jumlah Digit Kode$red >$white ";
@@ -364,7 +481,7 @@ function custgen(){
             }
         }
     }
-    elseif ($menu == 'n' OR $menu == 'N'){
+    elseif ($input == 'n' OR $input == 'N'){
         echo "$cyan Jumlah Digit Kode$red >$white ";
         $total = trim(fgets(STDIN));
         echo "$cyan UPPER/lower (U/l)?$red >$white ";
@@ -919,200 +1036,7 @@ function smstelkom(){
     print "$cyan Done !!\n\n";
 }
 
-// Command List
-
 index();
-function main(){
-    include 'config.php';
-    $user = trim(shell_exec('whoami'));
-    $host = trim(shell_exec('hostname'));
-    $date = date('H:i:s');
-    echo "$okegreen [$cyan $user$red.$cyan$host$okegreen ]$white - on -$okegreen [$white $date$okegreen ] \n$red >$white ";
-    $input = trim(fgets(STDIN));
-    $open = fopen(".cmd_history", 'a');
-    fwrite($open, $input. "\n");
-    fclose($open);
-    if ($input == '-ch' OR $input == 'clear history'){
-        clear_history();
-        main();
-    }
-    elseif ($input == '-m' OR $input == 'menu'){
-        menu();
-        main();
-    }
-    elseif ($input == '-c' OR $input == 'clear'){
-        index();
-        main();
-    }
-    elseif ($input == '-br' OR $input == 'brute'){
-        brute();
-        main();
-    }
-    elseif ($input == '-sc' OR $input == 'scan'){
-        scan();
-        main();
-    }
-    elseif ($input == '-cr' OR $input == 'crypto'){
-        endecode();
-        main();
-    }
-    elseif ($input == '-ip' OR $input == 'iptool'){
-        iptools();
-        main();
-    }
-    elseif ($input == '-gn' OR $input == 'gen'){
-        generator();
-        main();
-    }
-    elseif ($input == '-sp' OR $input == 'spam'){
-        spam();
-        main();
-    }
-    elseif ($input == '-h' OR $input == 'help'){
-        help();
-        main();
-    }
-    elseif ($input == '-a' OR $input == 'about'){
-        about();
-        main();
-    }
-    elseif ($input == 'exit' OR $input == '-e'){
-        echo"$red Exitting now$white ";
-        echo"\n";
-        exit();
-    }
-    elseif ($input == 'quit' OR $input == 'q'){
-        echo"$white Command $input Not Found\n";
-        echo"$white Type ($cyan exit$white ) to Exit Program\n\n";
-        main();
-    }
-    elseif ($input == 'bash' OR $input == '-b'){
-        @system("bash");
-        main();
-    }
-    elseif ($input == 'install'){
-        install();
-        main();
-    }
-    elseif ($input == 'adlog'){
-        logfin();
-        main();
-    }
-    elseif ($input == 'dirscan'){
-        dirscan();
-        main();
-    }
-    elseif ($input == 'shellscan'){
-        shellscan();
-        main();
-    }
-    elseif ($input == 'subscan'){
-        subdoscan();
-        main();
-    }
-    elseif ($input == 'encode'){
-        encode();
-        main();
-    }
-    elseif ($input == 'mtr'){
-        mtr();
-        main();
-    }
-    elseif ($input == 'nping'){
-        testping();
-        main();
-    }
-    elseif ($input == 'dnslookup'){
-        dnslookup();
-        main();
-    }
-    elseif ($input == 'revdns'){
-        reversedns();
-        main();
-    }
-    elseif ($input == 'whois'){
-        whois();
-        main();
-    }
-    elseif ($input == 'hostsrc'){
-        host();
-        main();
-    }
-    elseif ($input == 'revip'){
-        reverseip();
-        main();
-    }
-    elseif ($input == 'httphead'){
-        httphead();
-        main();
-    }
-    elseif ($input == 'pagelink'){
-        pagelink();
-        main();
-    }
-    elseif ($input == 'nmap'){
-        nmap();
-        main();
-    }
-    elseif ($input == 'ping'){
-        ping();
-        main();
-    }
-    elseif ($input == 'custgen'){
-        custgen();
-        main();
-    }
-    elseif ($input == 'hma'){
-        hma();
-        main();
-    }
-    elseif ($input == 'enmd4'){
-        enmd4();
-        main();
-    }
-    elseif ($input == 'enmd5'){
-        enmd5();
-        main();
-    }
-    elseif ($input == 'ensha1'){
-        ensha1();
-        main();
-    }
-    elseif ($input == 'enbase64'){
-        enbase64();
-        main();
-    }
-    elseif ($input == 'enall'){
-        enall();
-        main();
-    }
-    elseif ($input == 'smsphd'){
-        smsphd();
-        main();
-    }
-    elseif ($input == 'smstp'){
-        betaprogram();
-        main();
-    }
-    elseif ($input == 'calltp'){
-        betaprogram();
-        main();
-    }
-    elseif ($input == 'smsjd'){
-        smsjdid();
-        main();
-    }
-    elseif ($input == 'smsts'){
-        smstelkom();
-        main();
-    }
-    else{
-        echo"$white Command $input Not Found\n";
-        echo"$white Type ($cyan help$white ) to Show Help\n\n";
-        main();
-    }
-}
-
-main();
+menu();
 
 ?>
