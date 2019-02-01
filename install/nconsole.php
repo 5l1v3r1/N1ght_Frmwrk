@@ -237,7 +237,8 @@ function generator(){
     print "$okegreen\n═════════════[[$white     $date$okegreen    ]]═════════════";
     print "$okegreen\n═════════════[[$white     Generate$okegreen    ]]═════════════\n\n";
     print "$cyan 01  $red :$white  HMA License key Generator\n";
-    print "$cyan 02  $red :$white  Custom Code Generator\n\n";
+    print "$cyan 02  $red :$white  Custom Code Generator\n";
+    print "$cyan 03  $red :$white  Wifi.id Campus Generator\n\n";
     print "$cyan 00  $red :$white  Back\n";
     print "$cyan 99  $red :$white  Exit\n\n";
     $user = trim(shell_exec('whoami'));
@@ -251,6 +252,10 @@ function generator(){
     elseif ($input == '02' OR $input == '2'){
         index();
         custgen();
+    }
+    elseif ($input == '03' OR $input == '3'){
+        index();
+        wifiid();
     }
     elseif ($input == '00' OR $input == '0'){
         index();
@@ -318,6 +323,8 @@ function encode(){
     print "$cyan 05  $red :$white  Encode All Type\n\n";
     print "$cyan 00  $red :$white  Back\n";
     print "$cyan 99  $red :$white  Exit\n\n";
+    $user = trim(shell_exec('whoami'));
+    $host = trim(shell_exec('hostname'));
     echo "$okegreen [$cyan $user$red.$cyan$host$okegreen ]$white - on -$okegreen [$white Menu/Endecode/Encode$okegreen ] \n$red >$white ";
     $input = trim(fgets(STDIN));
     if ($input == '01' OR $input == '1'){
@@ -480,6 +487,34 @@ function hma(){
 		echo " ".randhma(6)."-".randhma(6)."-".randhma(6);
 		echo "\n";
 	}
+}
+
+function wifiid(){
+    include 'config.php';
+    echo "$cyan Base$red >$white ";
+    $base = trim(fgets(STDIN));
+    echo "$cyan Panjang Username$red >$white ";
+    $total = trim(fgets(STDIN));
+    echo "$cyan Nama Kampus$red >$white ";
+    $univ = trim(fgets(STDIN));
+    echo "$cyan Total Akun$red >$white ";
+    $jumlah = trim(fgets(STDIN));
+    print "\n";
+	function randwifi($panjang){
+		$karakter = '';
+		$karakter .= '1234567890'; // karakter numerik
+		$string = '';
+		for ($i=0; $i < $panjang; $i++){
+			$pos = rand(0, strlen($karakter)-1);
+			$string .= $karakter{$pos};
+		}
+		return $string;
+    }
+    for ($i=0; $i < $jumlah; $i++){
+        $acak = $base.randwifi($total-strlen($base));
+        echo "$cyan [$okegreen Username$cyan ]$red >$white ".$acak."@".$univ;print "\n";
+        echo "$cyan [$okegreen Password$cyan ]$red >$white ".$acak;print "\n\n";
+    }
 }
 
 // IP Tools
