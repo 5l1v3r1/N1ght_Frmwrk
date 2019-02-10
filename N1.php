@@ -12,7 +12,7 @@ function index(){
     print "\n";
     print "$red       _,  _,___,____, __, _,____, \n";
     print "$red      (-|\ |(-/|(-/ _,(-|__|(-|    \n";
-    print "$red       _| \|,'_|,_\__| _|  |,_|,  $purple V.6.7\n";
+    print "$red       _| \|,'_|,_\__| _|  |,_|,  $purple V.6.8\n";
     print "$red      (      (  (     (     (      \n";
     print "$yellow       ____,____, __, _,_   _,____, __, , \n";
     print "$yellow      (-|_,(-|__)(-|\/|(-|  |(-|__)( |_/  \n";
@@ -557,29 +557,57 @@ function hma(){
 
 function wifiid(){
     include 'config.php';
-    echo "$cyan Base$red >$white ";
-    $base = trim(fgets(STDIN));
-    echo "$cyan Panjang Username$red >$white ";
-    $total = trim(fgets(STDIN));
-    echo "$cyan Nama Kampus$red >$white ";
-    $univ = trim(fgets(STDIN));
-    echo "$cyan Total Akun$red >$white ";
-    $jumlah = trim(fgets(STDIN));
-    print "\n";
-	function randwifi($panjang){
-		$karakter = '';
-		$karakter .= '1234567890'; // karakter numerik
-		$string = '';
-		for ($i=0; $i < $panjang; $i++){
-			$pos = rand(0, strlen($karakter)-1);
-			$string .= $karakter{$pos};
-		}
-		return $string;
+    print "$cyan 01  $red :$white  Password like Username\n";
+    print "$cyan 02  $red :$white  Default Campus Account\n\n";
+    echo "$cyan Menu$red >$white ";
+    $input = trim(fgets(STDIN));print "\n";
+    if ($input == '01' OR $input == '1'){
+        echo "$cyan Base$red >$white ";
+        $base = trim(fgets(STDIN));
+        echo "$cyan Panjang Username$red >$white ";
+        $total = trim(fgets(STDIN));
+        echo "$cyan Nama Kampus$red >$white ";
+        $univ = trim(fgets(STDIN));
+        echo "$cyan Total Akun$red >$white ";
+        $jumlah = trim(fgets(STDIN));
+        print "\n";
+        function randwifi($panjang){
+            $karakter = '';
+            $karakter .= '1234567890';
+            $string = '';
+            for ($i=0; $i < $panjang; $i++){
+                $pos = rand(0, strlen($karakter)-1);
+                $string .= $karakter{$pos};
+            }
+            return $string;
+        }
+        for ($i=0; $i < $jumlah; $i++){
+            $acak = $base.randwifi($total-strlen($base));
+            print "$cyan [$okegreen Username$cyan ]$red >$white ".$acak."@".$univ;print "\n";
+            print "$cyan [$okegreen Password$cyan ]$red >$white ".$acak;print "\n\n";
+        }
     }
-    for ($i=0; $i < $jumlah; $i++){
-        $acak = $base.randwifi($total-strlen($base));
-        echo "$cyan [$okegreen Username$cyan ]$red >$white ".$acak."@".$univ;print "\n";
-        echo "$cyan [$okegreen Password$cyan ]$red >$white ".$acak;print "\n\n";
+    elseif ($input == '02' OR $input == '2'){
+        print "$cyan 01  $red :$white  Use Data List\n";
+        print "$cyan 02  $red :$white  Manual Input\n\n";
+        echo "$cyan Menu$red >$white ";
+        $input = trim(fgets(STDIN));
+        print "\n";
+        if ($input == '01' OR $input == '1'){
+            print "$cyan [$red !$cyan ]$yellow COMINGSOON !!\n\n";
+        }
+        elseif ($input == '02' OR $input == '2'){
+            print "$cyan NIM$red >$white ";
+            $nim = trim(fgets(STDIN));
+            print "$cyan Tahun Registrasi$red >$white ";
+            $tahun = trim(fgets(STDIN));
+            print "$cyan Tanggal Lahir$red >$white ";
+            $tanggal = trim(fgets(STDIN));
+            print "$cyan Ganjil/Genap$red >$white ";
+            $ganjilgenap = trim(fgets(STDIN));
+            print "$cyan [$okegreen Username$cyan ]$red >$white ".$nim."@ut.ac.id";print "\n";
+            print "$cyan [$okegreen Password$cyan ]$red >$white ".$tahun.$ganjilgenap.$tanggal;print "\n\n";
+        }
     }
 }
 
