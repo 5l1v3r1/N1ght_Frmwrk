@@ -238,7 +238,8 @@ function generator(){
     print "$okegreen\n═════════════[[$white     Generate$okegreen    ]]═════════════\n\n";
     print "$cyan 01  $red :$white  HMA License key Generator\n";
     print "$cyan 02  $red :$white  Custom Code Generator\n";
-    print "$cyan 03  $red :$white  Wifi.id Campus Generator\n\n";
+    print "$cyan 03  $red :$white  Wifi.id Campus Generator\n";
+    print "$cyan 04  $red :$white  Facebook UID Generator\n\n";
     print "$cyan 00  $red :$white  Back\n";
     print "$cyan 99  $red :$white  Exit\n\n";
     $user = trim(shell_exec('whoami'));
@@ -256,6 +257,10 @@ function generator(){
     elseif ($input == '03' OR $input == '3'){
         index();
         wifiid();
+    }
+    elseif ($input == '04' OR $input == '4'){
+        index();
+        fbid();
     }
     elseif ($input == '00' OR $input == '0'){
         index();
@@ -474,8 +479,8 @@ function hma(){
 	$total = trim(fgets(STDIN));
 	function randhma($panjang){
 		$karakter = '';
-		$karakter .= 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'; // karakter alfabet
-		$karakter .= '1234567890'; // karakter numerik
+		$karakter .= 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+		$karakter .= '1234567890';
 		$string = '';
 		for ($i=0; $i < $panjang; $i++){
 			$pos = rand(0, strlen($karakter)-1);
@@ -543,6 +548,32 @@ function wifiid(){
             print "$cyan [$okegreen Password$cyan ]$red >$white ".$tahun.$ganjilgenap.$tanggal;print "\n\n";
         }
     }
+}
+
+function fbid(){
+    include 'config.php';
+    $base = '1000';
+    echo "$cyan Total$red >$white ";
+    $jumlah = trim(fgets(STDIN));
+
+    function randfbid($panjang){
+        $karakter = '';
+        $karakter .= '1234567890';
+        $string = '';
+        for ($i=0; $i < $panjang; $i++){
+            $pos = rand(0, strlen($karakter)-1);
+            $string .= $karakter{$pos};
+        }
+        return $string;
+    }
+    for ($i=0; $i < $jumlah; $i++){
+        $acak = $base.randfbid(15-strlen($base))."\n";
+        $open = fopen("result/fbid.txt", 'a');
+        fwrite($open, $acak);
+        fclose($open);
+        print "$white$acak";
+    }
+    print "\n$cyan [!]==// Result reported to result/fbid.txt\n\n";
 }
 
 // IP Tools
