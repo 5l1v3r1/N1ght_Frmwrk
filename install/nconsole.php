@@ -489,9 +489,13 @@ function hma(){
 		return $string;
 	}
 	for ($i=0; $i < $total; $i++){
-		echo " ".randhma(6)."-".randhma(6)."-".randhma(6);
-		echo "\n";
-	}
+        $acak = randhma(6)."-".randhma(6)."-".randhma(6)."\n";
+        $open = fopen("result/hma.txt", 'a');
+        fwrite($open, $acak);
+        fclose($open);
+		print "$white$acak";
+    }
+    print "\n$cyan [!]==// Key generated to result/hma.txt\n\n";
 }
 
 function wifiid(){
@@ -573,7 +577,7 @@ function fbid(){
         fclose($open);
         print "$white$acak";
     }
-    print "\n$cyan [!]==// Result reported to result/fbid.txt\n\n";
+    print "\n$cyan [!]==// ID generated to result/fbid.txt\n\n";
 }
 
 // IP Tools
