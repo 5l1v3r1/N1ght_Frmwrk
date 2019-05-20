@@ -9,96 +9,28 @@ function index(){
     include 'config.php';
     $date = date('H:i:s');
     @system("clear");
+    print "$cyan\n";
+    print "  ██╗               \n";
+    print "  ╚██╗              \n";
+    print "   ╚██╗$white  これは私のものです.$cyan\n";
+    print "   ██╔╝             \n";
+    print "  ██╔╝  ███████╗    \n";
+    print "  ╚═╝   ╚══════╝    \n";
     print "\n";
-    print "$red       _,  _,___,____, __, _,____, \n";
-    print "$red      (-|\ |(-/|(-/ _,(-|__|(-|    \n";
-    print "$red       _| \|,'_|,_\__| _|  |,_|,  $purple V.6.8\n";
-    print "$red      (      (  (     (     (      \n";
-    print "$yellow       ____,____, __, _,_   _,____, __, , \n";
-    print "$yellow      (-|_,(-|__)(-|\/|(-|  |(-|__)( |_/  \n";
-    print "$yellow       _|   _|  \,_| _|,_|/\|,_|  \,_| \, \n";
-    print "$yellow      (    (     (     (     (     (      \n\n";
-}
-
-function install(){
-    include 'config.php';
-    $user = trim(shell_exec('whoami'));
-    print "\n";
-    if ($user == 'root'){
-        sleep(1);
-        @system("rm -rf /opt/N1ght/Framework");
-        @system("rm -rf /usr/bin/nconsole");
-        print "$white [$yellow *$white ]$okegreen Making Special Directory ";print ".";print ".";print ".";
-        @system("mkdir /opt/N1ght");print "$cyan [$white DONE$cyan ]";print "\n";
-        sleep(1);
-        print "$white [$yellow *$white ]$okegreen Making N1ght_Frmwrk Directory ";print ".";print ".";print ".";
-        @system("mkdir /opt/N1ght/Framework");print "$cyan [$white DONE$cyan ]";print "\n";
-        sleep(1);
-        print "$white [$yellow *$white ]$okegreen Copying Script to /opt/N1ght/Framework/ ";print ".";print ".";print ".";
-        @system("cp -r install/nconsole.php /opt/N1ght/Framework/");
-        @system("cp -r install/config.php /opt/N1ght/Framework/");print "$cyan [$white DONE$cyan ]";print "\n";
-        sleep(1);
-        print "$white [$yellow *$white ]$okegreen Copying Command to /usr/bin/ ";print ".";print ".";print ".";
-        @system("cp install/bin/nconsole /usr/bin/");print "$cyan [$white DONE$cyan ]";print "\n";
-        sleep(1);
-        print "$white [$yellow *$white ]$okegreen Setting Permission for /usr/bin/nconsole ";print ".";print ".";print ".";
-        @system("chmod +x /usr/bin/nconsole");print "$cyan [$white DONE$cyan ]";print "\n";
-        sleep(2);
-        print "\n\n";
-        print "$cyan [$white DONE$cyan ]";
-        sleep(1);
-        print "\n";
-        print "$okegreen You can using this framework by typing$white ($cyan nconsole$white )$okegreen command";
-        print "\n\n";
-    }
-    else{
-        print "$white [$red !$white ]$yellow Maybe you need to enter your$red ROOT$yellow passwd ";
-        sleep(1);
-        @system("sudo rm -rf /opt/N1ght/Framework");
-        @system("sudo rm -rf /usr/bin/nconsole");
-        print "$white [$yellow *$white ]$okegreen Making Special Directory ";print ".";print ".";print ".";
-        @system("sudo mkdir /opt/N1ght");print "$cyan [$white DONE$cyan ]";print "\n";
-        sleep(1);
-        print "$white [$yellow *$white ]$okegreen Making N1ght_Frmwrk Directory ";print ".";print ".";print ".";
-        @system("sudo mkdir /opt/N1ght/Framework");print "$cyan [$white DONE$cyan ]";print "\n";
-        sleep(1);
-        print "$white [$yellow *$white ]$okegreen Copying Script to /opt/N1ght/Framework/ ";print ".";print ".";print ".";
-        @system("sudo cp -r install/nconsole.php /opt/N1ght/Framework/");
-        @system("sudo cp -r install/config.php /opt/N1ght/Framework/");print "$cyan [$white DONE$cyan ]";print "\n";
-        sleep(1);
-        print "$white [$yellow *$white ]$okegreen Copying Command to /usr/bin/ ";print ".";print ".";print ".";
-        @system("sudo cp install/bin/nconsole /usr/bin/");print "$cyan [$white DONE$cyan ]";print "\n";
-        sleep(1);
-        print "$white [$yellow *$white ]$okegreen Setting Permission for /usr/bin/nconsole ";print ".";print ".";print ".";
-        @system("sudo chmod +x /usr/bin/nconsole");print "$cyan [$white DONE$cyan ]";print "\n";
-        sleep(2);
-        print "\n\n";
-        print "$cyan [$white DONE$cyan ]";
-        sleep(1);
-        print "\n";
-        print "$okegreen You can using this framework by typing$white ($cyan nconsole$white )$okegreen command";
-        print "\n\n";
-    }
 }
 
 // Menu
 
 function menu(){
     include 'config.php';
-    $date = date('H:i:s');
-    print "$okegreen\n═════════════[[$white     $date$okegreen    ]]═════════════";
-    print "$okegreen\n═════════════[[$white       Menu$okegreen      ]]═════════════\n\n";
-    print "$cyan 01  $red :$white  IP Tools\n";
-    print "$cyan 02  $red :$white  BruteForce\n";
-    print "$cyan 03  $red :$white  Scanner\n";
-    print "$cyan 04  $red :$white  Encode & Decode\n";
-    print "$cyan 05  $red :$white  Generator\n";
-    print "$cyan 06  $red :$white  Spammer\n\n";
-    print "$cyan 00  $red :$white  Install\n";
-    print "$cyan 99  $red :$white  Exit\n\n";
+    print "$cyan 01$red :$white IP Tools\n";
+    print "$cyan 02$red :$white Scanner\n";
+    print "$cyan 03$red :$white Crypto\n";
+    print "$cyan 04$red :$white Generator\n\n";
+    print "$cyan 99$red :$white Exit\n\n";
     $user = trim(shell_exec('whoami'));
     $host = trim(shell_exec('hostname'));
-    echo "$okegreen [$cyan $user$red.$cyan$host$okegreen ]$white - on -$okegreen [$white Menu$okegreen ] \n$red >$white ";
+    echo "$white Menu$red >$white ";
     $input = trim(fgets(STDIN));
     if ($input == '01' OR $input == '1'){
         index();
@@ -106,27 +38,15 @@ function menu(){
     }
     elseif ($input == '02' OR $input == '2'){
         index();
-        brute();
+        scan();
     }
     elseif ($input == '03' OR $input == '3'){
         index();
-        scan();
+        endecode();
     }
     elseif ($input == '04' OR $input == '4'){
         index();
-        endecode();
-    }
-    elseif ($input == '05' OR $input == '5'){
-        index();
         generator();
-    }
-    elseif ($input == '06' OR $input == '6'){
-        index();
-        spam();
-    }
-    elseif ($input == '00' OR $input == '0'){
-        index();
-        install();
     }
     elseif ($input == '99'){
         exit();
@@ -142,28 +62,17 @@ function menu(){
     }
 }
 
-function brute(){
-    include 'config.php';
-    $date = date('H:i:s');
-    print "$okegreen\n═════════════[[$white     $date$okegreen    ]]═════════════";
-    print "$okegreen\n═════════════[[$white    BruteForce$okegreen   ]]═════════════\n\n";
-    print "$yellow COMINGSOON!! \n\n";
-}
-
 function scan(){
     include 'config.php';
-    $date = date('H:i:s');
-    print "$okegreen\n═════════════[[$white     $date$okegreen    ]]═════════════";
-    print "$okegreen\n═════════════[[$white       Scan$okegreen      ]]═════════════\n\n";
-    print "$cyan 01  $red :$white  Admin Login Finder\n";
-    print "$cyan 02  $red :$white  Directory Scanner\n";
-    print "$cyan 03  $red :$white  Shell Finder\n";
-    print "$cyan 04  $red :$white  Subdomain Scanner\n\n";
-    print "$cyan 00  $red :$white  Back\n";
-    print "$cyan 99  $red :$white  Exit\n\n";
+    print "$cyan 01$red :$white Admin Login Finder\n";
+    print "$cyan 02$red :$white Directory Scanner\n";
+    print "$cyan 03$red :$white Shell Finder\n";
+    print "$cyan 04$red :$white Subdomain Scanner\n\n";
+    print "$cyan 00$red :$white Back\n";
+    print "$cyan 99$red :$white Exit\n\n";
     $user = trim(shell_exec('whoami'));
     $host = trim(shell_exec('hostname'));
-    echo "$okegreen [$cyan $user$red.$cyan$host$okegreen ]$white - on -$okegreen [$white Menu/Scan$okegreen ] \n$red >$white ";
+    echo "$white Menu/Scan$red >$white ";
     $input = trim(fgets(STDIN));
     if ($input == '01' OR $input == '1'){
         index();
@@ -196,15 +105,12 @@ function scan(){
 
 function endecode(){
     include 'config.php';
-    $date = date('H:i:s');
-    print "$okegreen\n═════════════[[$white     $date$okegreen    ]]═════════════";
-    print "$okegreen\n═════════════[[$white     Endecode$okegreen    ]]═════════════\n\n";
-    print "$cyan 01  $red :$white  Encode\n\n";
-    print "$cyan 00  $red :$white  Back\n";
-    print "$cyan 99  $red :$white  Exit\n\n";
+    print "$cyan 01$red :$white Encode\n\n";
+    print "$cyan 00$red :$white Back\n";
+    print "$cyan 99$red :$white Exit\n\n";
     $user = trim(shell_exec('whoami'));
     $host = trim(shell_exec('hostname'));
-    echo "$okegreen [$cyan $user$red.$cyan$host$okegreen ]$white - on -$okegreen [$white Menu/Crypto$okegreen ] \n$red >$white ";
+    echo "$white Menu/Crypto$red >$white ";
     $input = trim(fgets(STDIN));
     if ($input == '01' OR $input == '1'){
         index();
@@ -225,24 +131,26 @@ function endecode(){
 
 function iptools(){
     include 'config.php';
-    $date = date('H:i:s');
-    print "$okegreen\n═════════════[[$white     $date$okegreen    ]]═════════════";
-    print "$okegreen\n═════════════[[$white     IP Tools$okegreen    ]]═════════════\n\n";
-    print "$cyan 01  $red :$white  MTR Traceroute\n";
-    print "$cyan 02  $red :$white  Test Ping\n";
-    print "$cyan 03  $red :$white  DNS Lookup\n";
-    print "$cyan 04  $red :$white  Reverse DNS\n";
-    print "$cyan 05  $red :$white  Whois\n";
-    print "$cyan 06  $red :$white  Host Search\n";
-    print "$cyan 07  $red :$white  Reverse IP\n";
-    print "$cyan 08  $red :$white  HTTP Headers\n";
-    print "$cyan 09  $red :$white  Page Links\n";
-    print "$cyan 10  $red :$white  Nmap Port Scan\n\n";
-    print "$cyan 00  $red :$white  Back\n";
-    print "$cyan 99  $red :$white  Exit\n\n";
+    print "$cyan 01$red :$white MTR Traceroute\n";
+    print "$cyan 02$red :$white Test Ping\n";
+    print "$cyan 03$red :$white DNS Lookup\n";
+    print "$cyan 04$red :$white Reverse DNS\n";
+    print "$cyan 05$red :$white Whois\n";
+    print "$cyan 06$red :$white Host Search\n";
+    print "$cyan 07$red :$white Autonomous System Lookup\n";
+	print "$cyan 08$red :$white Subnet Lookup\n";
+	print "$cyan 09$red :$white Shared DNS Servers\n";
+	print "$cyan 10$red :$white Geo IP Location Lookup\n";
+	print "$cyan 11$red :$white Zone Transfer Test\n";
+    print "$cyan 12$red :$white Reverse IP\n";
+    print "$cyan 13$red :$white HTTP Headers\n";
+    print "$cyan 14$red :$white Page Links\n";
+    print "$cyan 15$red :$white Nmap Port Scan\n\n";
+    print "$cyan 00$red :$white Back\n";
+    print "$cyan 99$red :$white Exit\n\n";
     $user = trim(shell_exec('whoami'));
     $host = trim(shell_exec('hostname'));
-    echo "$okegreen [$cyan $user$red.$cyan$host$okegreen ]$white - on -$okegreen [$white Menu/IP$okegreen ] \n$red >$white ";
+    echo "$white Menu/IP$red >$white ";
     $input = trim(fgets(STDIN));
     if ($input == '01' OR $input == '1'){
         index();
@@ -270,17 +178,37 @@ function iptools(){
     }
     elseif ($input == '07' OR $input == '7'){
         index();
-        reverseip();
+        autonomous();
     }
     elseif ($input == '08' OR $input == '8'){
         index();
+        subnet();
+	}
+	elseif ($input == '09' OR $input == '9'){
+        index();
+        sharedns();
+    }
+    elseif ($input == '10'){
+        index();
+        geoip();
+	}
+	elseif ($input == '11'){
+        index();
+        zonetransfer();
+    }
+    elseif ($input == '12'){
+        index();
+        reverseip();
+    }
+    elseif ($input == '13'){
+        index();
         httphead();
     }
-    elseif ($input == '09' OR $input == '9'){
+    elseif ($input == '14'){
         index();
         pagelink();
     }
-    elseif ($input == '10'){
+    elseif ($input == '15'){
         index();
         nmap();
     }
@@ -299,18 +227,15 @@ function iptools(){
 
 function generator(){
     include 'config.php';
-    $date = date('H:i:s');
-    print "$okegreen\n═════════════[[$white     $date$okegreen    ]]═════════════";
-    print "$okegreen\n═════════════[[$white     Generate$okegreen    ]]═════════════\n\n";
-    print "$cyan 01  $red :$white  HMA License key Generator\n";
-    print "$cyan 02  $red :$white  Custom Code Generator\n";
-    print "$cyan 03  $red :$white  Wifi.id Campus Generator\n";
-    print "$cyan 04  $red :$white  Facebook UID Generator\n\n";
-    print "$cyan 00  $red :$white  Back\n";
-    print "$cyan 99  $red :$white  Exit\n\n";
+    print "$cyan 01$red :$white HMA License key Generator\n";
+    print "$cyan 02$red :$white Custom Code Generator\n";
+    print "$cyan 03$red :$white Wifi.id Campus Generator\n";
+    print "$cyan 04$red :$white Facebook UID Generator\n\n";
+    print "$cyan 00$red :$white Back\n";
+    print "$cyan 99$red :$white Exit\n\n";
     $user = trim(shell_exec('whoami'));
     $host = trim(shell_exec('hostname'));
-    echo "$okegreen [$cyan $user$red.$cyan$host$okegreen ]$white - on -$okegreen [$white Menu/Generator$okegreen ] \n$red >$white ";
+    echo "$white Menu/Generator$red >$white ";
     $input = trim(fgets(STDIN));
     if ($input == '01' OR $input == '1'){
         index();
@@ -341,62 +266,20 @@ function generator(){
     }
 }
 
-function spam(){
-    include 'config.php';
-    $date = date('H:i:s');
-    print "$okegreen\n═════════════[[$white     $date$okegreen    ]]═════════════";
-    print "$okegreen\n═════════════[[$white       Spam$okegreen      ]]═════════════\n\n";
-    print "$cyan 01  $red :$white  SMS Pizza Hut Delivery\n";
-    print "$cyan 02  $red :$white  SMS JD.ID\n";
-    print "$cyan 03  $red :$white  SMS Telkomsel\n\n";
-    print "$cyan 00  $red :$white  Back\n";
-    print "$cyan 99  $red :$white  Exit\n\n";
-    $user = trim(shell_exec('whoami'));
-    $host = trim(shell_exec('hostname'));
-    echo "$okegreen [$cyan $user$red.$cyan$host$okegreen ]$white - on -$okegreen [$white Menu/Spam$okegreen ] \n$red >$white ";
-    $input = trim(fgets(STDIN));
-    if ($input == '01' OR $input == '1'){
-        index();
-        smsphd();
-    }
-    elseif ($input == '02' OR $input == '2'){
-        index();
-        smsjd();
-    }
-    elseif ($input == '03' OR $input == '3'){
-        index();
-        smstelkom();
-    }
-    elseif ($input == '00' OR $input == '0'){
-        index();
-        menu();
-    }
-    elseif ($input == '99'){
-        exit();
-    }
-    else{
-        index();
-        spam();
-    }
-}
-
 // Encode Tools
 
 function encode(){
     include 'config.php';
-    $date = date('H:i:s');
-    print "$okegreen\n═════════════[[$white     $date$okegreen    ]]═════════════";
-    print "$okegreen\n═════════════[[$white      Encode$okegreen     ]]═════════════\n\n";
-    print "$cyan 01  $red :$white  Encode Md4\n";
-    print "$cyan 02  $red :$white  Encode Md5\n";
-    print "$cyan 03  $red :$white  Encode Sha1\n";
-    print "$cyan 04  $red :$white  Encode Base64\n";
-    print "$cyan 05  $red :$white  Encode All Type\n\n";
-    print "$cyan 00  $red :$white  Back\n";
-    print "$cyan 99  $red :$white  Exit\n\n";
+    print "$cyan 01$red :$white Encode Md4\n";
+    print "$cyan 02$red :$white Encode Md5\n";
+    print "$cyan 03$red :$white Encode Sha1\n";
+    print "$cyan 04$red :$white Encode Base64\n";
+    print "$cyan 05$red :$white Encode All Type\n\n";
+    print "$cyan 00$red :$white Back\n";
+    print "$cyan 99$red :$white Exit\n\n";
     $user = trim(shell_exec('whoami'));
     $host = trim(shell_exec('hostname'));
-    echo "$okegreen [$cyan $user$red.$cyan$host$okegreen ]$white - on -$okegreen [$white Menu/Endecode/Encode$okegreen ] \n$red >$white ";
+    echo "$white Menu/Endecode/Encode$red >$white ";
     $input = trim(fgets(STDIN));
     if ($input == '01' OR $input == '1'){
         echo "$cyan Input Kata$red >$white ";
@@ -566,8 +449,8 @@ function hma(){
 
 function wifiid(){
     include 'config.php';
-    print "$cyan 01  $red :$white  Password like Username\n";
-    print "$cyan 02  $red :$white  Default Campus Account\n\n";
+    print "$cyan 01$red :$white Password like Username\n";
+    print "$cyan 02$red :$white Default Campus Account\n\n";
     echo "$cyan Menu$red >$white ";
     $input = trim(fgets(STDIN));print "\n";
     if ($input == '01' OR $input == '1'){
@@ -597,8 +480,8 @@ function wifiid(){
         }
     }
     elseif ($input == '02' OR $input == '2'){
-        print "$cyan 01  $red :$white  Use Data List\n";
-        print "$cyan 02  $red :$white  Manual Input\n\n";
+        print "$cyan 01$red :$white Use Data List\n";
+        print "$cyan 02$red :$white Manual Input\n\n";
         echo "$cyan Menu$red >$white ";
         $input = trim(fgets(STDIN));
         print "\n";
@@ -649,183 +532,318 @@ function fbid(){
 // IP Tools
 
 function dnslookup(){
+    @system("mkdir result/dnslookup");
+    index();
     include 'config.php';
-    echo "$cyan Target$red >$white ";
+    print "$cyan Target$red >$white ";
     $target = trim(fgets(STDIN));
+    print "\n";
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-	curl_setopt($ch, CURLOPT_URL,'https://api.hackertarget.com/reversedns/?q='.$target);
+	curl_setopt($ch, CURLOPT_URL,'https://api.hackertarget.com/dnslookup/?q='.$target);
 	$result=curl_exec($ch);
 	curl_close($ch);
-	$isi = "[ ".date('d-m-Y H:i:s')." ]-[ ".$target." ]-[ N1ght_Frmwrk-dnslookup ]\n\n".$result."	";
-	$open = fopen("result/dnslookup-$target.txt", 'a');
+	$isi = "[ ".date('d-m-Y H:i:s')." ]-[ ".$target." ]-[ dnslookup ]\n\n".$result."	";
+	$open = fopen("result/dnslookup/$target.txt", 'a');
 	fwrite($open, $isi);
 	fclose($open);
 	print $result;
-	echo "\n\n$cyan [!]==// Result reported to result/dnslookup-$target.txt\n\n";
+	print "\n$cyan [$yellow *$cyan ]$white Result reported to result/dnslookup/$target.txt\n\n";
 }
 
 function httphead(){
+    @system("mkdir result/headers");
+    index();
     include 'config.php';
-    echo "$cyan Target$red >$white ";
+    print "$cyan Target$red >$white ";
     $target = trim(fgets(STDIN));
+    print "\n";
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 	curl_setopt($ch, CURLOPT_URL,'https://api.hackertarget.com/httpheaders/?q='.$target);
 	$result=curl_exec($ch);
 	curl_close($ch);
-	$isi = "[ ".date('d-m-Y H:i:s')." ]-[ ".$target." ]-[ N1ght_Frmwrk-headers ]\n\n".$result."	";
-	$open = fopen("result/headers-$target.txt", 'a');
+	$isi = "[ ".date('d-m-Y H:i:s')." ]-[ ".$target." ]-[ headers ]\n\n".$result."	";
+	$open = fopen("result/headers/$target.txt", 'a');
 	fwrite($open, $isi);
 	fclose($open);
 	print $result;
-	echo "\n\n$cyan [!]==// Result reported to result/headers-$target.txt\n\n";
+	print "\n$cyan [$yellow *$cyan ]$white Result reported to result/headers/$target.txt\n\n";
 }
 
 function host(){
+    @system("mkdir result/host");
+    index();
     include 'config.php';
-    echo "$cyan Target$red >$white ";
+    print "$cyan Target$red >$white ";
     $target = trim(fgets(STDIN));
+    print "\n";
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 	curl_setopt($ch, CURLOPT_URL,'https://api.hackertarget.com/hostsearch/?q='.$target);
 	$result=curl_exec($ch);
 	curl_close($ch);
-	$isi = "[ ".date('d-m-Y H:i:s')." ]-[ ".$target." ]-[ N1ght_Frmwrk-host ]\n\n".$result."	";
-	$open = fopen("result/host-$target.txt", 'a');
+	$isi = "[ ".date('d-m-Y H:i:s')." ]-[ ".$target." ]-[ host ]\n\n".$result."	";
+	$open = fopen("result/host/$target.txt", 'a');
 	fwrite($open, $isi);
 	fclose($open);
 	print $result;
-	echo "\n\n$cyan [!]==// Result reported to result/host-$target.txt\n\n";
+	print "\n$cyan [$yellow *$cyan ]$white Result reported to result/host/$target.txt\n\n";
 }
 
 function mtr(){
+    @system("mkdir result/mtr");
+    index();
     include 'config.php';
-    echo "$cyan Target$red >$white ";
+    print "$cyan Target$red >$white ";
     $target = trim(fgets(STDIN));
+    print "\n";
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 	curl_setopt($ch, CURLOPT_URL,'https://api.hackertarget.com/mtr/?q='.$target);
 	$result=curl_exec($ch);
 	curl_close($ch);
-	$isi = "[ ".date('d-m-Y H:i:s')." ]-[ ".$target." ]-[ N1ght_Frmwrk-mtr ]\n\n".$result."	";
-	$open = fopen("result/mtr-$target.txt", 'a');
+	$isi = "[ ".date('d-m-Y H:i:s')." ]-[ ".$target." ]-[ mtr ]\n\n".$result."	";
+	$open = fopen("result/mtr/$target.txt", 'a');
 	fwrite($open, $isi);
 	fclose($open);
 	print $result;
-	echo "\n\n$cyan [!]==// Result reported to result/mtr-$target.txt\n\n";
+	print "\n$cyan [$yellow *$cyan ]$white Result reported to result/mtr/$target.txt\n\n";
 }
 
 function nmap(){
+    @system("mkdir result/nmap");
+    index();
     include 'config.php';
-    echo "$cyan Target$red >$white ";
+    print "$cyan Target$red >$white ";
     $target = trim(fgets(STDIN));
+    print "\n";
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 	curl_setopt($ch, CURLOPT_URL,'https://api.hackertarget.com/nmap/?q='.$target);
 	$result=curl_exec($ch);
 	curl_close($ch);
-	$isi = "[ ".date('d-m-Y H:i:s')." ]-[ ".$target." ]-[ N1ght_Frmwrk-nmap ]\n\n".$result."	";
-	$open = fopen("result/nmap-$target.txt", 'a');
+	$isi = "[ ".date('d-m-Y H:i:s')." ]-[ ".$target." ]-[ nmap ]\n\n".$result."	";
+	$open = fopen("result/nmap/$target.txt", 'a');
 	fwrite($open, $isi);
 	fclose($open);
-	print $result;
-	echo "\n\n$cyan [!]==// Result reported to result/nmap-$target.txt\n\n";
+    print $result;
+	print "\n$cyan [$yellow *$cyan ]$white Result reported to result/nmap/$target.txt\n\n";
 }
 
 function pagelink(){
+    @system("mkdir result/links");
+    index();
     include 'config.php';
-    echo "$cyan Target$red >$white ";
+    print "$cyan Target$red >$white ";
     $target = trim(fgets(STDIN));
+    print "\n";
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 	curl_setopt($ch, CURLOPT_URL,'https://api.hackertarget.com/pagelinks/?q='.$target);
 	$result=curl_exec($ch);
 	curl_close($ch);
-	$isi = "[ ".date('d-m-Y H:i:s')." ]-[ ".$target." ]-[ N1ght_Frmwrk-links ]\n\n".$result."	";
-	$open = fopen("result/links-$target.txt", 'a');
+	$isi = "[ ".date('d-m-Y H:i:s')." ]-[ ".$target." ]-[ links ]\n\n".$result."	";
+	$open = fopen("result/links/$target.txt", 'a');
 	fwrite($open, $isi);
 	fclose($open);
 	print $result;
-	echo "\n\n$cyan [!]==// Result reported to result/links-$target.txt\n\n";
+	print "\n$cyan [$yellow *$cyan ]$white Result reported to result/links/$target.txt\n\n";
+}
+
+function zonetransfer(){
+    @system("mkdir result/zonetransfer");
+    index();
+    include 'config.php';
+    print "$cyan Target$red >$white ";
+    $target = trim(fgets(STDIN));
+    print "\n";
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch, CURLOPT_URL,'https://api.hackertarget.com/zonetransfer/?q='.$target);
+	$result=curl_exec($ch);
+	curl_close($ch);
+	$isi = "[ ".date('d-m-Y H:i:s')." ]-[ ".$target." ]-[ zonetransfer ]\n\n".$result."	";
+	$open = fopen("result/zonetransfer/$target.txt", 'a');
+	fwrite($open, $isi);
+	fclose($open);
+	print $result;
+	print "\n$cyan [$yellow *$cyan ]$white Result reported to result/zonetransfer/$target.txt\n\n";
+}
+
+function sharedns(){
+    @system("mkdir result/sharedns");
+    index();
+    include 'config.php';
+    print "$cyan Target$red >$white ";
+    $target = trim(fgets(STDIN));
+    print "\n";
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch, CURLOPT_URL,'https://api.hackertarget.com/findshareddns/?q='.$target);
+	$result=curl_exec($ch);
+	curl_close($ch);
+	$isi = "[ ".date('d-m-Y H:i:s')." ]-[ ".$target." ]-[ sharedns ]\n\n".$result."	";
+	$open = fopen("result/sharedns/$target.txt", 'a');
+	fwrite($open, $isi);
+	fclose($open);
+	print $result;
+	print "\n$cyan [$yellow *$cyan ]$white Result reported to result/sharedns/$target.txt\n\n";
+}
+
+function subnet(){
+    @system("mkdir result/subnet");
+    index();
+    include 'config.php';
+    print "$cyan Target$red >$white ";
+    $target = trim(fgets(STDIN));
+    print "\n";
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch, CURLOPT_URL,'https://api.hackertarget.com/subnetcalc/?q='.$target);
+	$result=curl_exec($ch);
+	curl_close($ch);
+	$isi = "[ ".date('d-m-Y H:i:s')." ]-[ ".$target." ]-[ subnet ]\n\n".$result."	";
+	$open = fopen("result/subnet/$target.txt", 'a');
+	fwrite($open, $isi);
+	fclose($open);
+	print $result;
+	print "\n$cyan [$yellow *$cyan ]$white Result reported to result/subnet/$target.txt\n\n";
+}
+
+function autonomous(){
+    @system("mkdir result/autonomous");
+    index();
+    include 'config.php';
+    print "$cyan Target$red >$white ";
+    $target = trim(fgets(STDIN));
+    print "\n";
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch, CURLOPT_URL,'https://api.hackertarget.com/aslookup/?q='.$target);
+	$result=curl_exec($ch);
+	curl_close($ch);
+	$isi = "[ ".date('d-m-Y H:i:s')." ]-[ ".$target." ]-[ autonomous ]\n\n".$result."	";
+	$open = fopen("result/autonomous/$target.txt", 'a');
+	fwrite($open, $isi);
+	fclose($open);
+	print $result;
+	print "\n$cyan [$yellow *$cyan ]$white Result reported to result/autonomous/$target.txt\n\n";
+}
+
+function geoip(){
+    @system("mkdir result/geoip");
+    index();
+    include 'config.php';
+    print "$cyan Target$red >$white ";
+    $target = trim(fgets(STDIN));
+    print "\n";
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch, CURLOPT_URL,'https://api.hackertarget.com/geoip/?q='.$target);
+	$result=curl_exec($ch);
+	curl_close($ch);
+	$isi = "[ ".date('d-m-Y H:i:s')." ]-[ ".$target." ]-[ geoip ]\n\n".$result."	";
+	$open = fopen("result/geoip/$target.txt", 'a');
+	fwrite($open, $isi);
+	fclose($open);
+	print $result;
+	print "\n$cyan [$yellow *$cyan ]$white Result reported to result/geoip/$target.txt\n\n";
 }
 
 function reversedns(){
+    @system("mkdir result/reversedns");
+    index();
     include 'config.php';
-    echo "$cyan Target$red >$white ";
+    print "$cyan Target$red >$white ";
     $target = trim(fgets(STDIN));
+    print "\n";
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 	curl_setopt($ch, CURLOPT_URL,'https://api.hackertarget.com/reversedns/?q='.$target);
 	$result=curl_exec($ch);
 	curl_close($ch);
-	$isi = "[ ".date('d-m-Y H:i:s')." ]-[ ".$target." ]-[ N1ght_Frmwrk-reversedns ]\n\n".$result."	";
-	$open = fopen("result/reversedns-$target.txt", 'a');
+	$isi = "[ ".date('d-m-Y H:i:s')." ]-[ ".$target." ]-[ reversedns ]\n\n".$result."	";
+	$open = fopen("result/reversedns/$target.txt", 'a');
 	fwrite($open, $isi);
 	fclose($open);
 	print $result;
-	echo "\n\n$cyan [!]==// Result reported to result/reversedns-$target.txt\n\n";
+	print "\n$cyan [$yellow *$cyan ]$white Result reported to result/reversedns/$target.txt\n\n";
 }
 
 function reverseip(){
+    @system("mkdir result/reverseip");
+    index();
     include 'config.php';
-    echo "$cyan Target$red >$white ";
+    print "$cyan Target$red >$white ";
     $target = trim(fgets(STDIN));
+    print "\n";
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-	curl_setopt($ch, CURLOPT_URL,'https://api.hackertarget.com/reverseip/?q='.$target);
+	curl_setopt($ch, CURLOPT_URL,'https://api.hackertarget.com/reverseiplookup/?q='.$target);
 	$result=curl_exec($ch);
 	curl_close($ch);
-	$isi = "[ ".date('d-m-Y H:i:s')." ]-[ ".$target." ]-[ N1ght_Frmwrk-reverseip ]\n\n".$result."	";
-	$open = fopen("result/reverseip-$target.txt", 'a');
+	$isi = "[ ".date('d-m-Y H:i:s')." ]-[ ".$target." ]-[ reverseip ]\n\n".$result."	";
+	$open = fopen("result/reverseip/$target.txt", 'a');
 	fwrite($open, $isi);
 	fclose($open);
 	print $result;
-	echo "\n\n$cyan [!]==// Result reported to result/reverseip-$target.txt\n\n";
+	print "\n$cyan [$yellow *$cyan ]$white Result reported to result/reverseip/$target.txt\n\n";
 }
 
 function testping(){
+    @system("mkdir result/testping");
+    index();
     include 'config.php';
-    echo "$cyan Target$red >$white ";
+    print "$cyan Target$red >$white ";
     $target = trim(fgets(STDIN));
+    print "\n";
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 	curl_setopt($ch, CURLOPT_URL,'https://api.hackertarget.com/nping/?q='.$target);
 	$result=curl_exec($ch);
 	curl_close($ch);
-	$isi = "[ ".date('d-m-Y H:i:s')." ]-[ ".$target." ]-[ N1ght_Frmwrk-testping ]\n\n".$result."	";
-	$open = fopen("result/testping-$target.txt", 'a');
+	$isi = "[ ".date('d-m-Y H:i:s')." ]-[ ".$target." ]-[ testping ]\n\n".$result."	";
+	$open = fopen("result/testping/$target.txt", 'a');
 	fwrite($open, $isi);
 	fclose($open);
 	print $result;
-	echo "\n\n$cyan [!]==// Result reported to result/testping-$target.txt\n\n";
+	print "\n$cyan [$yellow *$cyan ]$white Result reported to result/testping/$target.txt\n\n";
 }
 
 function whois(){
+    @system("mkdir result/whois");
+    index();
     include 'config.php';
-    echo "$cyan Target$red >$white ";
+    print "$cyan Target$red >$white ";
     $target = trim(fgets(STDIN));
+    print "\n";
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 	curl_setopt($ch, CURLOPT_URL,'https://api.hackertarget.com/whois/?q='.$target);
 	$result=curl_exec($ch);
 	curl_close($ch);
-	$isi = "[ ".date('d-m-Y H:i:s')." ]-[ ".$target." ]-[ N1ght_Frmwrk-whois ]\n\n".$result."	";
-	$open = fopen("result/whois-$target.txt", 'a');
+	$isi = "[ ".date('d-m-Y H:i:s')." ]-[ ".$target." ]-[ whois ]\n\n".$result."	";
+	$open = fopen("result/whois/$target.txt", 'a');
 	fwrite($open, $isi);
 	fclose($open);
 	print $result;
-	echo "\n\n$cyan [!]==// Result reported to result/whois-$target.txt\n\n";
+	print "\n$cyan [$yellow *$cyan ]$white Result reported to result/whois/$target.txt\n\n";
 }
 
 // Scanner Tools
@@ -1019,119 +1037,6 @@ function subdoscan(){
                 }
         }
     echo "\n\n$cyan [!]==// Result OK reported to result/subdo-$target.txt\n\n $white ";
-}
-
-// Spammer Tools
-
-function jdid($no, $jum, $wait){
-    $x = 0; 
-    while($x < $jum) {
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL,"http://sc.jd.id/phone/sendPhoneSms");
-        curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_POSTFIELDS,"phone=".$no."&smsType=1");
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-        curl_setopt($ch, CURLOPT_REFERER, 'http://sc.jd.id/phone/bindingPhone.html');
-        curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36');
-        curl_exec ($ch);
-        print ".";
-        curl_close ($ch);
-        sleep($wait);
-        $x++;
-        flush();
-    }
-}
-
-function smsjdid(){
-    include 'config.php';
-    echo "$cyan Target$red >$white ";
-    $nomor = trim(fgets(STDIN));
-    echo "$cyan Jumlah$red >$white ";
-    $jumlah = trim(fgets(STDIN));
-    echo "$cyan Delay$red >$white ";
-    $jeda = trim(fgets(STDIN));
-    print "\n";
-    print "$yellow Processing";
-    jdid($nomor, $jumlah, $jeda);
-    print "\n";
-    print "$cyan Done !!\n\n";
-}
-
-function phd($no, $jum, $wait){
-    $x = 0; 
-    while($x < $jum) {
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL,"https://www.phd.co.id/en/users/sendOTP");
-        curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_POSTFIELDS,"phone_number=".$no);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-        curl_setopt($ch, CURLOPT_REFERER, 'https://www.phd.co.id/en/users/createnewuser');
-        curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36');
-        curl_exec ($ch);
-        print ".";
-        curl_close ($ch);
-        sleep($wait);
-        $x++;
-        flush();
-    }
-}
-
-function smsphd(){
-    include 'config.php';
-    echo "$cyan Target$red >$white ";
-    $nomor = trim(fgets(STDIN));
-    echo "$cyan Jumlah$red >$white ";
-    $jumlah = trim(fgets(STDIN));
-    echo "$cyan Delay$red >$white ";
-    $jeda = trim(fgets(STDIN));
-    print "\n";
-    print "$yellow Processing";
-    phd($nomor, $jumlah, $jeda);
-    print "\n";
-    print "$cyan Done !!\n\n";
-}
-
-function telkom($no, $jum, $wait){
-    $x = 0; 
-    while($x < $jum) {
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL,"https://tdwidm.telkomsel.com/passwordless/start");
-        curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_POSTFIELDS,"phone_number=%2B".$no."&connection=sms");
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-        curl_setopt($ch, CURLOPT_REFERER, 'https://my.telkomsel.com/');
-        curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36');
-        curl_exec ($ch);
-        print ".";
-        curl_close ($ch);
-        sleep($wait);
-        $x++;
-        flush();
-    }
-}
-
-function smstelkom(){
-    include 'config.php';
-    echo "$cyan Target$red >$white ";
-    $nomor = trim(fgets(STDIN));
-    echo "$cyan Jumlah$red >$white ";
-    $jumlah = trim(fgets(STDIN));
-    echo "$cyan Delay$red >$white ";
-    $jeda = trim(fgets(STDIN));
-    print "\n";
-    print "$yellow Processing";
-    telkom($nomor, $jumlah, $jeda);
-    print "\n";
-    print "$cyan Done !!\n\n";
 }
 
 index();
