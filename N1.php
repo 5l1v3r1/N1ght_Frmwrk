@@ -28,8 +28,6 @@ function menu(){
     print "$cyan 03$red :$white Crypto\n";
     print "$cyan 04$red :$white Generator\n\n";
     print "$cyan 99$red :$white Exit\n\n";
-    $user = trim(shell_exec('whoami'));
-    $host = trim(shell_exec('hostname'));
     echo "$white Menu$red >$white ";
     $input = trim(fgets(STDIN));
     if ($input == '01' OR $input == '1'){
@@ -70,8 +68,6 @@ function scan(){
     print "$cyan 04$red :$white Subdomain Scanner\n\n";
     print "$cyan 00$red :$white Back\n";
     print "$cyan 99$red :$white Exit\n\n";
-    $user = trim(shell_exec('whoami'));
-    $host = trim(shell_exec('hostname'));
     echo "$white Menu/Scan$red >$white ";
     $input = trim(fgets(STDIN));
     if ($input == '01' OR $input == '1'){
@@ -108,8 +104,6 @@ function endecode(){
     print "$cyan 01$red :$white Encode\n\n";
     print "$cyan 00$red :$white Back\n";
     print "$cyan 99$red :$white Exit\n\n";
-    $user = trim(shell_exec('whoami'));
-    $host = trim(shell_exec('hostname'));
     echo "$white Menu/Crypto$red >$white ";
     $input = trim(fgets(STDIN));
     if ($input == '01' OR $input == '1'){
@@ -148,8 +142,6 @@ function iptools(){
     print "$cyan 15$red :$white Nmap Port Scan\n\n";
     print "$cyan 00$red :$white Back\n";
     print "$cyan 99$red :$white Exit\n\n";
-    $user = trim(shell_exec('whoami'));
-    $host = trim(shell_exec('hostname'));
     echo "$white Menu/IP$red >$white ";
     $input = trim(fgets(STDIN));
     if ($input == '01' OR $input == '1'){
@@ -233,8 +225,6 @@ function generator(){
     print "$cyan 04$red :$white Facebook UID Generator\n\n";
     print "$cyan 00$red :$white Back\n";
     print "$cyan 99$red :$white Exit\n\n";
-    $user = trim(shell_exec('whoami'));
-    $host = trim(shell_exec('hostname'));
     echo "$white Menu/Generator$red >$white ";
     $input = trim(fgets(STDIN));
     if ($input == '01' OR $input == '1'){
@@ -277,8 +267,6 @@ function encode(){
     print "$cyan 05$red :$white Encode All Type\n\n";
     print "$cyan 00$red :$white Back\n";
     print "$cyan 99$red :$white Exit\n\n";
-    $user = trim(shell_exec('whoami'));
-    $host = trim(shell_exec('hostname'));
     echo "$white Menu/Endecode/Encode$red >$white ";
     $input = trim(fgets(STDIN));
     if ($input == '01' OR $input == '1'){
