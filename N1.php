@@ -1,7 +1,12 @@
 <?php
 
 include 'config.php';
-@system("mkdir result");
+
+if (file_exists("result")){
+}
+else{
+    @system("mkdir result");
+}
 
 // Banner
 
@@ -55,7 +60,9 @@ function menu(){
         menu();
     }
     else{
-        index();
+        print "\n";
+        @system("$input");
+        print "\n";
         menu();
     }
 }
@@ -93,8 +100,15 @@ function scan(){
     elseif ($input == '99'){
         exit();
     }
-    else{
+    elseif ($input == 'bash'){
+        @system("bash");
         index();
+        scan();
+    }
+    else{
+        print "\n";
+        @system("$input");
+        print "\n";
         scan();
     }
 }
@@ -117,8 +131,15 @@ function endecode(){
     elseif ($input == '99'){
         exit();
     }
-    else{
+    elseif ($input == 'bash'){
+        @system("bash");
         index();
+        endecode();
+    }
+    else{
+        print "\n";
+        @system("$input");
+        print "\n";
         endecode();
     }
 }
@@ -211,8 +232,15 @@ function iptools(){
     elseif ($input == '99'){
         exit();
     }
-    else{
+    elseif ($input == 'bash'){
+        @system("bash");
         index();
+        iptools();
+    }
+    else{
+        print "\n";
+        @system("$input");
+        print "\n";
         iptools();
     }
 }
@@ -250,8 +278,15 @@ function generator(){
     elseif ($input == '99'){
         exit();
     }
-    else{
+    elseif ($input == 'bash'){
+        @system("bash");
         index();
+        generator();
+    }
+    else{
+        print "\n";
+        @system("$input");
+        print "\n";
         generator();
     }
 }
@@ -267,7 +302,7 @@ function encode(){
     print "$cyan 05$red :$white Encode All Type\n\n";
     print "$cyan 00$red :$white Back\n";
     print "$cyan 99$red :$white Exit\n\n";
-    echo "$white Menu/Endecode/Encode$red >$white ";
+    echo "$white Menu/Crypto/Encode$red >$white ";
     $input = trim(fgets(STDIN));
     if ($input == '01' OR $input == '1'){
         echo "$cyan Input Kata$red >$white ";
@@ -305,8 +340,15 @@ function encode(){
     elseif ($input == '99'){
         exit();
     }
-    else{
+    elseif ($input == 'bash'){
+        @system("bash");
         index();
+        encode();
+    }
+    else{
+        print "\n";
+        @system("$input");
+        print "\n";
         encode();
     }
     print "\n\n";
@@ -432,7 +474,7 @@ function hma(){
         fclose($open);
 		print "$white$acak";
     }
-    print "\n$cyan [!]==// Key generated to result/hma.txt\n\n";
+    print "$cyan [$yellow *$cyan ]$white Key generated to result/hma.txt\n\n";
 }
 
 function wifiid(){
@@ -514,13 +556,17 @@ function fbid(){
         fclose($open);
         print "$white$acak";
     }
-    print "\n$cyan [!]==// ID generated to result/fbid.txt\n\n";
+    print "$cyan [$yellow *$cyan ]$white ID generated to result/fbid.txt\n\n";
 }
 
 // IP Tools
 
 function dnslookup(){
-    @system("mkdir result/dnslookup");
+    if (file_exists("result/dnslookup")){
+    }
+    else{
+        @system("mkdir result/dnslookup");
+    }
     index();
     include 'config.php';
     print "$cyan Target$red >$white ";
@@ -541,7 +587,11 @@ function dnslookup(){
 }
 
 function httphead(){
-    @system("mkdir result/headers");
+    if (file_exists("result/headers")){
+    }
+    else{
+        @system("mkdir result/headers");
+    }
     index();
     include 'config.php';
     print "$cyan Target$red >$white ";
@@ -562,7 +612,11 @@ function httphead(){
 }
 
 function host(){
-    @system("mkdir result/host");
+    if (file_exists("result/host")){
+    }
+    else{
+        @system("mkdir result/host");
+    }
     index();
     include 'config.php';
     print "$cyan Target$red >$white ";
@@ -583,7 +637,11 @@ function host(){
 }
 
 function mtr(){
-    @system("mkdir result/mtr");
+    if (file_exists("result/mtr")){
+    }
+    else{
+        @system("mkdir result/mtr");
+    }
     index();
     include 'config.php';
     print "$cyan Target$red >$white ";
@@ -604,7 +662,11 @@ function mtr(){
 }
 
 function nmap(){
-    @system("mkdir result/nmap");
+    if (file_exists("result/nmap")){
+    }
+    else{
+        @system("mkdir result/nmap");
+    }
     index();
     include 'config.php';
     print "$cyan Target$red >$white ";
@@ -625,7 +687,11 @@ function nmap(){
 }
 
 function pagelink(){
-    @system("mkdir result/links");
+    if (file_exists("result/links")){
+    }
+    else{
+        @system("mkdir result/links");
+    }
     index();
     include 'config.php';
     print "$cyan Target$red >$white ";
@@ -646,7 +712,11 @@ function pagelink(){
 }
 
 function zonetransfer(){
-    @system("mkdir result/zonetransfer");
+    if (file_exists("result/zonetransfer")){
+    }
+    else{
+        @system("mkdir result/zonetransfer");
+    }
     index();
     include 'config.php';
     print "$cyan Target$red >$white ";
@@ -667,7 +737,11 @@ function zonetransfer(){
 }
 
 function sharedns(){
-    @system("mkdir result/sharedns");
+    if (file_exists("result/sharedns")){
+    }
+    else{
+        @system("mkdir result/sharedns");
+    }
     index();
     include 'config.php';
     print "$cyan Target$red >$white ";
@@ -688,7 +762,11 @@ function sharedns(){
 }
 
 function subnet(){
-    @system("mkdir result/subnet");
+    if (file_exists("result/subnet")){
+    }
+    else{
+        @system("mkdir result/subnet");
+    }
     index();
     include 'config.php';
     print "$cyan Target$red >$white ";
@@ -709,7 +787,11 @@ function subnet(){
 }
 
 function autonomous(){
-    @system("mkdir result/autonomous");
+    if (file_exists("result/autonomous")){
+    }
+    else{
+        @system("mkdir result/autonomous");
+    }
     index();
     include 'config.php';
     print "$cyan Target$red >$white ";
@@ -730,7 +812,11 @@ function autonomous(){
 }
 
 function geoip(){
-    @system("mkdir result/geoip");
+    if (file_exists("result/geoip")){
+    }
+    else{
+        @system("mkdir result/geoip");
+    }
     index();
     include 'config.php';
     print "$cyan Target$red >$white ";
@@ -751,7 +837,11 @@ function geoip(){
 }
 
 function reversedns(){
-    @system("mkdir result/reversedns");
+    if (file_exists("result/reversedns")){
+    }
+    else{
+        @system("mkdir result/reversedns");
+    }
     index();
     include 'config.php';
     print "$cyan Target$red >$white ";
@@ -772,7 +862,11 @@ function reversedns(){
 }
 
 function reverseip(){
-    @system("mkdir result/reverseip");
+    if (file_exists("result/reverseip")){
+    }
+    else{
+        @system("mkdir result/reverseip");
+    }
     index();
     include 'config.php';
     print "$cyan Target$red >$white ";
@@ -793,7 +887,11 @@ function reverseip(){
 }
 
 function testping(){
-    @system("mkdir result/testping");
+    if (file_exists("result/testping")){
+    }
+    else{
+        @system("mkdir result/testping");
+    }
     index();
     include 'config.php';
     print "$cyan Target$red >$white ";
@@ -814,7 +912,11 @@ function testping(){
 }
 
 function whois(){
-    @system("mkdir result/whois");
+    if (file_exists("result/whois")){
+    }
+    else{
+        @system("mkdir result/whois");
+    }
     index();
     include 'config.php';
     print "$cyan Target$red >$white ";
@@ -882,7 +984,7 @@ function dirscan(){
                     print "\n$red  [".date('H:m:s')."]==//$white $log =>$red ERROR";
                 }
         }
-    echo "\n\n$cyan [!]==// Result OK reported to result/dirscan-$target.txt\n\n $white ";
+    echo "\n$cyan [$yellow *$cyan ]$white Result OK reported to result/dirscan-$target.txt\n\n $white ";
 }
 
 function logfin(){
@@ -931,7 +1033,7 @@ function logfin(){
                 print "\n$red  [".date('H:m:s')."]==//$white $log =>$red ERROR";
             }
         }
-    echo "\n\n$cyan [!]==// Result OK reported to result/adlog-$target.txt\n\n $white ";
+    echo "\n$cyan [$yellow *$cyan ]$white Result OK reported to result/adlog-$target.txt\n\n $white ";
 }
 
 function shellscan(){
@@ -980,7 +1082,7 @@ function shellscan(){
                     print "\n$red  [".date('H:m:s')."]==//$white $log =>$red ERROR";
                 }
         }
-    echo "\n\n$cyan [!]==// Result OK reported to result/shellscan-$target.txt\n\n $white ";
+    echo "\n$cyan [$yellow *$cyan ]$white Result OK reported to result/shellscan-$target.txt\n\n $white ";
 }
 
 function subdoscan(){
@@ -1024,7 +1126,7 @@ function subdoscan(){
                     print "\n$red  [".date('H:m:s')."]==//$white $log =>$red ERROR";
                 }
         }
-    echo "\n\n$cyan [!]==// Result OK reported to result/subdo-$target.txt\n\n $white ";
+    echo "\n$cyan [$yellow *$cyan ]$white Result OK reported to result/subdo-$target.txt\n\n $white ";
 }
 
 index();
