@@ -30,8 +30,7 @@ function menu(){
     include 'config.php';
     print "$cyan 01$red :$white IP Tools\n";
     print "$cyan 02$red :$white Scanner\n";
-    print "$cyan 03$red :$white Crypto\n";
-    print "$cyan 04$red :$white Generator\n\n";
+    print "$cyan 03$red :$white Encode / Decode\n\n";
     print "$cyan 99$red :$white Exit\n\n";
     echo "$white Menu$red >$white ";
     $input = trim(fgets(STDIN));
@@ -46,10 +45,6 @@ function menu(){
     elseif ($input == '03' OR $input == '3'){
         index();
         endecode();
-    }
-    elseif ($input == '04' OR $input == '4'){
-        index();
-        generator();
     }
     elseif ($input == '99'){
         exit();
@@ -118,7 +113,7 @@ function endecode(){
     print "$cyan 01$red :$white Encode\n\n";
     print "$cyan 00$red :$white Back\n";
     print "$cyan 99$red :$white Exit\n\n";
-    echo "$white Menu/Crypto$red >$white ";
+    echo "$white Menu/Encode_Decode$red >$white ";
     $input = trim(fgets(STDIN));
     if ($input == '01' OR $input == '1'){
         index();
@@ -245,52 +240,6 @@ function iptools(){
     }
 }
 
-function generator(){
-    include 'config.php';
-    print "$cyan 01$red :$white HMA License key Generator\n";
-    print "$cyan 02$red :$white Custom Code Generator\n";
-    print "$cyan 03$red :$white Wifi.id Campus Generator\n";
-    print "$cyan 04$red :$white Facebook UID Generator\n\n";
-    print "$cyan 00$red :$white Back\n";
-    print "$cyan 99$red :$white Exit\n\n";
-    echo "$white Menu/Generator$red >$white ";
-    $input = trim(fgets(STDIN));
-    if ($input == '01' OR $input == '1'){
-        index();
-        hma();
-    }
-    elseif ($input == '02' OR $input == '2'){
-        index();
-        custgen();
-    }
-    elseif ($input == '03' OR $input == '3'){
-        index();
-        wifiid();
-    }
-    elseif ($input == '04' OR $input == '4'){
-        index();
-        fbid();
-    }
-    elseif ($input == '00' OR $input == '0'){
-        index();
-        menu();
-    }
-    elseif ($input == '99'){
-        exit();
-    }
-    elseif ($input == 'bash'){
-        @system("bash");
-        index();
-        generator();
-    }
-    else{
-        print "\n";
-        @system("$input");
-        print "\n";
-        generator();
-    }
-}
-
 // Encode Tools
 
 function encode(){
@@ -352,211 +301,6 @@ function encode(){
         encode();
     }
     print "\n\n";
-}
-
-// Generator Tools
-
-function custgen(){
-    include 'config.php';
-    echo "$cyan Want to Input Base(y/n)?$red >$white ";
-    $input = trim(fgets(STDIN));
-    if ($input == 'y' OR $input == 'Y'){
-        echo "$cyan Base$red >$white ";
-        $base = trim(fgets(STDIN));
-        echo "$cyan Jumlah Digit Kode$red >$white ";
-        $total = trim(fgets(STDIN));
-        echo "$cyan UPPER/lower (U/l)?$red >$white ";
-        $case = trim(fgets(STDIN));
-        echo "$cyan Total Kode$red >$white ";
-        $jumlah = trim(fgets(STDIN));
-        if ($case == 'U' OR $case == 'u'){
-            function random($panjang)
-            {
-                $karakter = '';
-                $karakter .= 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'; // karakter alfabet
-                $karakter .= '1234567890'; // karakter numerik
-                $string = '';
-                for ($i=0; $i < $panjang; $i++) { 
-                    $pos = rand(0, strlen($karakter)-1);
-                    $string .= $karakter{$pos};
-                }
-                return $string;
-            }
-            for ($i=0; $i < $jumlah; $i++){
-                echo " ".$base.random($total-strlen($base));
-                echo "\n";
-            }
-        }
-        elseif ($case == 'l' OR $case == 'L'){
-            function random($panjang)
-            {
-                $karakter = '';
-                $karakter .= 'abcdefghijklmnopqrstuvwxyz'; // karakter alfabet
-                $karakter .= '1234567890'; // karakter numerik
-                $string = '';
-                for ($i=0; $i < $panjang; $i++) { 
-                    $pos = rand(0, strlen($karakter)-1);
-                    $string .= $karakter{$pos};
-                }
-                return $string;
-            }
-            for ($i=0; $i < $jumlah; $i++){
-                echo " ".$base.random($total-strlen($base));
-                echo "\n";
-            }
-        }
-    }
-    elseif ($input == 'n' OR $input == 'N'){
-        echo "$cyan Jumlah Digit Kode$red >$white ";
-        $total = trim(fgets(STDIN));
-        echo "$cyan UPPER/lower (U/l)?$red >$white ";
-        $case = trim(fgets(STDIN));
-        echo "$cyan Total Kode$red >$white ";
-        $jumlah = trim(fgets(STDIN));
-        if ($case == 'U' OR $case == 'u'){
-            function random($panjang)
-            {
-                $karakter = '';
-                $karakter .= 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'; // karakter alfabet
-                $karakter .= '1234567890'; // karakter numerik
-                $string = '';
-                for ($i=0; $i < $panjang; $i++) { 
-                    $pos = rand(0, strlen($karakter)-1);
-                    $string .= $karakter{$pos};
-                }
-                return $string;
-            }
-            for ($i=0; $i < $jumlah; $i++){
-                echo " ".random($total);
-                echo "\n";
-            }
-        }
-        elseif ($case == 'l' OR $case == 'L'){
-            function random($panjang)
-            {
-                $karakter = '';
-                $karakter .= 'abcdefghijklmnopqrstuvwxyz'; // karakter alfabet
-                $karakter .= '1234567890'; // karakter numerik
-                $string = '';
-                for ($i=0; $i < $panjang; $i++) { 
-                    $pos = rand(0, strlen($karakter)-1);
-                    $string .= $karakter{$pos};
-                }
-                return $string;
-            }
-            for ($i=0; $i < $jumlah; $i++){
-                echo " ".random($total);
-                echo "\n";
-            }
-        }
-    }
-}
-
-function hma(){
-	include 'config.php';
-	echo "$cyan Total$red >$white ";
-	$total = trim(fgets(STDIN));
-	function randhma($panjang){
-		$karakter = '';
-		$karakter .= 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-		$karakter .= '1234567890';
-		$string = '';
-		for ($i=0; $i < $panjang; $i++){
-			$pos = rand(0, strlen($karakter)-1);
-			$string .= $karakter{$pos};
-		}
-		return $string;
-	}
-	for ($i=0; $i < $total; $i++){
-        $acak = randhma(6)."-".randhma(6)."-".randhma(6)."\n";
-        $open = fopen("result/hma.txt", 'a');
-        fwrite($open, $acak);
-        fclose($open);
-		print "$white$acak";
-    }
-    print "$cyan [$yellow *$cyan ]$white Key generated to result/hma.txt\n\n";
-}
-
-function wifiid(){
-    include 'config.php';
-    print "$cyan 01$red :$white Password like Username\n";
-    print "$cyan 02$red :$white Default Campus Account\n\n";
-    echo "$cyan Menu$red >$white ";
-    $input = trim(fgets(STDIN));print "\n";
-    if ($input == '01' OR $input == '1'){
-        echo "$cyan Base$red >$white ";
-        $base = trim(fgets(STDIN));
-        echo "$cyan Panjang Username$red >$white ";
-        $total = trim(fgets(STDIN));
-        echo "$cyan Nama Kampus$red >$white ";
-        $univ = trim(fgets(STDIN));
-        echo "$cyan Total Akun$red >$white ";
-        $jumlah = trim(fgets(STDIN));
-        print "\n";
-        function randwifi($panjang){
-            $karakter = '';
-            $karakter .= '1234567890';
-            $string = '';
-            for ($i=0; $i < $panjang; $i++){
-                $pos = rand(0, strlen($karakter)-1);
-                $string .= $karakter{$pos};
-            }
-            return $string;
-        }
-        for ($i=0; $i < $jumlah; $i++){
-            $acak = $base.randwifi($total-strlen($base));
-            print "$cyan [$okegreen Username$cyan ]$red >$white ".$acak."@".$univ;print "\n";
-            print "$cyan [$okegreen Password$cyan ]$red >$white ".$acak;print "\n\n";
-        }
-    }
-    elseif ($input == '02' OR $input == '2'){
-        print "$cyan 01$red :$white Use Data List\n";
-        print "$cyan 02$red :$white Manual Input\n\n";
-        echo "$cyan Menu$red >$white ";
-        $input = trim(fgets(STDIN));
-        print "\n";
-        if ($input == '01' OR $input == '1'){
-            print "$cyan [$red !$cyan ]$yellow COMINGSOON !!\n\n";
-        }
-        elseif ($input == '02' OR $input == '2'){
-            print "$cyan NIM$red >$white ";
-            $nim = trim(fgets(STDIN));
-            print "$cyan Tahun Registrasi$red >$white ";
-            $tahun = trim(fgets(STDIN));
-            print "$cyan Tanggal Lahir$red >$white ";
-            $tanggal = trim(fgets(STDIN));
-            print "$cyan Ganjil/Genap$red >$white ";
-            $ganjilgenap = trim(fgets(STDIN));
-            print "$cyan [$okegreen Username$cyan ]$red >$white ".$nim."@ut.ac.id";print "\n";
-            print "$cyan [$okegreen Password$cyan ]$red >$white ".$tahun.$ganjilgenap.$tanggal;print "\n\n";
-        }
-    }
-}
-
-function fbid(){
-    include 'config.php';
-    $base = '1000';
-    echo "$cyan Total$red >$white ";
-    $jumlah = trim(fgets(STDIN));
-
-    function randfbid($panjang){
-        $karakter = '';
-        $karakter .= '1234567890';
-        $string = '';
-        for ($i=0; $i < $panjang; $i++){
-            $pos = rand(0, strlen($karakter)-1);
-            $string .= $karakter{$pos};
-        }
-        return $string;
-    }
-    for ($i=0; $i < $jumlah; $i++){
-        $acak = $base.randfbid(15-strlen($base))."\n";
-        $open = fopen("result/fbid.txt", 'a');
-        fwrite($open, $acak);
-        fclose($open);
-        print "$white$acak";
-    }
-    print "$cyan [$yellow *$cyan ]$white ID generated to result/fbid.txt\n\n";
 }
 
 // IP Tools
@@ -957,12 +701,12 @@ function dirscan(){
     else{
             $targetnya = $target;
         }
-    echo "$yellow \n [!]==// Opening $list ...";
+    echo "$red \n //$white Opening $list ...";
     $buka = fopen("$list","r");
     $ukuran = filesize("$list");
     $baca = fread($buka,$ukuran);
     $lists = explode("\r\n",$baca);
-    echo "$cyan\n [!]==// Please Wait...
+    echo "$cyan\n //$white Scanning ...
     ";
     foreach($lists as $dir){
             $log = "$targetnya/$dir";
@@ -973,16 +717,16 @@ function dirscan(){
             $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
             curl_close($ch);
             if($httpcode == 200){
-                    $handle = fopen("result/dirscan-$target.txt", "a+");
-                    fwrite($handle, "$log\n");
-                    print "\n$cyan  [".date('H:m:s')."]==//$white $log =>$cyan OK";
-                }
+                $handle = fopen("result/dirscan-$target.txt", "a+");
+                fwrite($handle, "$log\n");
+                print "\n$yellow    ->$white $log =>$cyan OK";
+            }
             elseif($httpcode == 403){
-                    print "\n$red  [".date('H:m:s')."]==//$white $log =>$red FORBIDDEN";
-                }
+                print "\n$yellow    ->$white $log =>$red FORBIDDEN";
+            }
             else{
-                    print "\n$red  [".date('H:m:s')."]==//$white $log =>$red ERROR";
-                }
+                print "\n$yellow    ->$white $log =>$red ERROR";
+            }
         }
     echo "\n$cyan [$yellow *$cyan ]$white Result OK reported to result/dirscan-$target.txt\n\n $white ";
 }
@@ -1006,12 +750,12 @@ function logfin(){
     else{
             $targetnya = $target;
         }
-    echo "$yellow \n [!]==// Opening $list ...";
+    echo "$red \n //$white Opening $list ...";
     $buka = fopen("$list","r");
     $ukuran = filesize("$list");
     $baca = fread($buka,$ukuran);
     $lists = explode("\r\n",$baca);
-    echo "$cyan\n [!]==// Please Wait...
+    echo "$cyan\n //$white Scanning ...
     ";
     foreach($lists as $login){
             $log = "$targetnya/$login";
@@ -1024,13 +768,13 @@ function logfin(){
             if($httpcode == 200){
                 $handle = fopen("result/adlog-$target.txt", "a+");
                 fwrite($handle, "$log\n");
-                print "\n$cyan  [".date('H:m:s')."]==//$white $log =>$cyan OK";
+                print "\n$yellow    ->$white $log =>$cyan OK";
             }
             elseif($httpcode == 403){
-                print "\n$red  [".date('H:m:s')."]==//$white $log =>$red FORBIDDEN";
+                print "\n$yellow    ->$white $log =>$red FORBIDDEN";
             }
             else{
-                print "\n$red  [".date('H:m:s')."]==//$white $log =>$red ERROR";
+                print "\n$yellow    ->$white $log =>$red ERROR";
             }
         }
     echo "\n$cyan [$yellow *$cyan ]$white Result OK reported to result/adlog-$target.txt\n\n $white ";
@@ -1055,12 +799,12 @@ function shellscan(){
     else{
             $targetnya = $target;
         }
-    echo "$yellow \n [!]==// Opening $list ...";
+    echo "$red \n //$white Opening $list ...";
     $buka = fopen("$list","r");
     $ukuran = filesize("$list");
     $baca = fread($buka,$ukuran);
     $lists = explode("\r\n",$baca);
-    echo "$cyan\n [!]==// Please Wait...
+    echo "$cyan\n //$white Scanning ...
     ";
     foreach($lists as $shell){
             $log = "$targetnya/$shell";
@@ -1071,16 +815,16 @@ function shellscan(){
             $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
             curl_close($ch);
             if($httpcode == 200){
-                    $handle = fopen("result/shellscan-$target.txt", "a+");
-                    fwrite($handle, "$log\n");
-                    print "\n$cyan  [".date('H:m:s')."]==//$white $log =>$cyan OK";
-                }
+                $handle = fopen("result/shellscan-$target.txt", "a+");
+                fwrite($handle, "$log\n");
+                print "\n$yellow    ->$white $log =>$cyan OK";
+            }
             elseif($httpcode == 403){
-                    print "\n$red  [".date('H:m:s')."]==//$white $log =>$red FORBIDDEN";
-                }
+                print "\n$yellow    ->$white $log =>$red FORBIDDEN";
+            }
             else{
-                    print "\n$red  [".date('H:m:s')."]==//$white $log =>$red ERROR";
-                }
+                print "\n$yellow    ->$white $log =>$red ERROR";
+            }
         }
     echo "\n$cyan [$yellow *$cyan ]$white Result OK reported to result/shellscan-$target.txt\n\n $white ";
 }
@@ -1098,13 +842,12 @@ function subdoscan(){
             echo "$cyan List$red >$white ";
             $list = trim(fgets(STDIN));
         }
-    $targetnya = $target;
-    echo "$yellow \n [!]==// Opening $list ...";
+    echo "$red \n //$white Opening $list ...";
     $buka = fopen("$list","r");
     $ukuran = filesize("$list");
     $baca = fread($buka,$ukuran);
     $lists = explode("\r\n",$baca);
-    echo "$cyan\n [!]==// Please Wait...
+    echo "$cyan\n //$white Scanning ...
     ";
     foreach($lists as $subdo){
             $log = "$subdo.$targetnya";
@@ -1115,16 +858,16 @@ function subdoscan(){
             $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
             curl_close($ch);
             if($httpcode == 200){
-                    $handle = fopen("result/subdo-$target.txt", "a+");
-                    fwrite($handle, "$log\n");
-                    print "\n$cyan  [".date('H:m:s')."]==//$white $log =>$cyan OK";
-                }
+                $handle = fopen("result/subdo-$target.txt", "a+");
+                fwrite($handle, "$log\n");
+                print "\n$yellow    ->$white $log =>$cyan OK";
+            }
             elseif($httpcode == 403){
-                    print "\n$red  [".date('H:m:s')."]==//$white $log =>$red FORBIDDEN";
-                }
+                print "\n$yellow    ->$white $log =>$red FORBIDDEN";
+            }
             else{
-                    print "\n$red  [".date('H:m:s')."]==//$white $log =>$red ERROR";
-                }
+                print "\n$yellow    ->$white $log =>$red ERROR";
+            }
         }
     echo "\n$cyan [$yellow *$cyan ]$white Result OK reported to result/subdo-$target.txt\n\n $white ";
 }
